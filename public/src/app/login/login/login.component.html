@@ -1,0 +1,58 @@
+<div class="row m-0 row-content-login display-row-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 justify-content-center col-content-form p-0 mx-auto">
+      
+        <div class=" display-col-center" style="min-height: 100vh; width: 100%;background: linear-gradient(270deg, rgba(79,70,114,1) 0%, rgba(52,75,132,0.8468429608171394) 65%, rgba(53,76,133,1) 100%);
+        ">
+            <div class="header col-12 p-0 pt-2 pb-2  logo-content text-center mb-3">
+               <img class="img-haro" src="../../../assets/img/logo-fm88.png" >
+                
+                <br> 
+            </div>
+            <form #loginForm="ngForm" class="form-login" novalidate (ngSubmit)="onLogin(loginForm.value, loginForm.valid)">
+                <div class="content">
+                        <div class="p-0 input-group col-12 pb-1">
+                           <span class="input-group-addon pr-2">
+                                <img src="../../../assets/img/img/mail.svg" class="img-input"
+                                    alt="Pass"> 
+                           </span>
+                            <input type="email" placeholder="EMAIL" class="form-control" name="email"
+                                [(ngModel)]="userLogin.email" required #email="ngModel"
+                                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+
+                        </div>
+                        <small [hidden]="email.valid || (email.pristine && !loginForm.submitted)"
+                            class="text-danger">
+                            Email inválido.
+                        </small>
+                        <div class="input-group col-12 p-0 pt-1">
+                            <span class="input-group-addon pr-2">
+                                <img src="../../../assets/img/img/contrasena.svg" class="img-input"
+                                    alt="Pass"> 
+                            </span>
+                            <input type="password" placeholder="CONTRASEÑA" class="form-control"
+                                name="password" [(ngModel)]="userLogin.password" required minlength="6"
+                                #password="ngModel">
+                        </div>
+                        <small [hidden]="password.valid || (password.pristine && !loginForm.submitted)"
+                            class="text-danger">
+                            ingrese contraseña.
+                        </small>
+                    <br>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <button type="submit" class="btn btn-fill btn-block btn-wd btn-login btn-login">
+                            INGRESAR
+                        </button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class=" col-12 col-sm-6 col-md-8 col-lg-9 p-0">
+        <div class="col-img"></div>
+        
+    </div>
+</div>

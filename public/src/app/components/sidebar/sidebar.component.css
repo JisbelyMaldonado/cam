@@ -1,0 +1,27 @@
+.sidebar li.active > a {
+    padding: 0px  !important;
+    margin: 5px 5px  !important;
+}
+
+.sidebar .logo .simple-text {
+    font-size: 16px !important;
+    color: rgb(81, 68, 111) !important;
+}
+
+/* .logo {
+    background-color: rgba(128, 128, 128, 0.418);
+} */
+.logo-img {
+    width: 50px;
+}
+
+.display-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-text {
+    color: rgb(81, 68, 111) !important; 
+}
