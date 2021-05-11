@@ -85,5 +85,10 @@
   margin: 0 auto;
   margin-bottom: 25px;
   margin-top: 25px;
-
 }
+
+.title-services{
+  font-size: calc(1em + 1vw);
+  font-family: "Exo-VariableFont_wght";
+  padding-top: 25px;
+ }
