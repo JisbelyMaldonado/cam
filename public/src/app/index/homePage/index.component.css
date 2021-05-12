@@ -23,6 +23,22 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Exo-ExtraBold";
+  src: url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype"),
+    url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Exo-Bold";
+  src: url("/../../assets/fonts/Exo-Bold.woff") format("opentype"),
+    url("/../../assets/fonts/Exo-Bold.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ************************************************** */
 /*SECTIONS BACKGROUND*/
@@ -38,7 +54,7 @@
 
 .principal-title{
    font-size: calc(2em + 2vw);
-   font-family: "Exo-VariableFont_wght";
+   font-family: "Exo-Bold";
 
   }
 
@@ -71,8 +87,7 @@
   color: white;
   background-color: #c2c258;
   border-radius: 40px;
-
-  font-family: "D-DIN-Bold";
+  font-family: "Exo-Bold";
   font-size: calc(0.625em + 0.625vw);
   margin-top: 10px;
 }
@@ -89,6 +104,13 @@
 
 .title-services{
   font-size: calc(1em + 1vw);
-  font-family: "Exo-VariableFont_wght";
+  font-family: "Exo-Bold";
   padding-top: 25px;
  }
+
+ .subtitle-services{
+  font-size: calc(1em + 1vw);
+  font-family: "Exo-Bold";
+  color:  #00504c
+ }
+
