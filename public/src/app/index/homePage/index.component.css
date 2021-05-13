@@ -67,6 +67,8 @@
  
 }
 
+
+
 /**************************************************** */
 
 .principal-title {
@@ -157,6 +159,15 @@
   position: relative;
   right: -35px;top: -32px;
   width: 90px;
+}
+
+.cma-img-right{
+  position: relative;
+  right: -950px;
+  top: -450px;
+  z-index: 1000;
+  width: 230px;
+
 }
 
 @media (max-width: 576px) {
