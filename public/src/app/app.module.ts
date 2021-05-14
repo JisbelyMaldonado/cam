@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login/login.component';
 import { DataTablesModule } from 'angular-datatables';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { DataTablesModule } from 'angular-datatables';
     AngularFireAuthModule,
     AngularFirestoreModule,
     DataTablesModule,
+    AngularEditorModule
   ],
   declarations: [
     AppComponent,

@@ -19,6 +19,10 @@ const routes: Routes =[
          path: 'messages',
          loadChildren: './modules/messages/messages.module#MessagesModule',
        },
+       {
+        path: 'adminBlog',
+        loadChildren: './modules/blog-config/blog-config.module#BlogConfigModule',
+      },
       //   {
       //    path: 'socialHelp',
       //    loadChildren: './modules/socialHelp/social-help.module#SocialHelpModule',
