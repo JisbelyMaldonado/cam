@@ -162,7 +162,7 @@
 }
 
 .cma-img-right{
-  position: relative;
+  position:relative;
   right: -950px;
   top: -450px;
   z-index: 1000;
