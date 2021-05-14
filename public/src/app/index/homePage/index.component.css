@@ -15,6 +15,16 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "HindMadurai-Regular";
+  src: url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype"),
+    url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "HindMadurai-Light";
   src: url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype"),
@@ -83,12 +93,11 @@
 
 .principal-subtitle {
   font-size: calc(0.625em + 0.625vw);
-  font-family: "HindMadurai-Light";
+  font-family: "HindMadurai-Regular";
 }
 .principal-subtitle-serv{
   font-size: calc(0.8em + 0.8vw);
-  font-family: "HindMadurai-Light";
-}
+  font-family: "HindMadurai-Bold";}
 
 .logo-img-cma {
   /* position: relative;
@@ -133,6 +142,18 @@
   padding-top: 25px;
 }
 
+
+.title-directory{
+  font-size: calc(0.8em + 0.8vw);
+  font-family: "Exo-Bold";
+  color: #00504c;
+}
+.subtitle-directory{
+  font-size: calc(0.8em + 0.8vw);
+  font-family: "HindMadurai-Regular";
+  color: #c2c258
+}
+
 .subtitle-services {
   font-size: calc(1.3em + 1.3vw);
   font-family: "Exo-Bold";
@@ -170,6 +191,37 @@
 
 }
 
+.div-circle {
+  background-image: url("/../../assets/img/Mesa de trabajo 38.png");
+  background-repeat: no-repeat;
+  background-position: center; 
+  /* border: 2px solid #2c8551; */
+  border-radius: 50%;
+   height: 150px;
+  width: 150px;
+  margin: auto;
+  /* background-color: #2ECC71; */
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168); 
+}
+
+.display-row-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.justify-content-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
 @media (max-width: 576px) {
   .img-left {
     position: relative;
@@ -191,6 +243,15 @@
   }
   .img-logo-separador{
     width: 80px;
+  }
+  .col-content-directory{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
   }
 }
 
