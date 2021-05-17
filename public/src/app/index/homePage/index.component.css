@@ -53,6 +53,7 @@
 /* ************************************************** */
 /*SECTIONS BACKGROUND*/
 
+
 .section-one-background {
   background-image: url("/../../assets/img/Inicio.jpg");
   background-repeat: no-repeat;
@@ -75,7 +76,34 @@
   padding: 0 !important;
 }
 
+.background-contacts{
+  background-image: url("/../../assets/img/Contactos Elemento1.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /**************************************************** */
+
+.contacts-subtitle{
+  font-size: calc(0.85em + 0.85vw);
+  font-family: "Exo-Bold";
+  color: #c2c258;
+}
+
+.form-control {
+  background: no-repeat center bottom, center calc(100% - 1px);
+  background-size: 0 100%, 100% 100%;
+  border: solid 1px;
+  height: 36px;
+  padding-left: 25px;
+  padding-right: 0;
+  border-radius: 200px;
+  border-color: #c5c5c5;
+  font-size: 14px;
+}
+
 .img-location-title {
   position: relative;
   top: -30px;
@@ -99,6 +127,12 @@
 .principal-subtitle-serv {
   font-size: calc(0.8em + 0.8vw);
   font-family: "HindMadurai-Regular";
+}
+
+.principal-subtitle-serv1 {
+  font-size: calc(0.7em + 0.7vw);
+  font-family: "HindMadurai-Regular";
+  color: #00504c;
 }
 
 .logo-img-cma {
