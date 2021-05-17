@@ -60,44 +60,46 @@
   height: 50em;
 }
 
-.background-services-2{
+.background-services-2 {
   background-image: url("/../../assets/img/Servicios-elemento1.svg");
   background-repeat: no-repeat;
   background-position: right;
   margin: 0 !important;
   padding: 0 !important;
- 
 }
-.background-services-1{
+.background-services-1 {
   background-image: url("/../../assets/img/Servicios elemento2.svg");
   background-repeat: no-repeat;
   background-position: left;
   margin: 0 !important;
   padding: 0 !important;
- 
 }
 
-
-
 /**************************************************** */
+.img-location-title {
+  position: relative;
+  top: -30px;
+  left: 17px;
+}
 
 .principal-title {
   font-size: calc(2em + 2vw);
   font-family: "Exo-Bold";
 }
 
-.principal-title2{
+.principal-title2 {
   font-size: calc(1.5em + 1.5vw);
   font-family: "Exo-Bold";
 }
 
 .principal-subtitle {
-  font-size: calc(0.625em + 0.625vw);
+  font-size: calc(0.8em + 0.8vw);
   font-family: "HindMadurai-Regular";
 }
-.principal-subtitle-serv{
+.principal-subtitle-serv {
   font-size: calc(0.8em + 0.8vw);
-  font-family: "HindMadurai-Bold";}
+  font-family: "HindMadurai-Regular";
+}
 
 .logo-img-cma {
   /* position: relative;
@@ -136,22 +138,60 @@
   margin-top: 25px;
 }
 
+.rectangle-quienes-somos {
+  height: 8px;
+  width: 100px;
+  background-color: #c2c258;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  position: relative;
+  right: -175px;
+  top: -45px;
+}
+
+.rectangle-products {
+  height: 8px;
+  width: 100px;
+  background-color: #c2c258;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  position: relative;
+  left: 270px;
+  top: -45px;
+}
+
+.rectangle-directory{
+  height: 8px;
+  width: 100px;
+  background-color: #c2c258;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  position: relative;
+  left: 100px;
+  top: -45px;
+}
+
 .title-services {
   font-size: calc(1.4em + 1.4vw);
   font-family: "Exo-Bold";
   padding-top: 25px;
 }
 
-
-.title-directory{
+.title-directory {
   font-size: calc(0.8em + 0.8vw);
   font-family: "Exo-Bold";
   color: #00504c;
 }
-.subtitle-directory{
+.subtitle-directory {
   font-size: calc(0.8em + 0.8vw);
   font-family: "HindMadurai-Regular";
-  color: #c2c258
+  color: #c2c258;
 }
 
 .subtitle-services {
@@ -175,36 +215,150 @@
   z-index: 1000;
   width: 450px;
 }
-
-.img-logo-separador{
+.cma-img-right {
   position: relative;
-  right: -35px;top: -32px;
-  width: 90px;
-}
-
-.cma-img-right{
-  position:relative;
   right: -950px;
   top: -450px;
   z-index: 1000;
   width: 230px;
-
 }
 
 .div-circle {
   background-image: url("/../../assets/img/Mesa de trabajo 38.png");
   background-repeat: no-repeat;
-  background-position: center; 
-  /* border: 2px solid #2c8551; */
+  background-position: center;
   border-radius: 50%;
-   height: 150px;
+  height: 150px;
   width: 150px;
   margin: auto;
-  /* background-color: #2ECC71; */
-  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168); 
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
 }
 
-.display-row-center{
+.div-circle-1 {
+  background-image: url("/../../assets/img/Mesa de trabajo 39.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-2 {
+  background-image: url("/../../assets/img/Mesa de trabajo 40.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-3 {
+  background-image: url("/../../assets/img/Mesa de trabajo 41.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-4 {
+  background-image: url("/../../assets/img/Mesa de trabajo 42.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-5 {
+  background-image: url("/../../assets/img/Mesa de trabajo 43.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-6 {
+  background-image: url("/../../assets/img/Mesa de trabajo 44.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-7 {
+  background-image: url("/../../assets/img/Mesa de trabajo 45.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-8 {
+  background-image: url("/../../assets/img/Mesa de trabajo 46.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+.div-circle-9 {
+  background-image: url("/../../assets/img/Mesa de trabajo 47.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+
+.div-circle-10 {
+  background-image: url("/../../assets/img/Mesa de trabajo 48.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+
+.div-circle-11 {
+  background-image: url("/../../assets/img/Mesa de trabajo 49.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+
+.div-circle-12 {
+  background-image: url("/../../assets/img/Mesa de trabajo 50.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  box-shadow: 0px 7px 29px 0px rgb(168, 168, 168);
+}
+
+.display-row-center {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -213,7 +367,7 @@
   justify-items: center;
 }
 
-.justify-content-center{
+.justify-content-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -223,6 +377,22 @@
 }
 
 @media (max-width: 576px) {
+  .rectangle-quienes-somos {
+    position: relative;
+    right: -20px;
+    top: -45px;
+    padding: 0px !important;
+  }
+  .rectangle-products{
+    position: relative;
+    left: 75px;
+    top: -20px;
+  }
+  .rectangle-directory{
+    position: relative;
+    left:55px;
+  }
+
   .img-left {
     position: relative;
     right: 0px;
@@ -241,10 +411,8 @@
     display: block;
     margin: auto;
   }
-  .img-logo-separador{
-    width: 80px;
-  }
-  .col-content-directory{
+
+  .col-content-directory {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,6 +424,7 @@
 }
 
 @media (max-width: 769px) {
+  
   .img-left {
     padding-top: 80px !important;
     right: 0px;
@@ -273,9 +442,6 @@
     width: 200px;
     display: block;
     margin: auto;
-  }
-  .img-logo-separador{
-    width: 80px;
   }
 }
 
@@ -298,9 +464,6 @@
     display: block;
     margin: auto;
   }
-  .img-logo-separador{
-    width: 80px;
-  }
 }
 
 @media (max-width: 1085px) {
@@ -321,9 +484,6 @@
     width: 250px;
     display: block;
     margin: auto;
-  }
-  .img-logo-separador{
-    width: 80px;
   }
 }
 @media (max-width: 1280px) {
