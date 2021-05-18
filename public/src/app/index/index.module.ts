@@ -7,10 +7,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { IndexRoutingModule } from './index-routing.module';
+import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
 
 
 @NgModule({
-  declarations: [IndexComponent],
+  declarations: [IndexComponent, FooterLandingPageComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),
