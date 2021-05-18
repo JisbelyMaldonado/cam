@@ -79,12 +79,27 @@
 .background-contacts{
   background-image: url("/../../assets/img/Contactos Elemento1.svg");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position-x: 60%; 
+  background-position-y: 4rem;
+
   margin: 0 !important;
-  padding: 0 !important;
-}
+  padding: 0 !important;}
 
 /**************************************************** */
+
+.container-sm {
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.control-label{
+  font-size: calc(0.85em + 0.85vw);
+  font-family: "HindMadurai-Regular";
+  color: #006b66;
+}
 
 .contacts-subtitle{
   font-size: calc(0.85em + 0.85vw);
@@ -130,7 +145,7 @@
 }
 
 .principal-subtitle-serv1 {
-  font-size: calc(0.7em + 0.7vw);
+  font-size: calc(0.8em + 0.8vw);
   font-family: "HindMadurai-Regular";
   color: #00504c;
 }
