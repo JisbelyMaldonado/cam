@@ -9,9 +9,11 @@ import { MatInputModule } from '@angular/material/input';
 import { IndexRoutingModule } from './index-routing.module';
 import { LoginLandingComponent } from './login-landing/login-landing/login-landing.component';
 
+import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
+
 
 @NgModule({
-  declarations: [IndexComponent, LoginLandingComponent],
+  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),

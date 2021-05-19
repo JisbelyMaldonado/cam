@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Exo-VariableFont_wght";
+  src: url("/../../assets/fonts/Exo-VariableFont_wght.woff") format("opentype"),
+    url("/../../assets/fonts/Exo-VariableFont_wght.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HindMadurai-Bold";
+  src: url("/../../assets/fonts/HindMadurai-Bold.woff") format("opentype"),
+    url("/../../assets/fonts/HindMadurai-Bold.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HindMadurai-Regular";
+  src: url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype"),
+    url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HindMadurai-Light";
+  src: url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype"),
+    url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Exo-ExtraBold";
+  src: url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype"),
+    url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Exo-Bold";
+  src: url("/../../assets/fonts/Exo-Bold.woff") format("opentype"),
+    url("/../../assets/fonts/Exo-Bold.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+.contacts-subtitle{
+  font-size: calc(1.1em + 1.1vw);
+  font-family: "Exo-Bold";
+  color: #c2c258;
+}
+
+.display-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.justify-content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.menu{
+  font-size: calc(0.8em + 0.8vw);
+  font-family: "HindMadurai-Regular";
+  color: #00504c;
+}
+
+.img-location-title {
+  position: relative;
+  top: -30px;
+  left: 12px;
+}
