@@ -42,7 +42,8 @@ export class BlogConfigComponent implements OnInit {
 
   public newPost() {
     $('#multiCollapsePost').collapse('show');
-    this.post.post_id = new Date().getTime().toString()
+    this.post.post_id = new Date().getTime().toString();
+    this.post.post_state = true;
   }
 
   public getPosts() {
@@ -69,12 +70,12 @@ export class BlogConfigComponent implements OnInit {
   }
 
   public savePost(post: Post, isValid: boolean , formPost: NgForm) {
-    console.log(this.post);
+    // console.log(this.post);
     if (isValid) {
        if (this.isEdit) {
          this.blogService.editPost(this.post).then(() => {
            $('#multiCollapsePost').collapse('hide');
-           this.showNotification('top', 'center' , 'Se edito el post correctamente!', 'success');
+           this.showNotification('bottom', 'right' , 'Se edito el post correctamente!', 'success');
            formPost.resetForm();
            this.getPosts()
 
@@ -85,7 +86,7 @@ export class BlogConfigComponent implements OnInit {
         this.post.post_state = true;
         this.blogService.savePost(this.post).then(() => {
           $('#multiCollapsePost').collapse('hide');
-          this.showNotification('top', 'center' , 'Se creo el post correctamente!', 'success');
+          this.showNotification('bottom', 'right' , 'Se creo el post correctamente!', 'success');
           formPost.resetForm()
           this.getPosts()
         });
@@ -118,6 +119,7 @@ export class BlogConfigComponent implements OnInit {
   public editPost(post: Post) {
     $('#multiCollapsePost').collapse('show');
     this.post = post;
+    this.isEdit = true;
   }
 
   public deletePost(post: Post) {
@@ -130,7 +132,7 @@ export class BlogConfigComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         this.blogService.deletePost(post.post_id).then(() => {
-          this.showNotification('top', 'center' , 'Se elimino el post correctamente!', 'success');
+          this.showNotification('bottom', 'right' , 'Se elimino el post correctamente!', 'success');
           this.getPosts()
         })
       } 

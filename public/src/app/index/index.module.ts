@@ -7,10 +7,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { IndexRoutingModule } from './index-routing.module';
+import { LoginLandingComponent } from './login-landing/login-landing/login-landing.component';
 
 
 @NgModule({
-  declarations: [IndexComponent],
+  declarations: [IndexComponent, LoginLandingComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),

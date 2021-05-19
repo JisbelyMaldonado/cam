@@ -1,0 +1,27 @@
+.main-content {
+    margin-top: 50px;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+.display-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.display-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.btn-view-detail {
+    background-color: transparent;
+    border: none;
+}
