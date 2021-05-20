@@ -19,7 +19,7 @@ import { CalculatorService } from 'app/services/calculator.service';
 
 
 export class IndexComponent implements OnInit {
-  public username: string = '';
+  public username: string;
   public cuantiaValue: number = 0;
   public selectedValue: string = '';
   public selectedValueArb: string  = '';
@@ -65,17 +65,17 @@ export class IndexComponent implements OnInit {
 
 
   async clickme() {
-   var aa = await this.calcularService.calcular( this.cuantiaValue,
+  this.calcularService.calcular( this.cuantiaValue,
       this.selectedValue,
       this.selectedValueArb,
       this.selectedCuantia,
       this.selectedSocio,
-    ).subscribe((valores)=>{
-      console.log(valores);
+    ).subscribe((users)=>{
+      console.log(users)
+
     })
     
-    console.log(aa)
-
+ 
   }
   /**
    * *** Funcion para validar e iniciar sesion ***

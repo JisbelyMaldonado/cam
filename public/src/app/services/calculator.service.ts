@@ -18,13 +18,14 @@ export class CalculatorService {
     selectedCuantia: string,
     selectedSocio: string,
   ) {
-   
-        console.log("hasta indeterminado");
-        console.log(selectedValueArb)
+    if (selectedValue == "0") {
+      if (selectedValueArb == "tres") {
+        console.log("hasta aqui 1");
         return this.db
-        .collection("Arbitro")
-        .doc("tres").collection("xxx")
-        .snapshotChanges()
+        .collection<arbitro>("Arbitro")
+        .doc(`${selectedValueArb}`)
+        .collection("indeterminada").doc("4mvglwzgNgWPQmnli51c")
+       .snapshotChanges()
 
 
 
@@ -81,8 +82,13 @@ export class CalculatorService {
       //     .collection("1000").doc("jqCOQzxn3OOgvJCAM8TE")
       //     .valueChanges();
       // }
-    
-  
+    }else{
+      console.log("no entra a indeterminado")
+    }
+  }else{
+    console.log("no entra a arbitraje")
+
+  }
 }
 
 
