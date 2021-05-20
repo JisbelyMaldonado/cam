@@ -10,10 +10,11 @@ import { IndexRoutingModule } from './index-routing.module';
 import { LoginLandingComponent } from './login-landing/login-landing/login-landing.component';
 
 import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent],
+  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent, NavbarComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),
