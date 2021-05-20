@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Users } from 'app/interfaces/user';
+import { Arbitraje, Cuantia, Servicio, Socio, Users } from 'app/interfaces/user';
+import { CalculatorService } from 'app/services/calculator.service';
 
 @Component({
   selector: 'app-index',
@@ -8,15 +9,66 @@ import { Users } from 'app/interfaces/user';
   styleUrls: ['./index.component.css']
 })
 
+
+
 export class IndexComponent implements OnInit {
-  
+  public username: string = '';
+  public cuantiaValue: number = 0;
+  public selectedValue: string = '';
+  public selectedValueArb: string  = '';
+  public selectedCuantia: string  = '';
+  public selectedSocio: string  = '';
+
+
   public user: Users;
+
+
+  servicio: Servicio[] = [
+    {value: '0', viewValue: 'Arbitraje'},
+    {value: '1', viewValue: 'Mediación'}
+  ];
+  arbitraje: Arbitraje[] = [
+    {value: 'tres', viewValue: 'Árbitro Único'},
+    {value: 'unico', viewValue: 'Tres Árbitros'}
+  ];
+
+  cuantia: Cuantia[] = [
+    {value: '0', viewValue: 'Cuantía determinada'},
+    {value: '1', viewValue: 'Cuantía indeterminada'}
+  ];
+
+  socio: Socio[] = [
+    {value: '0', viewValue: 'Soy socio'},
+    {value: '1', viewValue: 'No soy socio'}
+  ];
   
+
+
+  constructor(    public calcularService: CalculatorService
+    ){
+  }
+
+
+
   // constructor(private authService: AuthServiceService) {}
 
   ngOnInit(): void {
     this.user = {};
   }
+
+
+
+
+  clickme() {
+    this.calcularService.calcular(  this.cuantiaValue,
+      this.selectedValue,
+      this.selectedValueArb,
+      this.selectedCuantia,
+      this.selectedSocio,
+    );
+    console.log('it does nothing',this.username);
+  }
+
 
   /**
    * *** Funcion para validar e iniciar sesion ***
@@ -39,48 +91,4 @@ export class IndexComponent implements OnInit {
     }
   }
 
-  soapCall() {
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('POST', 'http://apl.vazseguros.com:8080/ServicioWeb/wsmovil?wsdl', true);
-    const id_number = '0190088669001';
-
-
-
-    // The following variable contains the xml SOAP request.
-    const sr =
-    `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:miws="http://miws/">
-      <soapenv:Header/>
-      <soapenv:Body>
-         <miws:produccion>
-            <!--Optional:-->
-            <identificacion>` +
-    id_number +
-    `</identificacion>
-         </miws:produccion>
-      </soapenv:Body>
-   </soapenv:Envelope>`;
-
-
-    xmlhttp.onreadystatechange =  () => {
-        if (xmlhttp.readyState == 4) {
-            if (xmlhttp.status == 200) {
-                const xml = xmlhttp.responseXML;
-                // Here I'm getting the value contained by the <return> node.
-                const response_number = xml.getElementsByTagName('return')[0].childNodes[0].nodeValue;
-                // Print result square number.
-
-                var array = JSON.parse(response_number)
-                array.forEach(element => {
-                  console.log(element.ramo)
-                });
-                console.log(response_number);
-            }
-        }
-    }
-    // Send the POST request.
-    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
-    xmlhttp.responseType = 'document';
-    console.log
-    return xmlhttp.send(sr);
-  }
 }

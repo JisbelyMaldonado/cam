@@ -378,7 +378,97 @@
 
 
 <!--COTIZADOR-->
-<section>
+<section class="m-5">
+  <div class="row w-100 display-row-center mx-auto">
+    <div class="col-sm-6" style="background-color: #c2c258;">aaa</div>
+    <div class="col-sm-6" style="background-color: #ffffff;">
+
+
+      <form>
+        <h4>Seleccionar:</h4>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedValue" name="servicio">
+            <mat-option *ngFor="let servicio of servicio" [value]="servicio.value">
+              {{servicio.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado arbitraje: {{selectedValue}} - Arbitraje</p>
+      </form>
+
+      <form *ngIf="this.selectedValue">
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedValueArb" name="arbitraje">
+            <mat-option *ngFor="let arbitraje of arbitraje" [value]="arbitraje.value">
+              {{arbitraje.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado: {{selectedValueArb}} </p>
+      </form>
+
+
+      <form *ngIf="this.selectedValueArb">
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedCuantia" name="cuantia">
+            <mat-option *ngFor="let cuantia of cuantia" [value]="cuantia.value">
+              {{cuantia.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado: {{selectedCuantia}} </p>
+      </form>
+
+
+
+      <form *ngIf="this.selectedCuantia== '0'">
+        <p><input type="text" id="cuantiaValue" name="cuantiaValue" [(ngModel)]="cuantiaValue"></p>
+        <h1> {{cuantiaValue}}</h1>
+      </form>
+
+
+
+     
+
+
+
+
+
+
+
+      <form *ngIf="this.selectedCuantia">
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedSocio" name="socio">
+            <mat-option *ngFor="let socio of socio" [value]="socio.value">
+              {{socio.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado: {{selectedSocio}} </p>
+      </form>
+
+      <button *ngIf="this.selectedSocio" type="button" (click)="clickme()">Clickme</button>
+
+
+
+
+
+
+
+
+
+
+      <form *ngIf="this.selectedValue == '1'">
+        mediacion
+      </form>
+
+
+
+    </div>
+  </div>
+
+
+
 </section>
 
 
@@ -627,13 +717,13 @@
 
 <!--CONTACTS-->
 
-<section class="background-contacts" >
+<section class="background-contacts">
   <div class="row w-100 display-row-center p-0 m-0">
 
     <div class="col-sm-12 p-0 m-0 text-center">
       <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="PRODUCTOS Y SERVICIOS"
         src="../../../assets/img/Separador1.svg">
-      <span class="title-services">Contactos      </span>
+      <span class="title-services">Contactos </span>
       <div class="rectangle-directory"></div>
     </div>
 
@@ -641,7 +731,7 @@
   <div class="container">
     <div class="row">
       <!-- Section Titile -->
-     
+
       <!-- contact form -->
       <div class="col-md-6 wow animated fadeInRight">
         <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
@@ -698,17 +788,17 @@
         <h1 class="contacts-subtitle">Horarios</h1>
         <p class="principal-subtitle-serv1">Lunes a Viernes <br> 08:00 - 13h00 / 15:00 - 18:00 </p>
 
-        <div class="row display-row-center w-100 text-left pt-5"> 
+        <div class="row display-row-center w-100 text-left pt-5">
           <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Twitter.svg">
-          <img class=" text-center img-fluid pr-2" width="20%"  alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Mail.svg">
+            src="../../../assets/img/Twitter.svg">
           <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Facebook.svg">
-          <img class=" text-center img-fluid pr-2" width="20%"  alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Instagram.svg">
-          <img class=" text-center img-fluid pr-2" width="20%"  alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Whatsapp.svg">
+            src="../../../assets/img/Mail.svg">
+          <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
+            src="../../../assets/img/Facebook.svg">
+          <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
+            src="../../../assets/img/Instagram.svg">
+          <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
+            src="../../../assets/img/Whatsapp.svg">
         </div>
       </div>
     </div>

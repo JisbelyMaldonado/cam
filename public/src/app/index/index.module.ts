@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { IndexRoutingModule } from './index-routing.module';
 import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -15,11 +16,13 @@ import { FooterLandingPageComponent } from './footer-landing-page/footer-landing
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),
+  
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule
     
   ]
 })
