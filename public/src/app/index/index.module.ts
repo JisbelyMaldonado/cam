@@ -7,12 +7,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { IndexRoutingModule } from './index-routing.module';
+import { LoginLandingComponent } from './login-landing/login-landing/login-landing.component';
+
 import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
 import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
-  declarations: [IndexComponent, FooterLandingPageComponent],
+  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),

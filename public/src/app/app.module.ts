@@ -16,6 +16,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginComponent } from './login/login/login.component';
 import { DataTablesModule } from 'angular-datatables';
 import {MatSelectModule} from '@angular/material/select';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import {MatSelectModule} from '@angular/material/select';
     AngularFireAuthModule,
     AngularFirestoreModule,
     DataTablesModule,
+    AngularEditorModule
   ],
   declarations: [
     AppComponent,

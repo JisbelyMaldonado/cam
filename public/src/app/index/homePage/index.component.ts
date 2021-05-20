@@ -70,8 +70,8 @@ export class IndexComponent implements OnInit {
       this.selectedValueArb,
       this.selectedCuantia,
       this.selectedSocio,
-    ).subscribe((users)=>{
-      console.log(users)
+    ).subscribe((value)=>{
+      console.log(value)
 
     })
     

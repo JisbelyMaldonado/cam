@@ -6,12 +6,12 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyCy6Jvl_kxJ8RyBGfD9Vfdy_J1QO2ksFg4",
-    authDomain: "appfm88.firebaseapp.com",
-    databaseURL: "https://appfm88.firebaseio.com",
-    projectId: "appfm88",
-    storageBucket: "appfm88.appspot.com",
-    messagingSenderId: "203323638903",
-    appId: "1:203323638903:web:bb1e24cdf93b092cb6f272"
+    apiKey: "AIzaSyBw-v9eB7eK_AS5Pa0x6DOW8WvpC_u1zyg",
+    authDomain: "centro-mediacion-y-arbitraje.firebaseapp.com",
+    projectId: "centro-mediacion-y-arbitraje",
+    storageBucket: "centro-mediacion-y-arbitraje.appspot.com",
+    messagingSenderId: "259625248941",
+    appId: "1:259625248941:web:dee561c27661749e9abe24",
+    measurementId: "G-41XSH7ZC8B"
   }
 };
