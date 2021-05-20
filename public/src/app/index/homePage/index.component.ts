@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Arbitraje, Cuantia, Servicio, Socio, Users } from 'app/interfaces/user';
+import { Arbitraje } from 'app/interfaces/arbitraje';
+import { arbitro } from 'app/interfaces/arbitro';
+import { Cuantia } from 'app/interfaces/cuantia';
+import { Servicio } from 'app/interfaces/servicio';
+import { Socio } from 'app/interfaces/socio';
+import { Users } from 'app/interfaces/user';
+
+
 import { CalculatorService } from 'app/services/calculator.service';
 
 @Component({
@@ -21,6 +28,7 @@ export class IndexComponent implements OnInit {
 
 
   public user: Users;
+  public arbitro: arbitro;
 
 
   servicio: Servicio[] = [
@@ -28,8 +36,8 @@ export class IndexComponent implements OnInit {
     {value: '1', viewValue: 'Mediación'}
   ];
   arbitraje: Arbitraje[] = [
-    {value: 'tres', viewValue: 'Árbitro Único'},
-    {value: 'unico', viewValue: 'Tres Árbitros'}
+    {value: 'unico', viewValue: 'Árbitro Único'},
+    {value: 'tres', viewValue: 'Tres Árbitros'}
   ];
 
   cuantia: Cuantia[] = [
@@ -44,13 +52,10 @@ export class IndexComponent implements OnInit {
   
 
 
-  constructor(    public calcularService: CalculatorService
-    ){
+  constructor(public calcularService: CalculatorService)
+  {
   }
 
-
-
-  // constructor(private authService: AuthServiceService) {}
 
   ngOnInit(): void {
     this.user = {};
@@ -59,17 +64,19 @@ export class IndexComponent implements OnInit {
 
 
 
-  clickme() {
-    this.calcularService.calcular(  this.cuantiaValue,
+  async clickme() {
+   var aa = await this.calcularService.calcular( this.cuantiaValue,
       this.selectedValue,
       this.selectedValueArb,
       this.selectedCuantia,
       this.selectedSocio,
-    );
-    console.log('it does nothing',this.username);
+    ).subscribe((valores)=>{
+      console.log(valores);
+    })
+    
+    console.log(aa)
+
   }
-
-
   /**
    * *** Funcion para validar e iniciar sesion ***
    * @param user 

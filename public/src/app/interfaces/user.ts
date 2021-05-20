@@ -16,21 +16,3 @@ export interface Users {
 
   }
 
-  export interface Servicio {
-   value: string;
-   viewValue: string;
- }
- 
- export interface Arbitraje {
-   value: string;
-   viewValue: string;
- }
- export interface Cuantia {
-   value: string;
-   viewValue: string;
- }
- 
- export interface Socio {
-   value: string;
-   viewValue: string;
- }
