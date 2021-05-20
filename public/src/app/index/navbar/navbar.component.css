@@ -1,0 +1,54 @@
+.bg-color-solid {
+  background-color: #026568 !important;
+  min-height: 80px !important;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+}
+
+.bg-light {
+  min-height: 120px;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 900 !important;
+  border-bottom: solid 4px transparent !important;
+
+}
+
+.nav-item {
+  min-width: 100px;
+}
+
+.display-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.display-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.logo-navbar {
+  height: 60px;
+}
+
+.active .nav-link {
+  border-bottom: solid 4px #c2c258 !important;
+  background: none !important;
+  border-radius: 0px !important;
+}

@@ -11,10 +11,11 @@ import { LoginLandingComponent } from './login-landing/login-landing/login-landi
 
 import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
 import {MatSelectModule} from '@angular/material/select';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent],
+  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent, NavbarComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),

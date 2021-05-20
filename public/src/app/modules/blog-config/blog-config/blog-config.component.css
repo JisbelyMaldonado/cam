@@ -79,3 +79,39 @@ th  {
     border: none !important;
 
 }
+
+.img-upload-input {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: gray;
+    height: 30px;
+    width: 40px; 
+    background-color: rgba(189, 189, 189, 0.226);
+    cursor: pointer;
+  }
+  
+  .img-new-image {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: gray;
+    height: 30px;
+    width: 40px;
+    background-color: rgba(189, 189, 189, 0.226);
+    cursor: pointer;
+  }
+
+  .image-preview {
+    width: max-content;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .img-upload {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: gray;
+    height: 160px;
+    width: 240px;
+    background-color: rgba(189, 189, 189, 0.226);
+    cursor: pointer;
+  }
