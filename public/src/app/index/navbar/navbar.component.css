@@ -51,4 +51,7 @@
   border-bottom: solid 4px #c2c258 !important;
   background: none !important;
   border-radius: 0px !important;
+  /* -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease; */
 }
