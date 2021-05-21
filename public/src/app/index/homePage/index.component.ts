@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Users } from 'app/interfaces/user';
+import { take } from 'rxjs/operators';
+import { Post } from '../../interfaces/post';
+import { BlogService } from '../../services/blog/blog.service';
 
 @Component({
   selector: 'app-index',
@@ -11,11 +15,21 @@ import { Users } from 'app/interfaces/user';
 export class IndexComponent implements OnInit {
   
   public user: Users;
-  
-  // constructor(private authService: AuthServiceService) {}
+  public arrayPost: Post[];
+  public arrayPostAux: Post[];
+  public post: any;
+  public show: boolean;
+  next: any;
+  //constructor(private authService: AuthServiceService) {}
+  constructor( private BlogService: BlogService, private db: AngularFirestore)
+  {
 
+  }
   ngOnInit(): void {
     this.user = {};
+    // this.getPosts();
+    this.getPosts();
+    this.show=false;
   }
 
   /**
@@ -83,4 +97,33 @@ export class IndexComponent implements OnInit {
     console.log
     return xmlhttp.send(sr);
   }
+  
+
+  /* METODO PARA OBTENER LOS BLOGS  DE LA BASE DATOS */
+  // public getPosts() {
+  //   this.BlogService.getPosts().pipe(take(3)).subscribe(posts => {
+  //     this.arrayPost = posts;
+  //     console.log(this.arrayPost);
+  //   })
+  // }
+
+  public getPosts() {
+    this.BlogService.getPostByCategory().subscribe(posts => {
+      this.arrayPost= posts;
+      console.log(posts);
+    })
+  }
+ 
+  public post3()
+  {
+    this.BlogService.getMoreTree().subscribe(posts =>{
+
+        posts.forEach(post => {
+          this.arrayPost.push(post);
+        });
+    
+      console.log(this.arrayPost);
+    })
+  }
+
 }

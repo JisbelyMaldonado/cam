@@ -622,18 +622,74 @@
 
 
 <!--BLOG SECTION-->
+<section>
+  <div class="row display-row-center p-0 m-0  ">
+    <div class="col-sm-12 p-0 m-0 text-center">
+      <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="BLOG INFOMATIVO"
+        src="../../../assets/img/Separador1.svg">
+      <span class="title-services">Blog informativo </span>
+      <div class="rectangle-directory"></div>
+    </div>
+  </div>
+
+  <div class="row w-85 display-row-center p-0 m-0 mx-auto">
+    <ng-container class="" *ngFor="let post of arrayPost">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+        <div class="card card-post ">
+          <div class="img-card-border">
+            <img class="img-card-img" src="{{post.post_img}}" alt="{{post.post_title}}">
+          </div>
+          <div>
+            <div class="text-left">
+              <h4 class="title">{{post.post_title}}</h4>
+            </div>
+            <p class="text">{{post.post_description |slice:0:116}} ...</p>
+          </div>
+          <div>
+            <a data-toggle="modal" data-target="#modalpost">
+              <button (click)="selectProdcut(post)" class="btn btn-ver-Mas">Ver más</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div style="margin-bottom: 10rem;">
+    <div class="row w-85 display-row-center p-0 m-0 mx-auto">
+      <div class="col-md-4 col-lg-4">
+
+      </div>
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <button *ngIf="!show==true"  (click)="post3()" class="btn btn-ligth-blog">Cargar más</button>
+      </div>
+      <div class="col-sm-12 col-md-2 col-lg-2">
+        <button class="btn btn-ligth-blog">Ir al Blog</button>
+      </div>
+      <div class=" col-md-4 col-lg-4">
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
 
 
 
 <!--CONTACTS-->
 
-<section class="background-contacts" >
+<section class="background-contacts">
   <div class="row w-100 display-row-center p-0 m-0">
 
     <div class="col-sm-12 p-0 m-0 text-center">
       <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="PRODUCTOS Y SERVICIOS"
         src="../../../assets/img/Separador1.svg">
-      <span class="title-services">Contactos      </span>
+      <span class="title-services">Contactos </span>
       <div class="rectangle-directory"></div>
     </div>
 
@@ -641,7 +697,7 @@
   <div class="container">
     <div class="row">
       <!-- Section Titile -->
-     
+
       <!-- contact form -->
       <div class="col-md-6 wow animated fadeInRight">
         <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
@@ -698,17 +754,17 @@
         <h1 class="contacts-subtitle">Horarios</h1>
         <p class="principal-subtitle-serv1">Lunes a Viernes <br> 08:00 - 13h00 / 15:00 - 18:00 </p>
 
-        <div class="row display-row-center w-100 text-left pt-5"> 
+        <div class="row display-row-center w-100 text-left pt-5">
           <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Twitter.svg">
-          <img class=" text-center img-fluid pr-2" width="20%"  alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Mail.svg">
+            src="../../../assets/img/Twitter.svg">
           <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Facebook.svg">
-          <img class=" text-center img-fluid pr-2" width="20%"  alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Instagram.svg">
-          <img class=" text-center img-fluid pr-2" width="20%"  alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/Whatsapp.svg">
+            src="../../../assets/img/Mail.svg">
+          <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
+            src="../../../assets/img/Facebook.svg">
+          <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
+            src="../../../assets/img/Instagram.svg">
+          <img class=" text-center img-fluid pr-2" width="20%" alt="PRODUCTOS Y SERVICIOS"
+            src="../../../assets/img/Whatsapp.svg">
         </div>
       </div>
     </div>

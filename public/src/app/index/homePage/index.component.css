@@ -425,6 +425,61 @@
   justify-items: center;
 }
 
+/*BLOG STYLES*/
+.card-post {
+  height: 70vh;
+  border: none;
+  border-radius: 0%;
+  /* width: 50vh; */
+  /* margin-right: 25rem; */
+}
+.w-85{
+  max-width: 85%;
+}
+.img-card-border{
+  border-bottom: 3vh solid #c2c258;
+  margin-bottom: 8%;
+}
+.img-card-img{
+  width: 100% !important; 
+  height: 300px !important;
+}
+.title{
+ color: black;
+ font-size: calc(0.9em + 0.9vw);
+ /* font-size: 3.2vh; */
+ font-family: "Exo-ExtraBold";
+ text-transform: uppercase;
+}
+.text{
+  font-family: "HindMadurai-Regular";
+  font-size: calc(0.9em + 0.9vw);
+  /* font-size: 3.2vh; */
+  /* margin-right: 5rem; */
+}
+.btn-ver-Mas
+{
+  width: 20vh;
+  background-color: #c2c258;
+  border-radius: 40px;
+  font-family: "Exo-Bold";
+  font-size: calc(0.7em + 0.7vw);
+  position: absolute; 
+  bottom: 50px !important;
+}
+.btn-ligth-blog{
+  width: 20vh;
+  background-color: #ffffff;
+  border-color: #c2c258;
+  border-radius: 40px;
+  font-family: "Exo-Bold";
+  font-size: calc(0.6em + 0.6vw);
+  color: #c2c258;
+}
+
+
+
+
 @media (max-width: 576px) {
   .rectangle-quienes-somos {
     position: relative;
