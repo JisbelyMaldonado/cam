@@ -1,43 +1,101 @@
-<nav id="navbarIndex" class="navbar fixed-top navbar-expand-lg navbar-transparent bg-light">
-    <img src="../../../assets/img/Logo Header.svg" class="logo-navbar ml-5" alt="">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="text-center collapse navbar-collapse display-row-center display-col-center ml-5" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-0">
-        <li class="nav-item active" data-target="#home">
-          <a class="nav-link" data-target="#home" href="#home">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" data-target="#products" >
-          <a class="nav-link" href="#products">Productos y Servicios</a>
-        </li>
-        <li class="nav-item" data-target="#about">
-          <a class="nav-link" href="#about">¿Quiénes Somos?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cotizar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Directorio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contactos</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">
-            <button class="btn btn-sm btn-primary">
-              Iniciar Sesión
-            </button>
-          </a>
-        </li> -->
-      </ul>
-      
+<nav id="navbarIndex" class="navbar fixed-top navbar-expand-lg navbar-transparent bg-light" *ngIf="!isMobile">
+  <div class="row m-0 display-row-center" style="min-width: 100%;">
+    <div class="col-sm-3 col-md-3 col-lg-3  display-col-center">
+      <img src="../../../assets/img/Logo Header.svg" class="logo-navbar " alt="">
     </div>
-    <button class="btn btn-sm btn-primary ml-5 mr-5">
-      Iniciar Sesión
-    </button>
-  </nav>
+
+    <div class="col-sm-9 col-md-9 col-lg-8 p-0 display-col-end">
+      <div class="text-center collapse navbar-collapse display-row-center display-col-center m-0"
+        id="navbarSupportedContent">
+        <ul class="navbar-nav mr-0">
+          <li class="nav-item m-0 active" data-target="#home">
+            <a class="nav-link m-0" data-target="#home" href="#home">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item m-0" data-target="#products">
+            <a class="nav-link m-0" href="#products">Productos y Servicios</a>
+          </li>
+          <li class="nav-item m-0" data-target="#about">
+            <a class="nav-link m-0" href="#about">¿Quiénes Somos?</a>
+          </li>
+          <li class="nav-item m-0" data-target="#quote">
+            <a class="nav-link m-0" href="#quote">Cotizar</a>
+          </li>
+          <li class="nav-item m-0" data-target="#directory">
+            <a class="nav-link m-0" href="#directory">Directorio</a>
+          </li>
+          <li class="nav-item m-0" data-target="#blog">
+            <a class="nav-link m-0" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item m-0" data-target="#contact">
+            <a class="nav-link m-0" href="#contact">Contactos</a>
+          </li>
+          <li class="nav-item m-0">
+            <a class="nav-link m-0" href="#">
+              <button class="btn btn-sm btn-primary">
+                Iniciar Sesión
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row m-0 display-row-end fixed-top bg-transparent" style="z-index: 9999;"  *ngIf="isMobile">
+  <div class="col-sm-12 p-0" >
+    <div class="row m-0 display-row-center" id="navbarIndex">
+      <div class="col-7 col-sm-5 col-md-3 col-lg-3 p-0 display-col-center">
+        <img src="../../../assets/img/Logo Header.svg" class="logo-navbar " alt="">
+      </div>
+      <div class="col-5 col-sm-7 col-md-8 col-lg-9 p-0">
+        <nav class="navbar  nav-bar-style display-row-end" >
+          <button   #navigation class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars icon-bar" aria-hidden="true"></i>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0 fixed-top" style="margin-top: 79px;">
+  <div class="col-sm-12 p-0 " >
+    <div class="collapse " id="navbarToggleExternalContent">
+      <div class="bg-color-solid   p-4" >
+        <ul class="navbar-nav mr-0 ">
+          <li class="nav-item m-0 active" data-target="#home">
+            <a class="nav-link m-0" data-target="#home" href="#home">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item m-0" data-target="#products">
+            <a class="nav-link m-0" href="#products">Productos y Servicios</a>
+          </li>
+          <li class="nav-item m-0" data-target="#about">
+            <a class="nav-link m-0" href="#about">¿Quiénes Somos?</a>
+          </li>
+          <li class="nav-item m-0" data-target="#quote">
+            <a class="nav-link m-0" href="#quote">Cotizar</a>
+          </li>
+          <li class="nav-item m-0" data-target="#directory">
+            <a class="nav-link m-0" href="#directory">Directorio</a>
+          </li>
+          <li class="nav-item m-0" data-target="#blog">
+            <a class="nav-link m-0" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item m-0" data-target="#contact">
+            <a class="nav-link m-0" href="#contact">Contactos</a>
+          </li>
+          <li class="nav-item m-0">
+            <a class="nav-link m-0" href="#">
+              <button class="btn btn-sm btn-primary">
+                Iniciar Sesión
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

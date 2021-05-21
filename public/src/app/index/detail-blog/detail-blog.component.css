@@ -1,0 +1,270 @@
+@font-face {
+    font-family: "Exo-VariableFont_wght";
+    src: url("/../../assets/fonts/Exo-VariableFont_wght.woff") format("opentype"),
+      url("/../../assets/fonts/Exo-VariableFont_wght.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "HindMadurai-Bold";
+    src: url("/../../assets/fonts/HindMadurai-Bold.woff") format("opentype"),
+      url("/../../assets/fonts/HindMadurai-Bold.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "HindMadurai-Regular";
+    src: url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype"),
+      url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "HindMadurai-Light";
+    src: url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype"),
+      url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Exo-ExtraBold";
+    src: url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype"),
+      url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Exo-Bold";
+    src: url("/../../assets/fonts/Exo-Bold.woff") format("opentype"),
+      url("/../../assets/fonts/Exo-Bold.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+.row-content-body {
+  min-height: 90vh;
+  background-color: white;
+  padding-top: 80px;
+}
+
+.display-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.display-col-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+
+.display-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-content: center;
+  justify-items: center;
+}
+.col-content-element-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-content: flex-end;
+  justify-items: flex-end;
+ 
+}
+
+.col-content-element-text-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-content: center;
+  justify-items: flex-start;
+}
+
+.img-content-logo {
+  background-color: rgba(240, 240, 240);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 14px 0px rgb(167, 166, 166);
+  -moz-box-shadow: 0px 0px 14px 0px rgb(167, 166, 166);
+  box-shadow: 0px 0px 14px 0px rgb(167, 166, 166);
+}
+
+.img-logo {
+  width: 160px;
+}
+
+.title-section-blog {
+  color: #006b66;
+  font-family: "Exo-Bold" !important;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+
+
+.col-content-line-text-blog {
+  background-color: rgb(216, 215, 218);
+  height: 200px;
+  width: 4px;
+}
+
+.bg-line-green-1 {
+    background-color: rgb(194, 194, 88);
+    height: 16px;
+    width: 100%;
+}
+
+.bg-line-green-2 {
+    background-color: rgb(0, 80, 76);
+    height: 16px;
+    width: 100%;
+
+}
+
+
+.content-img-post {
+    min-width: 260px;
+    max-width: 260px;
+    min-height: 240px;
+    /* border: 10px solid  #864D7D; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    float: left; 
+    width: 30%;
+    border-radius: 2px;
+}
+
+.display-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.container-text-post {
+    text-align: justify;
+    color: #333333;
+    line-height: 23px !important;
+    font-family: "Made Tommy Personal";
+    font-size: 16px;
+}
+
+.text-justify {
+    text-align: justify !important;
+  }
+
+.post-subtitle {
+    color: rgb(131,131,131);
+    font-family: "Made Tommy Personal";
+    margin:0px !important;
+    font-size: 20px;
+}
+.content-post-info {
+    background-color: rgb(246,246,246);
+
+}
+
+.display-flex-end{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+.text-date {
+    font-family:"Made Tommy Personal";
+    font-style: italic;
+    font-size: 12px;
+    color: #9CC1C8;
+
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+  @media (max-width: 992px) {
+    .banner-blog-start{
+        background-size: 700px;
+    }
+}
+
+@media (max-width: 869px) {
+    .banner-blog-start{
+        background-size: 600px;
+    }
+
+}
+
+@media (max-width: 769px) {
+    .banner-blog-start{
+        background-size: 500px;
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-blog-start{
+        background-size: 300px;
+        min-height: 200px;
+    }
+    .col-content-element-img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-content: center;
+        justify-items: center;
+      }
+      .col-content-line-text-blog {
+        background-color: rgb(216, 215, 218);
+        height: 4px;
+        width: 250px;
+        margin-top: 20px;
+      }
+      .img-content-logo {
+        background-color: rgba(240, 240, 240);
+        width: 180px;
+        height: 180px;
+
+      }
+      
+      .img-logo {
+        width: 140px;
+      }
+      .title-section-blog {
+        margin-top: 10px;
+      }
+      .text-blog-section {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+}

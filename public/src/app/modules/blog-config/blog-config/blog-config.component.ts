@@ -46,7 +46,6 @@ export class BlogConfigComponent implements OnInit {
   ngOnInit(): void {
     this.post = {}
     this.getPosts();
-    this.newPost();
   }
 
   /**

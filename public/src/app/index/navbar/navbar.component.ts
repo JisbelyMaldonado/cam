@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 declare var $: any;
 @Component({
   selector: 'app-navbar',
@@ -6,23 +6,27 @@ declare var $: any;
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public sections = ['#home', '#products', '#about', '#contact'];
+  public isMobile = false;
+  private toggleButton;
 
-  constructor() { }
+  constructor(private element: ElementRef,) { }
 
   ngOnInit(): void {
+    this.isViewMobile()
+    // this.scroll()
 
+  }
+
+  public scroll() {
     $(window).on('scroll', function () {
-
     });
-
     $(window).scroll(function (event) {
       var element = document.getElementById("navbarIndex");
-      var sections = ['#home', '#products', '#about', '#contact'];
+      var sections = ['#home', '#products', '#about', '#quote', '#directory', '#blog', '#contact'];
 
       /// *** Se determina la posicion del scroll para cambiar el color de la barra ***
       var scrollTop = $(window).scrollTop();
-      if (scrollTop > 160) {
+      if (scrollTop > 220) {
         element.classList.add("bg-color-solid");
       } else {
         element.classList.remove("bg-color-solid");
@@ -40,12 +44,6 @@ export class NavbarComponent implements OnInit {
           }
         }
       });
-
-
-
-
-
-
     });
     // elementos de la lista
     var menues = $("ul li");
@@ -60,6 +58,24 @@ export class NavbarComponent implements OnInit {
       $(this).addClass("active");
     });
   }
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    if (event.target.innerWidth > 992) {
+      this.isMobile = false;
+    } else {
+      this.isMobile = true;
 
+    }
+  }
+
+  isViewMobile() {
+    if ($(window).width() > 992) {
+      this.isMobile = false;
+
+    } else {
+      this.isMobile = true;
+
+    }
+  }
 
 }

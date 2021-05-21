@@ -1,0 +1,259 @@
+@font-face {
+    font-family: "Exo-VariableFont_wght";
+    src: url("/../../assets/fonts/Exo-VariableFont_wght.woff") format("opentype"),
+      url("/../../assets/fonts/Exo-VariableFont_wght.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "HindMadurai-Bold";
+    src: url("/../../assets/fonts/HindMadurai-Bold.woff") format("opentype"),
+      url("/../../assets/fonts/HindMadurai-Bold.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "HindMadurai-Regular";
+    src: url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype"),
+      url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "HindMadurai-Light";
+    src: url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype"),
+      url("/../../assets/fonts/HindMadurai-Light.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Exo-ExtraBold";
+    src: url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype"),
+      url("/../../assets/fonts/Exo-ExtraBold.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Exo-Bold";
+    src: url("/../../assets/fonts/Exo-Bold.woff") format("opentype"),
+      url("/../../assets/fonts/Exo-Bold.woff") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+.row-content-body {
+  min-height: 90vh;
+  background-color: white;
+  padding-top: 80px;
+}
+
+.display-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.display-col-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+
+.display-row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-content: center;
+  justify-items: center;
+}
+.col-content-element-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-content: flex-end;
+  justify-items: flex-end;
+ 
+}
+
+.col-content-element-text-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-content: center;
+  justify-items: flex-start;
+}
+
+.img-content-logo {
+  background-color: rgba(240, 240, 240);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 14px 0px rgb(167, 166, 166);
+  -moz-box-shadow: 0px 0px 14px 0px rgb(167, 166, 166);
+  box-shadow: 0px 0px 14px 0px rgb(167, 166, 166);
+}
+
+.img-logo {
+  width: 160px;
+}
+
+.title-section-blog {
+  color: #006b66;
+  font-family: "Exo-Bold" !important;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text-blog-section {
+  color: rgb(142, 142, 142);
+  font-family: "HindMadurai-Regular";
+  font-size: 24px;
+}
+
+.col-content-line-text-blog {
+  background-color: rgb(216, 215, 218);
+  height: 200px;
+  width: 4px;
+}
+
+.bg-line-green-1 {
+    background-color: rgb(194, 194, 88);
+    height: 16px;
+    width: 100%;
+}
+
+.bg-line-green-2 {
+    background-color: rgb(0, 80, 76);
+    height: 16px;
+    width: 100%;
+
+}
+
+.row-content-post {
+  min-height: 350px;
+}
+
+.col-content-img-post {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+  width: 100%;
+}
+
+.title-post {
+  color: #006b66;
+  font-family: "Exo-Bold" !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.text-post {
+  font-size: 22px;
+  font-family: "HindMadurai-Regular";
+  color: black;
+}
+
+.btn-contact {
+  color: white;
+  width: 110px;
+  height: 40px;
+  border-radius: 20px;
+  text-transform: none;
+}
+
+.btn-view-more {
+  color: white;
+  width: 110px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid rgb(194, 194, 88);
+  color: rgb(194, 194, 88);
+  background-color: transparent;
+  font-family: "Exo-Bold";
+  text-transform: none;
+}
+
+.col-content-body-text {
+  min-height: 250px;
+}
+
+.bg-gray {
+  background-color: rgb(240, 241, 241);
+ 
+}
+
+@media (max-width: 576px) {
+    .col-content-element-img {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-content: center;
+        justify-items: center;
+      }
+      .col-content-line-text-blog {
+        background-color: rgb(216, 215, 218);
+        height: 4px;
+        width: 250px;
+        margin-top: 20px;
+      }
+      .img-content-logo {
+        background-color: rgba(240, 240, 240);
+        width: 180px;
+        height: 180px;
+
+      }
+      
+      .img-logo {
+        width: 140px;
+      }
+      .title-section-blog {
+        margin-top: 10px;
+      }
+      .text-blog-section {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+      .row-content-body {
+          padding-top: 20px;
+      }
+      .col-content-img-post {
+        width: 280px !important;
+        height: 240px !important;
+    }
+  }
+  
+  @media (max-width: 769px) {
+    .col-content-img-post {
+      width: 400px;
+      height: 280px;
+  }
+  }
+  
+  @media (max-width: 992px) {
+
+  }
+  
+  @media (max-width: 1085px) {
+
+  }

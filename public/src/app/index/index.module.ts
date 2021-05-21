@@ -12,10 +12,12 @@ import { LoginLandingComponent } from './login-landing/login-landing/login-landi
 import { FooterLandingPageComponent } from './footer-landing-page/footer-landing-page.component';
 import {MatSelectModule} from '@angular/material/select';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BlogComponent } from './blog/blog.component';
+import { DetailBlogComponent } from './detail-blog/detail-blog.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent, NavbarComponent],
+  declarations: [IndexComponent, LoginLandingComponent, FooterLandingPageComponent, NavbarComponent, BlogComponent, DetailBlogComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),
