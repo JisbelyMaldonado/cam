@@ -27,11 +27,16 @@ export class IndexComponent implements OnInit {
   public selectedSocio: string  = '';
 
 
+  //Calculadora
+  public total :number = 0;
+
   public user: Users;
+
   public arbitro: arbitro;
+  public array: arbitro[];
 
 
-  servicio: Servicio[] = [
+  public servicio: Servicio[] = [
     {value: '0', viewValue: 'Arbitraje'},
     {value: '1', viewValue: 'Mediación'}
   ];
@@ -65,18 +70,88 @@ export class IndexComponent implements OnInit {
 
 
   async clickme() {
-  this.calcularService.calcular( this.cuantiaValue,
+
+    if(this.selectedValueArb == '0'){
+      
+    }
+
+
+  this.calcularService.calcularArbitraje( this.cuantiaValue,
       this.selectedValue,
       this.selectedValueArb,
       this.selectedCuantia,
       this.selectedSocio,
-    ).subscribe((value)=>{
-      console.log(value)
+    ).subscribe((arbitro:arbitro)=>{
 
+      var excedente :number;
+      var fbasica :number;
+      var rango_inicial :number;
+      var calculo1 :number;
+      var calculo_valor_arb :number;
+      var iva:number;
+      var descuento:number;
+      var subtotal:number;
+   
+
+
+      excedente = arbitro.arb_unico_exc;
+      fbasica   = arbitro.arb_unico_fbasica;
+      rango_inicial  = arbitro.arb_unico_rango;
+      
+
+
+      if(this.selectedValueArb == 'unico'){
+        if(this.selectedSocio == '1'){
+          calculo1 = (this.cuantiaValue - rango_inicial)*excedente
+          calculo_valor_arb = calculo1 + fbasica
+          iva = calculo_valor_arb*0.12
+          this.total = iva + calculo_valor_arb;  
+        }else{
+          calculo1 = (this.cuantiaValue - rango_inicial)*excedente
+          calculo_valor_arb = calculo1 + fbasica
+          descuento = calculo_valor_arb*0.1
+          subtotal = calculo_valor_arb - descuento
+          iva = subtotal*0.12
+          this.total = iva + subtotal;  
+        }
+      }else{
+        if(this.selectedSocio == '1'){
+          calculo1 = (this.cuantiaValue - rango_inicial)*excedente
+          calculo_valor_arb = (calculo1 + fbasica)*1.05
+          iva = calculo_valor_arb*0.12
+          this.total = iva + calculo_valor_arb;  
+        }else{
+          calculo1 = (this.cuantiaValue - rango_inicial)*excedente
+          calculo_valor_arb = (calculo1 + fbasica)*1.05
+          descuento = calculo_valor_arb*0.1
+          subtotal = calculo_valor_arb - descuento
+          iva = subtotal*0.12
+          this.total = iva + subtotal;  
+        }
+      }
+      console.log(this.total);
     })
-    
- 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * *** Funcion para validar e iniciar sesion ***
    * @param user 
