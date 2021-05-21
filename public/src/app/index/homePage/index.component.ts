@@ -117,11 +117,9 @@ export class IndexComponent implements OnInit {
   public post3()
   {
     this.BlogService.getMoreTree().subscribe(posts =>{
-
         posts.forEach(post => {
           this.arrayPost.push(post);
         });
-    
       console.log(this.arrayPost);
     })
   }
