@@ -178,19 +178,31 @@ export class CalculatorService {
   ) {
     if (selectedValue == "1") {
           if (cuantiaValue < 2000) {
+            console.log("1");
             return this.db
               .collection<Mediacion>("Mediacion")
               .doc("mediacion")
               .collection("1")
               .doc("q5F8R7OIQgfX8QY3MDun")
               .valueChanges();
-          } else if (cuantiaValue > 2001 && cuantiaValue < 5000) {
+          }
+          else if (cuantiaValue > 2001 && cuantiaValue < 5000) {
             console.log("2001");
+            console.log(cuantiaValue);
+            
+            return this.db
+            .collection<Mediacion>("Mediacion")
+            .doc("mediacion")
+            .collection("2")
+            .doc("serQiv762tVUZQ07Aukb")
+            .valueChanges();
+          } else if (cuantiaValue > 5001 && cuantiaValue < 10000) {
+            console.log("hasta aqui en 6000");
             return this.db
               .collection<Mediacion>("Mediacion")
               .doc("mediacion")
-              .collection("2")
-              .doc("serQiv762tVUZQ07Aukb")
+              .collection("5")
+              .doc("1TVCJ5LApz72uSO7HKkl")
               .valueChanges();
           } else if (cuantiaValue > 10001 && cuantiaValue < 20000) {
             return this.db
@@ -220,14 +232,15 @@ export class CalculatorService {
               .collection("100")
               .doc("4Pe7EPbBTJ6I5XrsKYJx")
               .valueChanges();
-          } else if (cuantiaValue > 500001 && cuantiaValue < 1000000) {
+          }  else if (cuantiaValue > 500001 && cuantiaValue < 1000000) {
             return this.db
               .collection<Mediacion>("Mediacion")
               .doc("mediacion")
               .collection("500")
               .doc("L1iFu0sPZg6EiA1ns1lz")
               .valueChanges();
-          } else if (cuantiaValue > 1000001) {
+          } 
+          else if (cuantiaValue > 1000001) {
             return this.db
               .collection<Mediacion>("Mediacion")
               .doc("mediacion")
@@ -238,5 +251,6 @@ export class CalculatorService {
         } else console.log("no entraaaaaaaa--REVISA");
       
     }
-  }
+  
 
+}
