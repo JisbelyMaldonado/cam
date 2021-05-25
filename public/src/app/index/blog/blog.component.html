@@ -1,0 +1,138 @@
+<app-navbar></app-navbar>
+<!-- BODY-->
+<div class="row m-0 display-row-center">
+    <div class="col-sm-12 p-0 ">
+        <div class="row m-0 display-row-center row-content-body">
+            <div class="col-sm-5 col-md-5 col-lg-5 col-content-element-img ">
+                <div class="row img-content-logo display-row-center">
+                    <img class="img-logo" src="../../../assets/img/Logo Footer.svg">
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-content-element-text-blog ">
+                <div class="row m-0 ">
+                    <div class="col-sm-1 col-md-1 col-lg-1 p-0 display-col-center ">
+                        <div class="col-content-line-text-blog"></div>
+                    </div>
+                    <div class="col-11 col-sm-10 col-md-10 col-lg-10 p-0 display-col-center">
+                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 p-0 " style="max-height: 50px;">
+                            <h1 clasS="title-section-blog">BLOG</h1>
+                        </div>
+                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 p-0 " style="max-height: 100px;">
+                            <span class="text-blog-section">
+                                Lorem ipsum dolor sit amet, con secte tuer
+                                adipiscing elit, sed diamnonum my nibh eu
+                                amquis nostrud exerci tation.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="row m-0">
+    <div class="col-12 p-0">
+        <div class="row m-0">
+            <div class="col-6 p-0 ">
+                <div class="bg-line-green-1"></div>
+            </div>
+            <div class="col-6 p-0 ">
+                <div class="bg-line-green-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row m-0" *ngIf="!isMobile">
+    <div class="col-12 p-0 ">
+        <div class="row m-0" *ngFor="let post of array_blog , let i = index">
+            <!-- IMAGEN DERECHO -->
+            <div class="col-12 p-0" *ngIf="i%2==0">
+                <div class="row m-0 row-content-post">
+                    <div class="col-sm-6 col-md-5 col-lg-4 p-0">
+                        <div class="col-content-img-post" style="background-image: url({{post.post_img}});"></div>
+                    </div>
+                    <div class="col-sm-6 col-md-7 col-lg-8 p-0 display-col-start pl-5 pr-5">
+
+                        <div class="row m-0 display-row-center">
+                            <div class="col-12 pr-4 p-0 display-col-start col-content-body-text">
+                                <h1 class="title-post">{{post.post_title}} </h1>
+                                <div class="col-12 mt-2 p-0 text-justify"
+                                    [innerHTML]="post.post_description | slice:0:300"></div>
+                            </div>
+                            <div class="col-12 p-0">
+                                <button class="btn btn-primary btn-contact text-center p-0" (click)="viewMorePost(post.post_id)"> Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- IMAGEN IZQUIERDO -->
+            <div class="col-12 p-0" *ngIf="i%2==1">
+                <div class="row m-0 row-content-post bg-gray">
+                    <div class="col-sm-6 col-md-7 col-lg-8 p-0 display-col-start pl-5 pr-5">
+                        <div class="row m-0 display-row-center">
+                            <div class="col-12 pr-4 p-0 display-col-start col-content-body-text">
+                                <h1 class="title-post">{{post.post_title}} </h1>
+                                <div class="col-12 mt-2 p-0 text-justify"
+                                    [innerHTML]="post.post_description | slice:0:300"></div>
+                            </div>
+                            <div class="col-12 p-0">
+                                <button class="btn btn-primary btn-contact text-center p-0" (click)="viewMorePost(post.post_id)"> Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-lg-4 p-0">
+                        <div class="col-content-img-post" style="background-image: url({{post.post_img}});"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row m-0">
+            <div class="col-12 p-0 display-col-center mt-4" *ngIf="!hiddenButton">
+                <button class="btn  btn-view-more text-center p-0" (click)="getTreeMore()"> Cargar más</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row m-0" *ngIf="isMobile">
+    <div class="col-12 p-0 ">
+        <div class="row m-0 display-row-center" *ngFor="let post of array_blog , let i = index">
+            <!-- IMAGEN DERECHO -->
+            <div class="col-12 p-0" >
+                <div class="row m-0 row-content-post display-row-center pt-3 {{i%2==1 ? 'bg-gray' : ''}}">
+                    <div class="col-sm-10 display-col-center">
+                        <div class="col-content-img-post" style="background-image: url({{post.post_img}});"></div>
+                    </div>
+                    <div class="col-sm-10">
+
+                        <div class="row m-0 display-row-center pt-3">
+                            <div class="col-12 pr-4 p-0 display-col-start col-content-body-text">
+                                <h1 class="title-post">{{post.post_title}} </h1>
+                                <div class="col-12 mt-2 p-0 text-justify"
+                                    [innerHTML]="post.post_description | slice:0:300"></div>
+                            </div>
+                            <div class="col-12 p-0 pt-3 pb-3">
+                                <button class="btn btn-primary btn-contact text-center p-0" (click)="viewMorePost(post.post_id)"> Ver más</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <div class="row m-0">
+            <div class="col-12 p-0 display-col-center mt-4" *ngIf="!hiddenButton">
+                <button class="btn  btn-view-more text-center p-0" (click)="getTreeMore()"> Cargar más</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FIN BODY-->
+<!-- FOOTER-->
+<app-footer-landing-page></app-footer-landing-page>

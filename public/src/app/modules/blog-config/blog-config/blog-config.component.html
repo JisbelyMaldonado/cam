@@ -1,8 +1,9 @@
 <div class="main-content">
     <div class="row content-search">
-        <div class="col-sm-5 pl-5 align-items-center" >
-                <button id="buttonCategory" class="btn btn-sm btn-new btn-functions"  (click)="newPost()"> Nuevo Post</button>
-           
+        <div class="col-sm-5 pl-5 align-items-center">
+            <button id="buttonCategory" class="btn btn-sm btn-new btn-functions" (click)="newPost()"> Nuevo
+                Post</button>
+
         </div>
         <div class="col-sm-4 p-0"></div>
         <div class="col-sm-3 p-p0">
@@ -17,39 +18,37 @@
     <div class="row display-row-center">
         <div class="col-11">
             <div class="collapse multi-collapse" id="multiCollapsePost">
-               
-                <div class="card card-body">
-                        <div class="row">
-                            <div class="col-4 title-card">
-                                {{isEdit?'Editar':'Crear'}} Post
-                            </div>
-                            <div class="col-4"></div>
-                            <div class="col-4 justify-content-end">
-                                <i class="fa fa-times-circle-o text-danger text-close cursor-pointer btn-functions" (click)="closeNewAdmin()" ></i>
 
-                            </div>
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col-4 title-card">
+                            {{isEdit?'Editar':'Crear'}} Post
                         </div>
+                        <div class="col-4"></div>
+                        <div class="col-4 justify-content-end">
+                            <i class="fa fa-times-circle-o text-danger text-close cursor-pointer btn-functions"
+                                (click)="closeNewAdmin()"></i>
+
+                        </div>
+                    </div>
                     <form #formPost="ngForm" action="" class="form-horizontal"
-                        (ngSubmit)='savePost(formPost.value, formPost.valid, formPost)' novalidate
-                        action="/" method="get">
+                        (ngSubmit)='savePost(formPost.value, formPost.valid, formPost)' novalidate action="/"
+                        method="get">
                         <div class="modal-body ">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <input disabled class="form-control" name="post_id" id="post_id"
-                                        placeholder="Id" [(ngModel)]="post.post_id " #post_id="ngModel"
-                                        pattern="">
-                                    <small
-                                        [hidden]="post_id.valid || (post_id.pristine && !formPost.submit)"
+                                    <input disabled class="form-control" name="post_id" id="post_id" placeholder="Id"
+                                        [(ngModel)]="post.post_id " #post_id="ngModel" pattern="">
+                                    <small [hidden]="post_id.valid || (post_id.pristine && !formPost.submit)"
                                         class="text-danger">
                                         Obligatorio
                                     </small>
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" name="post_title" id="post_title"
-                                        placeholder="Título de post" [(ngModel)]="post.post_title"
-                                        #post_title="ngModel" required pattern="">
-                                    <small
-                                        [hidden]="post_title.valid || (post_title.pristine && !formPost.submit)"
+                                        placeholder="Título de post" [(ngModel)]="post.post_title" #post_title="ngModel"
+                                        required pattern="">
+                                    <small [hidden]="post_title.valid || (post_title.pristine && !formPost.submit)"
                                         class="text-danger">
                                         Obligatorio
                                     </small>
@@ -57,12 +56,9 @@
                                 <div class="col-sm-3">
                                     <div class="form-check form-check-radio">
                                         <label class="form-check-label">
-                                            <input class="form-check-input"
-                                                [(ngModel)]="post.post_state"
-                                                type="checkbox" name="post_state"
-                                                id="post_state"
-                                                value="post_state">
-                                                Estado de post
+                                            <input class="form-check-input" [(ngModel)]="post.post_state"
+                                                type="checkbox" name="post_state" id="post_state" value="post_state">
+                                            Estado de post
                                             <span class="circle">
                                                 <span class="check"></span>
                                             </span>
@@ -71,24 +67,40 @@
                                 </div>
                             </div>
                             <div class="row m-0 mt-2">
-                                <div class="col-sm-12 p-0">
+                                <div class="col-sm-8 border p-0">
                                     <label for="post_description pb-2">Descripción</label>
-                                    <angular-editor  name="post_description" id="post_description"
-                                      #post_description="ngModel" 
-                                      [(ngModel)]="post.post_description"></angular-editor>
-                  
-                                    <!-- <textarea type="text" class="form-control" name="post_description" id="post_description"
-                                        placeholder="Descripción del post" [(ngModel)]="post.post_description" #post_description="ngModel"
-                                        required pattern=""></textarea>
-                                      <span style="float: right;" *ngIf="post.post_description">{{post.post_description.length}}
-                                        / 200
-                                      </span> -->
-                  
-                                    <!-- <small [hidden]="post_description.valid || (post_description.pristine && !formPost.submitted)"
-                                        class="text-danger">
-                                        Obligatorio
-                                      </small>  -->
-                                  </div>
+                                    <angular-editor name="post_description" id="post_description"
+                                        #post_description="ngModel" [(ngModel)]="post.post_description">
+                                    </angular-editor>
+                                </div>
+
+                                <div class="col-sm-4 border">
+
+                                    <!-- VISUALIZACIÓN DE IMAGEN EN TAMAÑO GRANDE-->
+                                    <img *ngIf="!previewUrl && post.post_img" [src]="post.post_img" height="160"
+                                        width="240px" />
+                                    <img *ngIf="previewUrl && post.post_img" [src]="previewUrl"
+                                        height="160" width="240px" />
+                                    <img *ngIf="previewUrl && !post.post_img" [src]="previewUrl" height="160"
+                                        width="240px" />
+                                    <!-- VISUALIZACIÓN DE IMAGEN EN TAMAÑO GRANDE-->
+
+
+                                    <div class="display-col-center text-center">
+                                        <div class="row m-0" style="min-width: 100%;">
+                                            <div class="col-sm-3 display-col-center">
+                                                <div (click)="addImage()" class="img-new-image display-row-center">
+                                                    <i class="fa fa-picture-o" aria-hidden="true"
+                                                        style="font-size: 20px;"></i>
+                                                </div>
+                                            </div>
+                                            <input hidden id="post_image" type="file" name="post_image" accept="image/*"
+                                                (change)="fileProgress($event)" required />
+                                        </div>
+                                    </div>
+                                    <input hidden id="post_image" type="file" name="post_image" accept="image/*"
+                                        (change)="fileProgress($event)" required />
+                                </div>
                             </div>
                         </div>
                         <div class="col-3">
@@ -107,15 +119,15 @@
     </div>
 
     <!-------- DATA TABLE -------->
-    <div class="row display-row-center"  *ngIf="array_posts && array_posts.length > 0">
+    <div class="row display-row-center" *ngIf="array_posts && array_posts.length > 0">
         <div class="" style="min-width: 90%;">
-            <table #table  mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="min-width: 100%;">
+            <table #table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="min-width: 100%;">
                 <ng-container matColumnDef="N">
-                    <th mat-header-cell *matHeaderCellDef  class="text-center title-table"> No. </th>
-                <td mat-cell *matCellDef="let row" class="text-center"> <span>{{row.post_id | slice:6}}</span> </td>
+                    <th mat-header-cell *matHeaderCellDef class="text-center title-table"> No. </th>
+                    <td mat-cell *matCellDef="let row" class="text-center"> <span>{{row.post_id | slice:6}}</span> </td>
                 </ng-container>
                 <ng-container matColumnDef="post_title">
-                    <th mat-header-cell *matHeaderCellDef  class="text-center title-table" > Título </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-center title-table"> Título </th>
                     <td mat-cell *matCellDef="let row" class="text-center">
                         <span>{{row.post_title}}</span>
                     </td>
@@ -124,7 +136,7 @@
                 <ng-container matColumnDef="post_state">
                     <th mat-header-cell *matHeaderCellDef class="text-center title-table"> Estado </th>
                     <td mat-cell *matCellDef="let row" class="text-center">
-                        <i  *ngIf="row.post_state" class="fa fa-check text-primary" aria-hidden="true"></i>
+                        <i *ngIf="row.post_state" class="fa fa-check text-primary" aria-hidden="true"></i>
                         <i *ngIf="!row.post_state" class="fa fa-times text-danger" aria-hidden="true"></i>
                     </td>
                 </ng-container>
@@ -140,22 +152,24 @@
                         <span>{{row.post_date}}</span>
                     </td>
                 </ng-container>
-             
+
                 <ng-container matColumnDef="edit">
-                    <th mat-header-cell *matHeaderCellDef  class="text-center title-table"> Editar
+                    <th mat-header-cell *matHeaderCellDef class="text-center title-table"> Editar
                     </th>
                     <td mat-cell *matCellDef="let row" class="text-center">
                         <div class="display-row-center">
-                            <i class="fa fa-pencil text-warning cursor-pointer btn-functions text-close" aria-hidden="true" type="button"  (click)="editPost(row)"></i>
+                            <i class="fa fa-pencil text-warning cursor-pointer btn-functions text-close"
+                                aria-hidden="true" type="button" (click)="editPost(row)"></i>
                         </div>
                     </td>
                 </ng-container>
                 <ng-container matColumnDef="delete">
-                    <th mat-header-cell *matHeaderCellDef  class="text-center title-table"> Eliminar
+                    <th mat-header-cell *matHeaderCellDef class="text-center title-table"> Eliminar
                     </th>
                     <td mat-cell *matCellDef="let row">
                         <div class="display-row-center">
-                            <i class="fa fa-trash text-danger cursor-pointer btn-functions text-close" aria-hidden="true" type="button"  (click)="deletePost(row)"></i>
+                            <i class="fa fa-trash text-danger cursor-pointer btn-functions text-close"
+                                aria-hidden="true" type="button" (click)="deletePost(row)"></i>
                         </div>
                     </td>
                 </ng-container>
@@ -169,4 +183,3 @@
     </div>
 </div>
 <!-- LIST CATEGORÍAS-->
-    

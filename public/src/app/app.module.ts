@@ -15,11 +15,13 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login/login.component';
 import { DataTablesModule } from 'angular-datatables';
+import {MatSelectModule} from '@angular/material/select';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

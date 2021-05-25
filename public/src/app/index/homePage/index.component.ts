@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Arbitraje } from 'app/interfaces/arbitraje';
+import { arbitro } from 'app/interfaces/arbitro';
+import { Cuantia } from 'app/interfaces/cuantia';
+import { Servicio } from 'app/interfaces/servicio';
+import { Socio } from 'app/interfaces/socio';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Users } from 'app/interfaces/user';
 import { take } from 'rxjs/operators';
 import { Post } from '../../interfaces/post';
 import { BlogService } from '../../services/blog/blog.service';
+import { CalculatorService } from 'app/services/calculator.service';
 
 @Component({
   selector: 'app-index',
@@ -13,25 +19,63 @@ import { BlogService } from '../../services/blog/blog.service';
 })
 
 export class IndexComponent implements OnInit {
-  
+  public username: string;
+  public cuantiaValue: number = 0;
+  public selectedValue: string = '';
+  public selectedValueArb: string  = '';
+  public selectedCuantia: string  = '';
+  public selectedSocio: string  = '';
   public user: Users;
-  public arrayPost: Post[];
-  public arrayPostAux: Post[];
-  public post: any;
-  public show: boolean;
-  next: any;
-  //constructor(private authService: AuthServiceService) {}
-  constructor( private BlogService: BlogService, private db: AngularFirestore)
-  {
+  public arbitro: arbitro;
+  public show = false;
+  public arrayPost: Array<Post>
+  servicio: Servicio[] = [
+    {value: '0', viewValue: 'Arbitraje'},
+    {value: '1', viewValue: 'Mediación'}
+  ];
+  arbitraje: Arbitraje[] = [
+    {value: 'unico', viewValue: 'Árbitro Único'},
+    {value: 'tres', viewValue: 'Tres Árbitros'}
+  ];
 
-  }
+  cuantia: Cuantia[] = [
+    {value: '0', viewValue: 'Cuantía determinada'},
+    {value: '1', viewValue: 'Cuantía indeterminada'}
+  ];
+
+  socio: Socio[] = [
+    {value: '0', viewValue: 'Soy socio'},
+    {value: '1', viewValue: 'No soy socio'}
+  ];
+  
+
+
+  constructor( private BlogService: BlogService, private db: AngularFirestore,
+    private calcularService: CalculatorService)
+  {}
+
   ngOnInit(): void {
     this.user = {};
     // this.getPosts();
     this.getPosts();
-    this.show=false;
   }
 
+
+
+
+  async clickme() {
+  this.calcularService.calcular( this.cuantiaValue,
+      this.selectedValue,
+      this.selectedValueArb,
+      this.selectedCuantia,
+      this.selectedSocio,
+    ).subscribe((value)=>{
+      console.log(value)
+
+    })
+    
+ 
+  }
   /**
    * *** Funcion para validar e iniciar sesion ***
    * @param user 

@@ -5,4 +5,8 @@ export interface Users {
    user_type_account_str ?: string;
    user_uid ?: string;
    user_state ?: boolean;
+   user_token ?: string;
+   user_cedula?: string;
   }
+
+  

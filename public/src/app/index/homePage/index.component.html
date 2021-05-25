@@ -1,11 +1,15 @@
+<app-navbar></app-navbar>
+
+
+
 <!--SECTION INITIAL-->
-<section class="section-one-background">
+<section id="home" class="section-one-background">
   <div class="row w-100 mx-auto">
     <div class="col-sm-1"></div>
 
     <div class="col-sm-5 display-col-center" style=" margin: 1em;">
-      <div class="">
-        <div class="text-left">
+      <div class="mt-5">
+        <div class="text-left mt-5">
           <h1 class="principal-title">
             <span style="color: #c2c258;;">Promoviendo</span><br>
             <span style="color: white;">la Cultura de </span><br>
@@ -31,14 +35,9 @@
 </section>
 
 <!--SECTION WE ARE-->
-<section style="padding-bottom: 100px; background-color: white">
+<section id="home" style="padding-bottom: 100px; background-color: white">
   <div class="">
-
-
-
-
     <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-
       <div class="col-sm-8 display-col-center" style=" margin: 1em;">
         <div class="">
           <div class="text-center">
@@ -64,7 +63,7 @@
 </section>
 
 <!--PRODUCTS AND SERVICES-->
-<section style="background-color: white; padding-bottom: 25px;">
+<section id="products" style="background-color: white; padding-bottom: 25px;">
   <div class="row w-100 mx-auto display-row-center">
 
     <div class="col-sm-12 text-center">
@@ -217,7 +216,7 @@
 </section>
 
 <!--SECTION WE ARE AND GOALS-->
-<section class="pt-5" style="padding-bottom: 100px; background-color: #f5f5f5">
+<section id="about" class="pt-5" style="padding-bottom: 100px; background-color: #f5f5f5">
   <div class="container">
 
     <div class="row w-100 display-row-center mx-auto pt-5 mt-5">
@@ -378,13 +377,101 @@
 
 
 <!--COTIZADOR-->
-<section>
+<section class="m-5" id="quote">
+  <div class="row w-100 display-row-center mx-auto">
+    <div class="col-sm-6" style="background-color: #c2c258;">aaa</div>
+    <div class="col-sm-6" style="background-color: #ffffff;">
+
+
+      <form>
+        <h4>Seleccionar:</h4>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedValue" name="servicio">
+            <mat-option *ngFor="let servicio of servicio" [value]="servicio.value">
+              {{servicio.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado arbitraje: {{selectedValue}}</p>
+      </form>
+
+      <form *ngIf="this.selectedValue">
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedValueArb" name="arbitraje">
+            <mat-option *ngFor="let arbitraje of arbitraje" [value]="arbitraje.value">
+              {{arbitraje.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado: {{selectedValueArb}} </p>
+      </form>
+
+
+      <form *ngIf="this.selectedValueArb">
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedCuantia" name="cuantia">
+            <mat-option *ngFor="let cuantia of cuantia" [value]="cuantia.value">
+              {{cuantia.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado: {{selectedCuantia}} </p>
+      </form>
+
+
+
+      <form *ngIf="this.selectedCuantia== '0'">
+        <p><input type="text" id="cuantiaValue" name="cuantiaValue" [(ngModel)]="cuantiaValue"></p>
+        <h1> {{cuantiaValue}}</h1>
+      </form>
+
+
+
+     
+
+
+
+
+
+
+
+      <form *ngIf="this.selectedCuantia">
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="selectedSocio" name="socio">
+            <mat-option *ngFor="let socio of socio" [value]="socio.value">
+              {{socio.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Servicio Seleccionado: {{selectedSocio}} </p>
+      </form>
+
+      <button *ngIf="this.selectedSocio" type="button" (click)="clickme()">Clickme</button>
+
+
+
+
+
+
+
+
+
+
+      <form *ngIf="this.selectedValue == '1'">
+        mediacion
+      </form>
+
+
+
+    </div>
+  </div>
+
+
+
 </section>
 
-
-
 <!--DIRECTORIO-->
-<section class="" style="background-color: white; ">
+<section class="" style="background-color: white; " id="directory">
   <div class="row w-100 display-row-center p-0 m-0">
 
     <div class="col-sm-12 p-0 m-0 text-center">
@@ -619,8 +706,6 @@
 
 </section>
 
-
-
 <!--BLOG SECTION-->
 <section>
   <div class="row display-row-center p-0 m-0  ">
@@ -679,11 +764,9 @@
 
 
 
-
-
 <!--CONTACTS-->
 
-<section class="background-contacts">
+<section class="background-contacts" id="contact">
   <div class="row w-100 display-row-center p-0 m-0">
 
     <div class="col-sm-12 p-0 m-0 text-center">

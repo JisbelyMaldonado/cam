@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+<!-- BODY-->
+<div class="row m-0 display-row-center">
+    <div class="col-sm-12 p-0 ">
+        <div class="row m-0 display-row-center row-content-body">
+            <div class="col-sm-5 col-md-5 col-lg-5 col-content-element-img ">
+                <div class="row img-content-logo display-row-center">
+                    <img class="img-logo" src="../../../assets/img/Logo Footer.svg">
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-content-element-text-blog ">
+                <div class="row m-0 ">
+                    <div class="col-sm-1 col-md-1 col-lg-1 p-0 display-col-center ">
+                        <div class="col-content-line-text-blog"></div>
+                    </div>
+                    <div class="col-11 col-sm-10 col-md-10 col-lg-10 p-0 display-col-center">
+                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 p-0 " style="max-height: 50px;">
+                            <h1 clasS="title-section-blog">BLOG</h1>
+                        </div>
+                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 p-0 " style="max-height: 100px;">
+                            <span class="text-blog-section">
+                                Lorem ipsum dolor sit amet, con secte tuer
+                                adipiscing elit, sed diamnonum my nibh eu
+                                amquis nostrud exerci tation.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="row m-0">
+    <div class="col-12 p-0">
+        <div class="row m-0">
+            <div class="col-6 p-0 ">
+                <div class="bg-line-green-1"></div>
+            </div>
+            <div class="col-6 p-0 ">
+                <div class="bg-line-green-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FOOTER-->
+
+<!--BODY-->
+
+<div class="row display-row-center m-0 mb-4 mt-4 pb-3" *ngIf="post">
+    <div class="col-10 text-center content-post-info">
+        <h2 class="title-section-blog">
+            {{post.post_title}}
+        </h2>
+        <h3 class="post-subtitle m-0">
+            {{post.post_subtitle}}
+        </h3>
+        <div class="content-img-post mr-4 mb-2 ml-2" [ngStyle]="{'background-image': 'url('+post.post_img+')'}" hspace="20"
+            vspace="5"></div>
+
+        <div class="text-justify mt-2 container-text-post" [innerHTML]="post.post_description"></div>
+        <!-- <div class="display-flex-end  pb-2">
+            <span class="text-date">Publicado : {{post.post_date}} / {{ post.post_time}}</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <div class="div-container-share cursor-pointer " (click)="sharePost1()">
+                    <a href="https://inspirapmc.com/sharepost/{{post.post_id}}"></a>
+            </div>
+           
+        </div> -->
+    </div>
+  
+</div>
+
+<!--FIN BODY-->
+<app-footer-landing-page></app-footer-landing-page>
