@@ -446,14 +446,14 @@
 }
 .title{
  color: black;
- font-size: calc(0.9em + 0.9vw);
+ font-size: calc(0.7em + 0.7vw);
  /* font-size: 3.2vh; */
  font-family: "Exo-ExtraBold";
  text-transform: uppercase;
 }
 .text{
   font-family: "HindMadurai-Regular";
-  font-size: calc(0.9em + 0.9vw);
+  font-size: calc(0.7em + 0.7vw);
   /* font-size: 3.2vh; */
   /* margin-right: 5rem; */
 }
