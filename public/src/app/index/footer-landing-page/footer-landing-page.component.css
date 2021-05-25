@@ -54,7 +54,7 @@
 
 
 .contacts-subtitle{
-  font-size: calc(1.1em + 1.1vw);
+  font-size: 24px;
   font-family: "Exo-Bold";
   color: #c2c258;
 }
@@ -78,7 +78,7 @@
 }
 
 .menu{
-  font-size: calc(0.8em + 0.8vw);
+  font-size: 18px;
   font-family: "HindMadurai-Regular";
   color: #00504c;
 }
@@ -87,4 +87,49 @@
   position: relative;
   top: -30px;
   left: 12px;
+  width: 50px;
 }
+
+.row-content-footer {
+  background-color: rgb(240, 240, 240);
+}
+
+.logo {
+  width: 150px;
+}
+@media (max-width: 576px) {
+  
+.contacts-subtitle{
+  font-size: 20px;
+
+}
+.text-content-footer {
+  text-align: justify !important;
+}
+.menu{
+  font-size: 15px;
+}
+.row-content-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+}
+
+@media (max-width: 769px) {
+  .col-content-menu {
+    display: none;
+  }
+  .img-location-title {
+    left: 0px;
+    width: 30px;
+}
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 1280px) {}
