@@ -21,7 +21,7 @@ import { DetailBlogComponent } from './detail-blog/detail-blog.component';
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),
-  
+
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,

@@ -14,12 +14,14 @@ export class BlogComponent implements OnInit {
   public hiddenButton = false;
   public array_blog: Array<Post>;
   public isMobile = false;
+  public isHome = false;
   constructor(public blogService: BlogService,
     public router: Router) { }
 
   ngOnInit(): void {
     this.getPosts();
     this.isViewMobile()
+    
   }
 
   public getPosts() {

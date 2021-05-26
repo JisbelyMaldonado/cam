@@ -12,6 +12,7 @@ import { take } from 'rxjs/operators';
 export class DetailBlogComponent implements OnInit {
   public post_id = this.activatedRoute.snapshot.params.post_id;
   public post : Post;
+  public isHome = false;
   constructor(private blogService : BlogService,
     private activatedRoute: ActivatedRoute,) { }
 

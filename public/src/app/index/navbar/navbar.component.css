@@ -1,37 +1,72 @@
+@font-face {
+  font-family: "HindMadurai-Regular";
+  src: url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype"),
+    url("/../../assets/fonts/HindMadurai-Regular.woff") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .bg-color-solid {
-  background-color: #026568f5 !important;
-
-  min-height: 80px !important;
+  background-color: #026568f5 !important; 
+  color: white !important ;
+  min-height: 40px !important;
   -webkit-transition: all 0.5s 0s ease;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
 }
-
-.bg-light {
-  background-color: #026568f5 !important;
-  min-height: 80px;
-  -moz-transition: all 0.5s 0s ease;
-  -o-transition: all 0.5s 0s ease;
-  transition: all 0.5s 0s ease;
+.bg-color-menu-responsive {
+  background-color:  white !important; 
+  color:  #026568f5!important ;
 }
-
+/* .bg-color-solid a{
+  color: white !important;
+} */
 .bg-transparent {
-  background-color: #026568f5 !important;
-  min-height: 80px;
+  background-color: transparent ;
+  min-height: 40px;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+  color: white !important ;
+}
+
+.bg-transparent a {
+
+  color: white !important ;
+}
+
+.bg-nav-two {
+  background-color: transparent !important;
+  color:#026568f5 !important ;
+  min-height: 40px !important;
   -webkit-transition: all 0.5s 0s ease;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
 }
 
+.bg-color-two {
+  background-color: white !important; 
+  color:#026568f5 !important ;
+  min-height: 40px !important;
+  -webkit-transition: all 0.5s 0s ease;
+  -moz-transition: all 0.5s 0s ease;
+  -o-transition: all 0.5s 0s ease;
+  transition: all 0.5s 0s ease;
+}
 
 .navbar .navbar-nav .nav-item .nav-link {
-  padding: 12px !important; 
+  padding: 13px !important; 
+  /* color: none !important; */
 }
 
 .icon-bar {
-  color: white;
+  color: white ;
+}
+.icon-bar-2 {
+  color: #026568f5 ;
 }
 
 .nav-bar-style {
@@ -48,10 +83,12 @@
   margin: 0 auto;
 }
 .nav-link {
-  color: white !important;
+  /* color: white !important; */
   font-weight: none !important;
   border-bottom: solid 4px transparent !important;
-  font-size: 11px;
+  font-size: 15px;
+  font-family: "HindMadurai-Regular";
+  text-transform: none;
 }
 
 .nav-item {
@@ -81,9 +118,9 @@
 }
 
 .active .nav-link {
-  border-bottom: solid 4px #c2c258 !important;
+  border-bottom: solid 3px #c2c258 !important;
   background: none !important;
-  border-radius: 0px !important;
+  border-radius: 3px !important;
   /* -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease; */
@@ -106,7 +143,19 @@
   align-content: center;
   justify-items: flex-end;
 }
+.navbar-menu {
+  box-shadow: none !important;
+  border: 0;
+  border-radius: 0px;
+  padding: 0.625rem 0;
+  margin-bottom: 20px;
+  padding-top: 0px;
+  background-color: none;
+}
 
+.navbar {
+  background-color: none;
+}
 @media (max-width: 576px) {
   .logo-navbar {
     width: 150px;

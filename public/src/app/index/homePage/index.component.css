@@ -141,7 +141,7 @@
 }
 
 .principal-title {
-  font-size: calc(2em + 2vw);
+  font-size: 45px;
   font-family: "Exo-Bold";
 }
 
@@ -152,11 +152,16 @@
 }
 
 .principal-subtitle {
-  font-size: 22px;
-  font-family: "HindMadurai-Regular";
-  color: rgb(4, 80, 79);
+  font-size: 20px;
+  font-family: "HindMadurai-Light";
+  color: white;
 }
 
+.text-center-arbitration {
+  font-size: 18px;
+  font-family: "HindMadurai-Regular";
+  color: #006b66;
+}
 .text-content-cards {
   font-size: 18px;
   font-family: "HindMadurai-Regular";
@@ -193,7 +198,7 @@
   left: 60px;
   margin-left: auto;
   margin-right: auto; */
-  width: 80%;
+  width: 450px;
 }
 
 .display-col-center {
@@ -203,6 +208,26 @@
   align-content: center;
   align-items: center;
   justify-items: center;
+}
+
+.col-content-element-text-home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+.col-content-element-img-home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .display-col-start {
@@ -227,13 +252,17 @@
   color: white;
   background-color: #c2c258;
   border-radius: 30px;
-  font-family: "HindMadurai-Regular";
+  font-family: "HindMadurai-Bold";
   font-size: calc(0.625em + 0.625vw);
   margin-top: 10px;
   text-transform: none;
-  font-weight: bold;
 }
 
+.box-shadow {
+  -webkit-box-shadow: 0px 3px 12px 0px rgba(186,186,186,1) !important;
+  -moz-box-shadow: 0px 3px 12px 0px rgba(186,186,186,1) !important;
+  box-shadow: 0px 3px 12px 0px rgba(186,186,186,1) !important;
+}
 .rectangle {
   height: 8px;
   width: 100px;
@@ -245,7 +274,7 @@
 }
 
 .rectangle-quienes-somos {
-  height: 8px;
+  height: 6px;
   width: 120px;
   background-color: #c2c258;
   border-radius: 40px;
@@ -258,7 +287,7 @@
 }
 
 .rectangle-products {
-  height: 8px;
+  height: 6px;
   width: 145px;
   background-color: #c2c258;
   border-radius: 40px;
@@ -270,7 +299,7 @@
 }
 
 .rectangle-directory {
-  height: 8px;
+  height: 6px;
   width: 160px;
   background-color: #c2c258;
   border-radius: 40px;
@@ -283,7 +312,7 @@
 }
 
 .rectangle-blog {
-  height: 8px;
+  height: 6px;
   width: 120px;
   background-color: #c2c258;
   border-radius: 40px;
@@ -295,12 +324,12 @@
   top: -45px;
 }
 .rectangle-contact {
-  height: 8px;
+  height: 6px;
   width: 140px;
   background-color: #c2c258;
   border-radius: 40px;
   margin: 0 auto;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   margin-top: 25px;
   position: relative;
   left: 60px;
@@ -509,37 +538,45 @@
 
 /*BLOG STYLES*/
 .card-post {
-  height: 70vh;
+  height: 68vh;
   border: none;
-  border-radius: 0%;
-  /* width: 50vh; */
-  /* margin-right: 25rem; */
-}
+} 
 .w-85 {
   max-width: 85%;
 }
 .img-card-border {
   border-bottom: 3vh solid #c2c258;
   margin-bottom: 8%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
 }
-.img-card-img {
+/* .img-card-img {
   width: 100% !important;
   height: 300px !important;
-}
+} */
 .title {
   color: black;
-  font-size: calc(0.9em + 0.9vw);
+  font-size: 16px;
   /* font-size: 3.2vh; */
   font-family: "Exo-ExtraBold";
   text-transform: uppercase;
 }
+
+.div-content-text-title {
+  min-height: 70px;
+}
+
 .text {
   font-family: "HindMadurai-Regular";
   font-size: calc(0.7em + 0.7vw);
   /* font-size: 3.2vh; */
   /* margin-right: 5rem; */
 }
-.btn-ver-Mas {
+
+
+/* .btn-ver-Mas {
   width: 20vh;
   background-color: #c2c258;
   border-radius: 40px;
@@ -547,15 +584,31 @@
   font-size: calc(0.7em + 0.7vw);
   position: absolute;
   bottom: 50px !important;
-}
-.btn-ligth-blog {
-  width: 20vh;
-  background-color: #ffffff;
-  border-color: #c2c258;
+} */
+
+.btn-view-more-post {
+  width: 100px;
+  background-color: #c2c258;
   border-radius: 40px;
   font-family: "Exo-Bold";
-  font-size: calc(0.6em + 0.6vw);
+  text-transform: none;
+  font-size: 13px;
+  padding: 8px;
+  margin-top: 20px;
+}
+.btn-ligth-blog {
+  width: 120px;
+  background-color: white !important;
+  border: 1px solid  #c2c258;
+  border-radius: 40px;
+  font-family: "Exo-Bold";
+  font-size: 13px;
   color: #c2c258;
+  padding: 8px;
+  text-transform: none;
+  -webkit-box-shadow: 0px 3px 12px 0px rgba(186,186,186,1);
+  -moz-box-shadow: 0px 3px 12px 0px rgba(186,186,186,1);
+  box-shadow: 0px 3px 12px 0px rgba(186,186,186,1);
 }
 .col-content-arbitration {
   background-color: #e5eded;
@@ -596,7 +649,6 @@
   background-repeat: no-repeat;
   background-position: right;
   background-size: auto;
-  margin-right: 40px;
   height: 400px;
 }
 
@@ -618,8 +670,31 @@
 
 .img-redes-contact {
   width: 55px;
+ 
 }
 
+.img-separador {
+  width: 100px;
+  margin-top: 30px;
+}
+
+.row-content-blog {
+  background-image: url('../../../assets/img/BlogElemento1.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+  left: 0px;
+  top: 0px;
+  background-size: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-content-bg-color {
+  background-color: rgb(245, 245, 245);
+  min-height: 100vh;
+}
 @media (max-width: 576px) {
   .rectangle-quienes-somos {
     position: relative;
@@ -698,10 +773,41 @@
   .img-redes-contact {
     width: 50px;
   }
-
+  .row-content-blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    background-image: none;
+  }
+  .div-content-text-title {
+    min-height: auto; 
+  }
+  .section-one-background {
+    height: 80vh;
+  }
+  .col-content-element-text-home {
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: flex-start; 
+    align-items: flex-start; 
+    align-content: flex-start; 
+  }
+  .principal-title {
+    font-size: 18px !important;
+  }
+  .logo-img-cma {
+    width: 150px !important;
+  }
+  .principal-subtitle {
+    font-size: 12px !important;
+  }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .background-services-1 {
     display: none !important;
   }
@@ -749,7 +855,27 @@
   .img-redes-contact {
     width: 50px !important;
   }
-
+  .row-content-blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+  .card-post {
+    height: auto;
+  } 
+  .principal-title {
+    font-size: 24px !important;
+  }
+  .logo-img-cma {
+    width: 280px !important;
+  }
+  .principal-subtitle {
+    font-size: 14px !important;
+  }
+  .logo-img-cma {
+    display: none;
+  }
 }
 
 @media (max-width: 992px) {
@@ -768,6 +894,15 @@
   }
   .img-redes-contact {
     width: 50px;
+  }
+  .principal-title {
+    font-size: 30px;
+  }
+  .logo-img-cma {
+    width: 350px;
+  }
+  .principal-subtitle {
+    font-size: 16px;
   }
 }
 

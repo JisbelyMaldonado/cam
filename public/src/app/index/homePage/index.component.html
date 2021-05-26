@@ -1,41 +1,40 @@
-<app-navbar></app-navbar>
+
+<app-navbar [isHome]="isHome"></app-navbar>
 
 
 
 <!--SECTION INITIAL-->
 <section id="home" class="section-one-background">
   <div class="row w-100 mx-auto">
-    <div class="col-sm-1"></div>
+    <!-- <div class="col-sm-1"></div> -->
 
-    <div class="col-sm-5 display-col-center" style=" margin: 1em;">
-      <div class="mt-5">
-        <div class="text-left mt-5">
-          <h1 class="principal-title">
-            <span style="color: #c2c258;;">Promoviendo</span><br>
-            <span style="color: white;">la Cultura de </span><br>
-            <span style="color: #c2c258;">Paz, tolerancia</span><br>
-            <span style="color: white;">y diálogo</span><br>
-          </h1>
-          <br>
-          <h5 class="principal-subtitle" style="color: white;">
-            Procuramos ser una organización líder en el <br>
-            Ecuador con proyección hacia América Latina, en <br>
-            la creación de la cultura del diálogo y la paz</h5>
-        </div>
-        <div class=" col-sm-12 text-left">
-          <button type="button" class="btn btn-light">Contactar</button>
+    <div class="col-10 col-sm-6 col-md-6 col-lg-6  mt-5 col-content-element-text-home">
+      <div class="text-left ">
+        <h1 class="principal-title">
+          <span style="color: #c2c258;">Promoviendo</span><br>
+          <span style="color: white;">la Cultura de </span><br>
+          <span style="color: #c2c258;">Paz, tolerancia</span><br>
+          <span style="color: white;">y diálogo</span><br>
+        </h1>
+        <br>
+        <h5 class="principal-subtitle">
+          Procuramos ser una organización líder en el <br>
+          Ecuador con proyección hacia América Latina, en <br>
+          la creación de la cultura del diálogo y la paz.</h5>
+        <div class="col-sm-12 text-left p-0">
+          <button (click)="navigateSectionBlog('#contact')" type="button" class="btn btn-light">Contactar</button>
         </div>
       </div>
     </div>
-    <div class="col-sm-5 pl-0 pr-0 display-col-center">
-      <img class="logo-img-cma text-center" alt="logo" src="../../../assets/img/Logo inicio.svg">
+    <div class="col-10 col-sm-6 col-md-6 col-lg-6 pl-0 pr-0 col-content-element-img-home">
+      <img class="logo-img-cma text-center" alt="logo" src="../../../assets/img/Logo Home.svg">
     </div>
-    <div class="col-sm-1"></div>
+    <!-- <div class="col-sm-1"></div> -->
   </div>
 </section>
 
 <!--SECTION WE ARE-->
-<section id="home" style="padding-bottom: 100px; background-color: white">
+<section style="padding-bottom: 100px; background-color: white">
   <div class="">
     <div class="row w-100 mx-auto m-0 p-0 display-row-center">
       <div class=" col-sm-10 col-md-9 col-lg-9 display-col-center" style=" margin: 1em;">
@@ -103,7 +102,7 @@
                     para el efecto.</span>
                 </div>
                 <div class=" p-0 col-sm-12 text-left">
-                  <button class="" type="button" class="btn btn-light">Ver más</button>
+                  <button class="" type="button" class="btn btn-light box-shadow">Ver más</button>
                 </div>
               </div>
             </div>
@@ -128,7 +127,7 @@
             extra-judicial, pero plenamente legal.
           </span>
           <div class=" col-sm-12 text-right p-0">
-            <button class="" type="button" class="btn btn-light">Ver más</button>
+            <button class="" type="button" class="btn btn-light box-shadow">Ver más</button>
           </div>
         </div>
         <div class="col-sm-0 col-md-4 col-lg-3">
@@ -165,7 +164,7 @@
                     con los Medios Alternativos de Solución de Conflictosy áreas jurídicas a fines.</span>
                 </div>
                 <div class=" p-0 col-sm-12 text-left">
-                  <button class="" type="button" class="btn btn-light">Ver más</button>
+                  <img alt="separador" class="img-separador" src="../../../assets/img/Separador2.svg">
                 </div>
               </div>
             </div>
@@ -188,7 +187,7 @@
             con los Medios Alternativos de Solución de Conflictos, Cultura de la Convivencia y de la Paz.
           </span>
           <div class=" col-sm-12 text-right p-0">
-            <button class="" type="button" class="btn btn-light">Ver más</button>
+            <img alt="separador" class="img-separador" src="../../../assets/img/Separador2.svg">
           </div>
         </div>
         <div class="col-sm-0 col-md-4 col-lg-3">
@@ -254,25 +253,24 @@
     </div>
     <div class="col-sm-6 pl-5 pt-5 m-0 ">
       <div class="row w-100 display-row-center mx-auto ">
-        <div class="col-sm-11">
+        <div class="col-sm-12">
           <h1 class="principal-title2">
             <span>El Centro de Arbitraje <br> y Mediación</span><br>
           </h1>
-          <h5 class="principal-subtitle">
-            <br>
+          <h5 class="text-center-arbitration pt-2">
             Es el resultado de una alianza estratégica, inédita en el
             Ecuador, establecida entre la Cámara de Comercio, la Cámara de Industrias, la Cámara de la Construcción de
             Cuenca y la Cámara Ecuatoriano Americana. Esta alianza, que se estableció en el año 2001.
           </h5>
         </div>
-        <div class="col-sm-1">
-        </div>
+        <!-- <div class="col-sm-1"> 
+        </div>-->
       </div>
     </div>
   </div>
-  <div class="mt-5 row-content-background-about">
-    <div class="container">
-      <div class="row w-100 display-row-center mx-auto ">
+  <div class=" row-content-background-about">
+    <div class="pt-5 container">
+      <div class="row pt-5 w-100 display-row-center mx-auto ">
         <div class="col-sm-1"></div>
         <div class="col-sm-10 display-col-center" style=" margin: 1em;">
           <div class="">
@@ -568,7 +566,7 @@
           </div>
         </div>
         <div class="col-sm-10 col-md-12 col-lg-5 col-xl-7 mt-3 col-content-directory">
-          <p class="title-directory">ANTONIO <br>VÁSQUEZ CUESTA</p>
+          <p class="title-directory">ANTONIO <br>VÁZQUEZ CUESTA</p>
           <p class="subtitle-directory">Vocal Alterno</p>
         </div>
       </div>
@@ -629,8 +627,8 @@
       </div>
     </div>
   </div>
-  <div class="container pt-3 pb-5">
-    <div class="row w-100 mx-auto pt-3 mt-3 pb-3 mb-3">
+  <div class="container pb-5">
+    <div class="row w-100 mx-auto  pb-3 mb-3">
       <div class="col-sm-2">
       </div>
       <div class="col-sm-8 text-center">
@@ -704,75 +702,84 @@
           <p class="title-directory">JUANA MONSERRATH
             <br> MÉNDEZ ÁLVAREZ
           </p>
-          <p class="subtitle-directory">Secretaria Jurídica
+          <p class="subtitle-directory">Secretaria Administrativa
           </p>
         </div>
       </div>
     </div>
   </div>
-
-
 </section>
 
 <!--BLOG SECTION-->
-<section>
-  <div class="row display-row-center p-0 m-0">
-    <!-- <div class="col-sm-12 p-0 m-0 text-center">
-      <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="BLOG INFOMATIVO"
-        src="../../../assets/img/Separador1.svg">
-      <span class="title-services">Blog informativo </span>
-      <div class="rectangle-directory"></div>
-    </div> -->
-    <div class="col-12 col-sm-12 text-center">
-      <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
-        src="../../../assets/img/Separador1.svg">
+<section id="blog">
+  <div class="row-content-bg-color pt-5 pb-5 m-0">
+    <div class="row display-row-center p-0 m-0">
+      <!-- <div class="col-sm-12 p-0 m-0 text-center">
+        <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="BLOG INFOMATIVO"
+          src="../../../assets/img/Separador1.svg">
+        <span class="title-services">Blog informativo </span>
+        <div class="rectangle-directory"></div>
+      </div> -->
+      <div class="col-12 col-sm-12 text-center">
+        <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
+          src="../../../assets/img/Separador1.svg">
 
-      <span class="title-services">Blog informativo</span>
-      <div class="col-12 col-sm-12">
-        <div class="rectangle-blog"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row w-85 display-row-center p-0 m-0 mx-auto">
-    <ng-container class="" *ngFor="let post of arrayPost">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-        <div class="card card-post ">
-          <div class="img-card-border">
-            <img class="img-card-img" src="{{post.post_img}}" alt="{{post.post_title}}">
-          </div>
-          <div>
-            <div class="text-left">
-              <h4 class="title">{{post.post_title |slice:0:80}} ...</h4>
-            </div>
-            <p class="text">{{post.post_description |slice:0:116}} ...</p>
-          </div>
-          <div>
-            <a data-toggle="modal" data-target="#modalpost">
-              <button (click)="selectProdcut(post)" class="btn btn-ver-Mas">Ver más</button>
-            </a>
-          </div>
+        <span class="title-services">Blog informativo</span>
+        <div class="col-12 col-sm-12">
+          <div class="rectangle-blog"></div>
         </div>
       </div>
-    </ng-container>
-  </div>
-  <div style="margin-bottom: 10rem;">
-    <div class="row w-85 display-row-center p-0 m-0 mx-auto">
-      <div class="col-md-4 col-lg-4">
+    </div>
 
-      </div>
-      <div class="col-sm-12 col-md-2 col-lg-2">
-        <button *ngIf="!show==true" (click)="post3()" class="btn btn-ligth-blog">Cargar más</button>
-      </div>
-      <div class="col-sm-12 col-md-2 col-lg-2">
-        <button class="btn btn-ligth-blog">Ir al Blog</button>
-      </div>
-      <div class=" col-md-4 col-lg-4">
+    <div class="row p-0 m-0 row-content-blog">
+      <!-- <ng-container > -->
+        <div class=" col-11 col-sm-6 col-md-4 col-lg-3 " *ngFor="let post of arrayPost">
+          <div class="mr-1 mt-2">
+            <div class=" card-post ">
+              <div class="img-card-border" style="background-image: url({{post.post_img}});">
+                <!-- <img class="img-card-img" src="{{post.post_img}}" alt="{{post.post_title}}"> -->
+              </div>
+              <div>
+                <div class="text-left div-content-text-title">
+                  <h4 class="title">{{post.post_title |slice:0:60}} </h4>
+                </div>
+                <!-- <p class="text">{{post.post_description |slice:0:116}} ...</p> -->
+                <div class="row m-0 ">
+                  <div [innerHTML]="post.post_description | slice:0:100"></div>
+                </div>
+              
+              </div>
 
+            </div>
+            <div class="row m-0 ">
+                <button (click)="viewPost(post)" class="btn btn-view-more-post">Ver más</button>
+            </div>
+          </div>
       </div>
-
+      <!-- </ng-container>  -->
+    </div>
+    <!-- <div style="margin-bottom: 10rem;">
+      <div class="row w-85 display-row-center p-0 m-0 mx-auto">
+        <div class="col-md-4 col-lg-4">
+  
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2">
+          <button *ngIf="!show==true" (click)="post3()" class="btn btn-ligth-blog">Cargar más</button>
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2">
+          <button class="btn btn-ligth-blog">Ir al Blog</button>
+        </div>
+        <div class=" col-md-4 col-lg-4">
+  
+        </div>
+  
+      </div>
+    </div> -->
+    <div class="row m-0 display-row-center">
+            <button class="btn btn-ligth-blog" [routerLink]="'blog'">Ir al Blog</button>
     </div>
   </div>
+
 
 </section>
 
@@ -784,7 +791,7 @@
 <!--CONTACTS-->
 
 <section class="background-contacts" id="contact">
-  <div class="row w-100 display-row-center p-0 m-0">
+  <div class="row w-100 display-row-center p-0 m-0 pt-5">
     <div class="col-sm-12 p-0 m-0 text-center ">
       <img class=" text-center img-fluid img-location-title" width="65" alt="PRODUCTOS Y SERVICIOS"
         src="../../../assets/img/Separador1.svg">
@@ -869,3 +876,16 @@
 <!---------------  FOOTER   --------------------------->
 <app-footer-landing-page></app-footer-landing-page>
 <!--------------- FIN FOOTER   --------------------------->
+
+
+
+
+<!-- <div class="row m-0">
+  <button (click)="post()">1</button>
+<button (click)="get2()">3</button>
+<button (click)="get1()">4</button>
+<button (click)="put()">5</button>
+
+
+
+</div> -->

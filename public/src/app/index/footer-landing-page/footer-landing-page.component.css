@@ -97,6 +97,13 @@
 .logo {
   width: 150px;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.option-menu:hover {
+  color: #c5c258;
+}
 @media (max-width: 576px) {
   
 .contacts-subtitle{
@@ -117,6 +124,9 @@
   align-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.col-content-object {
+  display: none;
 }
 }
 

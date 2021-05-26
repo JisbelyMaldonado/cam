@@ -1,32 +1,33 @@
-<nav id="navbarIndex" class="navbar fixed-top navbar-expand-lg navbar-transparent bg-light" *ngIf="!isMobile">
+<nav id="navbarIndex" class="navbar navbar-menu fixed-top navbar-expand-lg " *ngIf="!isMobile">
   <div class="row m-0 display-row-center" style="min-width: 100%;">
     <div class="col-sm-3 col-md-3 col-lg-3  display-col-center">
-      <img src="../../../assets/img/Logo Header.svg" class="logo-navbar " alt="">
+      <img *ngIf="isHome" src="../../../assets/img/Logo Header.svg" class="logo-navbar " alt="">
+      <img *ngIf="!isHome" src="../../../assets/img/LogoHeaderB.svg" class="logo-navbar " alt="">
     </div>
 
     <div class="col-sm-9 col-md-9 col-lg-8 p-0 display-col-end">
       <div class="text-center collapse navbar-collapse display-row-center display-col-center m-0"
         id="navbarSupportedContent">
         <ul class="navbar-nav mr-0">
-          <li class="nav-item m-0 active" data-target="#home">
+          <li (click)="viewSection('#home')" class="nav-item m-0 active" data-target="#home">
             <a class="nav-link m-0" data-target="#home" href="#home">Inicio <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item m-0" data-target="#products">
+          <li (click)="viewSection('#products')" class="nav-item m-0" data-target="#products">
             <a class="nav-link m-0" href="#products">Productos y Servicios</a>
           </li>
-          <li class="nav-item m-0" data-target="#about">
+          <li (click)="viewSection('#about')" class="nav-item m-0" data-target="#about">
             <a class="nav-link m-0" href="#about">¿Quiénes Somos?</a>
           </li>
-          <li class="nav-item m-0" data-target="#quote">
+          <li (click)="viewSection('#quote')" class="nav-item m-0" data-target="#quote">
             <a class="nav-link m-0" href="#quote">Cotizar</a>
           </li>
-          <li class="nav-item m-0" data-target="#directory">
+          <li (click)="viewSection('#directory')" class="nav-item m-0" data-target="#directory">
             <a class="nav-link m-0" href="#directory">Directorio</a>
           </li>
-          <li class="nav-item m-0" data-target="#blog">
+          <li (click)="viewSection('#blog')" class="nav-item m-0" data-target="#blog">
             <a class="nav-link m-0" href="#blog">Blog</a>
           </li>
-          <li class="nav-item m-0" data-target="#contact">
+          <li (click)="viewSection('#contact')" class="nav-item m-0" data-target="#contact">
             <a class="nav-link m-0" href="#contact">Contactos</a>
           </li>
           <li class="nav-item m-0">
@@ -43,17 +44,18 @@
 </nav>
 
 
-<div class="row m-0 display-row-end fixed-top bg-transparent" style="z-index: 9999;"  *ngIf="isMobile">
+<div class="row m-0 display-row-end fixed-top " style="z-index: 9999;"  *ngIf="isMobile">
   <div class="col-sm-12 p-0" >
-    <div class="row m-0 display-row-center" id="navbarIndex">
+    <div class="row m-0 display-row-center pt-3" id="navbarIndex">
       <div class="col-7 col-sm-5 col-md-3 col-lg-3 p-0 display-col-center">
-        <img src="../../../assets/img/Logo Header.svg" class="logo-navbar " alt="">
+        <img *ngIf="isHome" src="../../../assets/img/Logo Header.svg" class="logo-navbar " alt="">
+      <img *ngIf="!isHome" src="../../../assets/img/LogoHeaderB.svg" class="logo-navbar " alt="">
       </div>
       <div class="col-5 col-sm-7 col-md-8 col-lg-9 p-0">
         <nav class="navbar  nav-bar-style display-row-end" >
-          <button   #navigation class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+          <button   #navigation class="navbar-toggler {{isHome ? 'icon-bar' : 'icon-bar-2'}} " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars icon-bar" aria-hidden="true"></i>
+            <i class="fa fa-bars " aria-hidden="true"></i>
           </button>
         </nav>
       </div>
@@ -61,31 +63,31 @@
   </div>
 </div>
 
-<div class="row m-0 fixed-top" style="margin-top: 79px;">
+<div *ngIf="isMobile" class="row m-0 fixed-top" style="padding-top: 79px;">
   <div class="col-sm-12 p-0 " >
     <div class="collapse " id="navbarToggleExternalContent">
-      <div class="bg-color-solid   p-4" >
+      <div id="bg-color-menu-responsive"  class="p-4 {{isHome? 'bg-color-solid' : 'bg-color-menu-responsive'}}" >
         <ul class="navbar-nav mr-0 ">
-          <li class="nav-item m-0 active" data-target="#home">
-            <a class="nav-link m-0" data-target="#home" href="#home">Inicio <span class="sr-only">(current)</span></a>
+          <li (click)="viewSection('#home')" class="nav-item m-0 cursor-pointer active" data-target="#home">
+            <a  class="nav-link  m-0" data-target="#home" href="#home">Inicio <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item m-0" data-target="#products">
-            <a class="nav-link m-0" href="#products">Productos y Servicios</a>
+          <li (click)="viewSection('#products')" class="nav-item mcursor-pointer -0" data-target="#products">
+            <a  class="nav-link  m-0" href="#products">Productos y Servicios</a>
           </li>
-          <li class="nav-item m-0" data-target="#about">
-            <a class="nav-link m-0" href="#about">¿Quiénes Somos?</a>
+          <li (click)="viewSection('#about')" class="nav-itecursor-pointer m m-0" data-target="#about">
+            <a  class="nav-link  m-0" href="#about">¿Quiénes Somos?</a>
           </li>
-          <li class="nav-item m-0" data-target="#quote">
-            <a class="nav-link m-0" href="#quote">Cotizar</a>
+          <li (click)="viewSection('#quote')" class="nav-itecursor-pointer m m-0" data-target="#quote">
+            <a  class="nav-link  m-0" href="#quote">Cotizar</a>
           </li>
-          <li class="nav-item m-0" data-target="#directory">
-            <a class="nav-link m-0" href="#directory">Directorio</a>
+          <li (click)="viewSection('#directory')" class="nav-item m-cursor-pointer 0" data-target="#directory">
+            <a  class="nav-link  m-0" href="#directory">Directorio</a>
           </li>
-          <li class="nav-item m-0" data-target="#blog">
-            <a class="nav-link m-0" href="#blog">Blog</a>
+          <li (click)="viewSection('#blog')" class="nav-itcursor-pointer em m-0" data-target="#blog">
+            <a  class="nav-link  m-0" href="#blog">Blog</a>
           </li>
-          <li class="nav-item m-0" data-target="#contact">
-            <a class="nav-link m-0" href="#contact">Contactos</a>
+          <li (click)="viewSection('#contact')" class="nav-item cursor-pointer m-0" data-target="#contact">
+            <a class="nav-link  m-0" href="#contact">Contactos</a>
           </li>
           <li class="nav-item m-0">
             <a class="nav-link m-0" href="#">

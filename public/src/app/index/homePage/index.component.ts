@@ -11,6 +11,8 @@ import { take } from 'rxjs/operators';
 import { Post } from '../../interfaces/post';
 import { BlogService } from '../../services/blog/blog.service';
 import { CalculatorService } from 'app/services/calculator.service';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-index',
@@ -48,10 +50,19 @@ export class IndexComponent implements OnInit {
     {value: '1', viewValue: 'No soy socio'}
   ];
   
-
-
+  /***** test Jean Carlos */
+  public isHome = true;
+  public url = 'https://vazseguros-c7bbe.firebaseapp.com/api/v1/notification';
+  public httpOptions = {
+    headers: new HttpHeaders({
+      "Content-Type": "application/json",
+      "Authorization": "Bearer d&q5PKGl8qlX4Z#@",
+    }),
+  };
   constructor( private BlogService: BlogService, private db: AngularFirestore,
-    private calcularService: CalculatorService)
+    private calcularService: CalculatorService,
+    private route: Router,
+    private http : HttpClient)
   {}
 
   ngOnInit(): void {
@@ -141,15 +152,6 @@ export class IndexComponent implements OnInit {
     console.log
     return xmlhttp.send(sr);
   }
-  
-
-  /* METODO PARA OBTENER LOS BLOGS  DE LA BASE DATOS */
-  // public getPosts() {
-  //   this.BlogService.getPosts().pipe(take(3)).subscribe(posts => {
-  //     this.arrayPost = posts;
-  //     console.log(this.arrayPost);
-  //   })
-  // }
 
   public getPosts() {
     this.BlogService.getPostByCategory().subscribe(posts => {
@@ -166,5 +168,44 @@ export class IndexComponent implements OnInit {
         });
       console.log(this.arrayPost);
     })
+  }
+
+  public viewPost(post: Post) {
+    this.route.navigate(['post/'+post.post_id])
+  }
+
+  public navigateSectionBlog(section: string) {
+    setTimeout(function () {
+      $("html, body").animate(
+        {
+          scrollTop: $(section).position().top,
+        },
+        500,
+        function () { }
+      );
+    }, 1000);
+  }
+  public post() {
+    console.log('Llama a metodo');
+    
+    let data = {
+      "vin": 123456,
+    }
+     this.http.post<any>(this.url, data, this.httpOptions).subscribe(test => {
+       console.log(test);
+       
+     });
+  }
+
+  public get1() {
+    
+  }
+
+  public get2() {
+    
+  }
+
+  public put() {
+    
   }
 }
