@@ -10,7 +10,7 @@
 .bg-color-solid {
   background-color: #026568f5 !important; 
   color: white !important ;
-  min-height: 40px !important;
+  min-height: 60px !important;
   -webkit-transition: all 0.5s 0s ease;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
@@ -25,7 +25,7 @@
 } */
 .bg-transparent {
   background-color: transparent ;
-  min-height: 40px;
+  min-height: 60px;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
@@ -40,7 +40,7 @@
 .bg-nav-two {
   background-color: transparent !important;
   color:#026568f5 !important ;
-  min-height: 40px !important;
+  min-height: 60px !important;
   -webkit-transition: all 0.5s 0s ease;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
@@ -50,7 +50,7 @@
 .bg-color-two {
   background-color: white !important; 
   color:#026568f5 !important ;
-  min-height: 40px !important;
+  min-height: 60px !important;
   -webkit-transition: all 0.5s 0s ease;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;

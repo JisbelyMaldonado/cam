@@ -62,7 +62,7 @@
 </section>
 
 <!--PRODUCTS AND SERVICES-->
-<section id="products" style="background-color: white; padding-bottom: 25px;">
+<section id="products">
   <div class="row w-100 mx-auto display-row-center">
 
     <div class="col-12 col-sm-12 text-center">
@@ -372,12 +372,111 @@
 
 
 <!--COTIZADOR-->
-<section class="m-5" id="quote">
-  <div class="row w-100 display-row-center mx-auto">
+<section class="" id="quote">
+  <div class="row pt-5 pb-5 m-0 row-content-bg-quote">
+    <div class="row  w-100 mx-auto display-row-center">
+      <div class="col-12 col-sm-12 text-center">
+        <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
+          src="../../../assets/img/Separador1.svg">
+  
+        <span class="title-services">Cotizador</span>
+        <div class="col-12 col-sm-12">
+          <div class="rectangle-quote"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-11 col-sm-10 col-md-6 col-lg-6">
+        <div class="row display-row-center">
+          <div class="col-lg-8">
+            <div class="row m-0">
+              <img class="icon-quote" src="../../../assets/img/Cotizador.svg">
+            </div>
+            <div class="row m-0 pt-2">
+              <h1 class="title-quote">Lorem ipsum dolor sit
+                amet, conse</h1>
+            </div>
+            <div class="row m-0 pt-2">
+              <span class="text-quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet
+                dolore magna aliquam erat volutpat. Ut wisi enim ad minim
+                veniam, quis nostrud exerci tation ullamcorper suscipit
+                lobortis nisl ut aliquip ex ea commodo consequat.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-11 col-sm-10 col-md-6 col-lg-6">
+        <div class="row m-0 display-row-center">
+          <div class="col-11 col-sm-11 col-md-10 col-lg-10">
+            <form class="shake" role="form" method="post" id="quoteForm" name="quote-form" data-toggle="validator">
+              <!-- Servicio -->
+              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
+                <label class="control-label" for="service">Servicio</label>
+                <select class="form-control bg-white cursor-pointer" id="service">
+                  <option>Arbitraje</option>
+                  <option>Mediación</option>
+                </select>
+              </div>
+              <!-- Cantidad -->
+              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
+                <label class="control-label" for="exampleFormControlSelect1">Cantidad</label>
+                <select class="form-control bg-white cursor-pointer" id="exampleFormControlSelect1">
+                  <option>1 arbitro</option>
+                  <option>3 arbitros</option>
+                </select>
+              </div>
+              <!-- CUANTÍAAA SELECT-->
+             <div class="row m-0 pt-2">
+               <div class="col-12">
+                <input type="checkbox" class="form-check-input" id="quote1">
+                <label class="form-check-label control-label" for="quote1">Cuantía determinada</label>
+               </div>
+               <div class="col-12">
+                <input type="checkbox" class="form-check-input" id="quote2">
+                <label class="form-check-label control-label" for="quote2">Cuantía indeterminada</label>
+               </div>
+
+             </div>
+             <!-- Cantidad -->
+             <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
+              <label class="control-label" for="quote">Cuantía</label>
+              <input class="form-control bg-white" id="quote" type="quote" name="quote" required placeholder="Ingrese el valor de la cuantía">
+              <div class="help-block with-errors"></div>
+              </div>
+                 <!-- SOCIO -->
+             <div class="row m-0 pt-2">
+              <div class="col-6 col-sm-6 col-md-5 col-lg-5">
+               <input type="checkbox" class="form-check-input" id="quote1">
+               <label class="form-check-label control-label" for="quote1">Soy socio</label>
+              </div>
+              <div class="col-6 col-sm-6 col-md-5 col-lg-5">
+               <input type="checkbox" class="form-check-input" id="quote2">
+               <label class="form-check-label control-label" for="quote2">No soy socio</label>
+              </div>
+              </div>
+              <!-- Form Submit -->
+              <div class="form-submit mt-3">
+                <div class="col-11 col-sm-11 col-md-10 col-lg-9 text-left p-0">
+                  <button class="" type="submit" class="btn btn-light w-100 p-2 max-height-btn">Calcular</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <!-- <div class="row w-100 display-row-center mx-auto">
     <div class="col-sm-6" style="background-color: #c2c258;">aaa</div>
     <div class="col-sm-6" style="background-color: #ffffff;">
-
-
       <form>
         <h4>Seleccionar:</h4>
         <mat-form-field appearance="fill">
@@ -389,8 +488,6 @@
         </mat-form-field>
         <p> Servicio Seleccionado arbitraje: {{selectedValue}}</p>
       </form>
-
-
       <div class="form-group" *ngIf="this.selectedValue == '1'">
         <p><input type="text" id="cuantiaValue" name="cuantiaValue" [(ngModel)]="cuantiaValue"></p>
         <h1> {{cuantiaValue | currency}}</h1>
@@ -406,8 +503,6 @@
         </mat-form-field>
         <p> Servicio Seleccionado: {{selectedValueArb}} </p>
       </div>
-
-
       <div class="form-group" *ngIf="this.selectedValueArb">
         <mat-form-field appearance="fill">
           <mat-select [(ngModel)]="selectedCuantia" name="cuantia">
@@ -419,14 +514,10 @@
         <p> Servicio Seleccionado: {{selectedCuantia}} </p>
       </div>
 
-
-
       <div class="form-group" *ngIf="this.selectedCuantia== '0'">
         <p><input type="text" id="cuantiaValue" name="cuantiaValue" [(ngModel)]="cuantiaValue"></p>
         <h1> {{cuantiaValue | currency}}</h1>
       </div>
-
- 
 
       <div class="form-group" *ngIf="this.selectedCuantia || this.selectedValue == '1'">
         <mat-form-field appearance="fill">
@@ -442,38 +533,17 @@
       <button *ngIf="this.selectedSocio" type="button" (click)="clickme()">Clickme</button>
 
       <p>{{total |currency}}</p>
-
-
-
-
-
-
-
-
       <form *ngIf="this.selectedValue == '1'">
         mediacion
       </form>
-
-
-
     </div>
-  </div>
-
-
-
+  </div> -->
 </section>
 
 <!--DIRECTORIO-->
 <section class="" style="background-color: white; " id="directory">
   <div class="row mb-3 w-100 display-row-center p-0 m-0">
-
-    <!-- <div class="col-sm-12 p-0 m-0 text-center">
-      <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="PRODUCTOS Y SERVICIOS"
-        src="../../../assets/img/Separador1.svg">
-      <span class="title-services">Directorio</span>
-      <div class="rectangle-directory"></div>
-    </div> -->
-    <div class="col-12 col-sm-12 text-center">
+    <div class="col-12 col-sm-12 text-center pt-5">
       <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
         src="../../../assets/img/Separador1.svg">
 
@@ -774,7 +844,7 @@
       </div>
     </div> -->
     <div class="row m-0 display-row-center">
-            <button class="btn btn-ligth-blog" [routerLink]="'blog'">Ir al Blog</button>
+            <button class="btn btn-ligth-blog mt-5" [routerLink]="'blog'">Ir al Blog</button>
     </div>
   </div>
 

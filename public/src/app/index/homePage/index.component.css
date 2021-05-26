@@ -329,13 +329,23 @@
   background-color: #c2c258;
   border-radius: 40px;
   margin: 0 auto;
-  /* margin-bottom: 25px; */
   margin-top: 25px;
   position: relative;
   left: 60px;
   top: -45px;
 }
 
+.rectangle-quote {
+  height: 6px;
+  width: 100px;
+  background-color: #c2c258;
+  border-radius: 40px;
+  margin: 0 auto;
+  margin-top: 25px;
+  position: relative;
+  left: 60px;
+  top: -45px;
+}
 .title-services {
   font-size: calc(1.4em + 1.4vw);
   font-family: "Exo-Bold";
@@ -695,6 +705,39 @@
   background-color: rgb(245, 245, 245);
   min-height: 100vh;
 }
+
+.row-content-bg-quote {
+  background-image: url('../../../assets/img/Fondo-Cotizador.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.icon-quote {
+  width: 70px;
+}
+
+.title-quote {
+  color: #c2c258;
+  font-family: "HindMadurai-Bold";
+  font-weight: bolder;
+  font-size: 32px;
+}
+
+.text-quote {
+  font-size: 14px;
+  font-family: "HindMadurai-Regular";
+  color: #00504c;
+  text-align: justify;
+}
+
+#products {
+  background-color: white; padding-bottom: 25px;
+}
+.max-height-btn {
+  max-height: 35px;
+}
 @media (max-width: 576px) {
   .rectangle-quienes-somos {
     position: relative;
@@ -804,6 +847,11 @@
   }
   .principal-subtitle {
     font-size: 12px !important;
+  }
+  .rectangle-quote {
+    width: 80px;
+    left: 30px;
+    top: -35px;
   }
 }
 
