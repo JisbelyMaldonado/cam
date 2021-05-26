@@ -13,11 +13,13 @@ import { BlogService } from '../../services/blog/blog.service';
 import { CalculatorService } from 'app/services/calculator.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Mediacion } from "app/interfaces/mediacion";
+
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: "app-index",
+  templateUrl: "./index.component.html",
+  styleUrls: ["./index.component.css"],
 })
 
 export class IndexComponent implements OnInit {
@@ -27,27 +29,30 @@ export class IndexComponent implements OnInit {
   public selectedValueArb: string  = '';
   public selectedCuantia: string  = '';
   public selectedSocio: string  = '';
+  public total: number = 0;
   public user: Users;
   public arbitro: arbitro;
+  public array: arbitro[];
+
   public show = false;
   public arrayPost: Array<Post>
-  servicio: Servicio[] = [
+  public servicio: Servicio[] = [
     {value: '0', viewValue: 'Arbitraje'},
     {value: '1', viewValue: 'Mediación'}
   ];
   arbitraje: Arbitraje[] = [
-    {value: 'unico', viewValue: 'Árbitro Único'},
-    {value: 'tres', viewValue: 'Tres Árbitros'}
+    { value: "unico", viewValue: "Árbitro Único" },
+    { value: "tres", viewValue: "Tres Árbitros" },
   ];
 
   cuantia: Cuantia[] = [
-    {value: '0', viewValue: 'Cuantía determinada'},
-    {value: '1', viewValue: 'Cuantía indeterminada'}
+    { value: "0", viewValue: "Cuantía determinada" },
+    { value: "1", viewValue: "Cuantía indeterminada" },
   ];
 
   socio: Socio[] = [
-    {value: '0', viewValue: 'Soy socio'},
-    {value: '1', viewValue: 'No soy socio'}
+    { value: "0", viewValue: "Soy socio" },
+    { value: "1", viewValue: "No soy socio" },
   ];
   
   /***** test Jean Carlos */
@@ -67,35 +72,145 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = {};
-    // this.getPosts();
     this.getPosts();
   }
 
+  // async clickme() {
+  //   if (this.selectedValue == "0") {
+  //     console.log("entra a arbitraje");
+  //     this.calcularService
+  //       .calcularArbitraje(
+  //         this.cuantiaValue,
+  //         this.selectedValue,
+  //         this.selectedValueArb,
+  //         this.selectedCuantia,
+  //         this.selectedSocio
+  //       )
+  //       .subscribe((arbitro: arbitro) => {
+  //         var excedente: number;
+  //         var fbasica: number;
+  //         var rango_inicial: number;
+  //         var calculo1: number;
+  //         var calculo_valor_arb: number;
+  //         var iva: number;
+  //         var descuento: number;
+  //         var subtotal: number;
+
+  //         excedente = arbitro.arb_unico_exc;
+  //         fbasica = arbitro.arb_unico_fbasica;
+  //         rango_inicial = arbitro.arb_unico_rango;
+
+  //         if (this.selectedValueArb == "unico") {
+  //           if (this.selectedSocio == "1") {
+  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+  //             calculo_valor_arb = calculo1 + fbasica;
+  //             iva = calculo_valor_arb * 0.12;
+  //             this.total = iva + calculo_valor_arb;
+  //           } else {
+  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+  //             calculo_valor_arb = calculo1 + fbasica;
+  //             descuento = calculo_valor_arb * 0.1;
+  //             subtotal = calculo_valor_arb - descuento;
+  //             iva = subtotal * 0.12;
+  //             this.total = iva + subtotal;
+  //           }
+  //         } else {
+  //           if (this.selectedSocio == "1") {
+  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+  //             calculo_valor_arb = (calculo1 + fbasica) * 1.05;
+  //             iva = calculo_valor_arb * 0.12;
+  //             this.total = iva + calculo_valor_arb;
+  //           } else {
+  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+  //             calculo_valor_arb = (calculo1 + fbasica) * 1.05;
+  //             descuento = calculo_valor_arb * 0.1;
+  //             subtotal = calculo_valor_arb - descuento;
+  //             iva = subtotal * 0.12;
+  //             this.total = iva + subtotal;
+  //           }
+  //         }
+  //         console.log(this.total);
+  //       });
+  //   } else {
+  //     console.log("Entra a mediacion");
+
+  //     this.calcularService
+  //       .calcularMediacion(
+  //         this.cuantiaValue,
+  //         this.selectedValue,
+  //         this.selectedValueArb,
+  //         this.selectedCuantia,
+  //         this.selectedSocio
+  //       )
+  //       .subscribe((mediacion: Mediacion) => {
+  //         if (this.selectedSocio == "1") {
+
+  //           console.log("NO SOY SOCIO");
+  //           var excedente: number;
+  //           var fbasica: number;
+  //           var rango_inicial: number;
+  //           var calculo1: number;
+  //           var calculo_valor_med: number;
+
+  //           var iva: number;
+  //           var descuento: number;
+  //           var subtotal: number;
+  //           var valor_hora: number = 50;
+
+  //           excedente = mediacion.med_exc;
+  //           fbasica = mediacion.med_fbasica;
+  //           rango_inicial = mediacion.med_rango;
+
+  //           calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
+  //           calculo_valor_med = (calculo1 + fbasica) * valor_hora;
+  //           iva = calculo_valor_med * 0.12;
+  //           this.total = calculo_valor_med + iva;
+  //         } else if(this.selectedSocio == "0"){
+
+  //           console.log("NO SOY SOCIO");
+  //           var excedente: number;
+  //           var fbasica: number;
+  //           var rango_inicial: number;
+  //           var calculo1: number;
+  //           var calculo_valor_med: number;
+
+  //           var iva: number;
+  //           var descuento: number;
+  //           var subtotal: number;
+  //           var valor_hora: number = 50;
+
+  //           excedente = mediacion.med_exc;
+  //           fbasica = mediacion.med_fbasica;
+  //           rango_inicial = mediacion.med_rango;
 
 
 
-  async clickme() {
-  this.calcularService.calcular( this.cuantiaValue,
-      this.selectedValue,
-      this.selectedValueArb,
-      this.selectedCuantia,
-      this.selectedSocio,
-    ).subscribe((value)=>{
-      console.log(value)
 
-    })
-    
- 
-  }
+
+
+  //           console.log("SOY SOCIO");
+            
+  //           calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
+  //           calculo_valor_med = (calculo1 + fbasica) * valor_hora;
+  //           descuento = calculo_valor_med*0.1
+  //           subtotal = calculo_valor_med - descuento;
+  //           iva = subtotal * 0.12;
+  //           this.total = iva + subtotal;
+  //           console.log(this.total);
+            
+  //         }
+  //       });
+  //   }
+  // }
+
   /**
    * *** Funcion para validar e iniciar sesion ***
-   * @param user 
-   * @param valid 
+   * @param user
+   * @param valid
    */
   public onLogin(user: Users, valid: boolean) {
     if (valid) {
       // this.authService.login(this.user.user_email, this.user.user_password);
-    
       // var soap = require('soap');
       // var url = 'http://apl.vazseguros.com:8080/ServicioWeb/wsmovil?wsdl';
       // var args = {name: 'value'};
@@ -104,53 +219,7 @@ export class IndexComponent implements OnInit {
       // }).then((result) => {
       //   console.log(result);
       // });
-
     }
-  }
-
-  soapCall() {
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('POST', 'http://apl.vazseguros.com:8080/ServicioWeb/wsmovil?wsdl', true);
-    const id_number = '0190088669001';
-
-
-
-    // The following variable contains the xml SOAP request.
-    const sr =
-    `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:miws="http://miws/">
-      <soapenv:Header/>
-      <soapenv:Body>
-         <miws:produccion>
-            <!--Optional:-->
-            <identificacion>` +
-    id_number +
-    `</identificacion>
-         </miws:produccion>
-      </soapenv:Body>
-   </soapenv:Envelope>`;
-
-
-    xmlhttp.onreadystatechange =  () => {
-        if (xmlhttp.readyState == 4) {
-            if (xmlhttp.status == 200) {
-                const xml = xmlhttp.responseXML;
-                // Here I'm getting the value contained by the <return> node.
-                const response_number = xml.getElementsByTagName('return')[0].childNodes[0].nodeValue;
-                // Print result square number.
-
-                var array = JSON.parse(response_number)
-                array.forEach(element => {
-                  console.log(element.ramo)
-                });
-                console.log(response_number);
-            }
-        }
-    }
-    // Send the POST request.
-    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
-    xmlhttp.responseType = 'document';
-    console.log
-    return xmlhttp.send(sr);
   }
 
   public getPosts() {
@@ -160,16 +229,6 @@ export class IndexComponent implements OnInit {
     })
   }
  
-  public post3()
-  {
-    this.BlogService.getMoreTree().subscribe(posts =>{
-        posts.forEach(post => {
-          this.arrayPost.push(post);
-        });
-      console.log(this.arrayPost);
-    })
-  }
-
   public viewPost(post: Post) {
     this.route.navigate(['post/'+post.post_id])
   }
@@ -197,15 +256,15 @@ export class IndexComponent implements OnInit {
      });
   }
 
-  public get1() {
+  // public get1() {
     
-  }
+  // }
 
-  public get2() {
+  // public get2() {
     
-  }
+  // }
 
-  public put() {
+  // public put() {
     
-  }
+  // }
 }

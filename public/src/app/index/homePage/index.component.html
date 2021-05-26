@@ -390,7 +390,13 @@
         <p> Servicio Seleccionado arbitraje: {{selectedValue}}</p>
       </form>
 
-      <form *ngIf="this.selectedValue">
+
+      <div class="form-group" *ngIf="this.selectedValue == '1'">
+        <p><input type="text" id="cuantiaValue" name="cuantiaValue" [(ngModel)]="cuantiaValue"></p>
+        <h1> {{cuantiaValue | currency}}</h1>
+      </div>
+
+      <div class="form-group" *ngIf="this.selectedValue == '0' ">
         <mat-form-field appearance="fill">
           <mat-select [(ngModel)]="selectedValueArb" name="arbitraje">
             <mat-option *ngFor="let arbitraje of arbitraje" [value]="arbitraje.value">
@@ -399,10 +405,10 @@
           </mat-select>
         </mat-form-field>
         <p> Servicio Seleccionado: {{selectedValueArb}} </p>
-      </form>
+      </div>
 
 
-      <form *ngIf="this.selectedValueArb">
+      <div class="form-group" *ngIf="this.selectedValueArb">
         <mat-form-field appearance="fill">
           <mat-select [(ngModel)]="selectedCuantia" name="cuantia">
             <mat-option *ngFor="let cuantia of cuantia" [value]="cuantia.value">
@@ -411,26 +417,18 @@
           </mat-select>
         </mat-form-field>
         <p> Servicio Seleccionado: {{selectedCuantia}} </p>
-      </form>
+      </div>
 
 
 
-      <form *ngIf="this.selectedCuantia== '0'">
+      <div class="form-group" *ngIf="this.selectedCuantia== '0'">
         <p><input type="text" id="cuantiaValue" name="cuantiaValue" [(ngModel)]="cuantiaValue"></p>
-        <h1> {{cuantiaValue}}</h1>
-      </form>
+        <h1> {{cuantiaValue | currency}}</h1>
+      </div>
 
+ 
 
-
-
-
-
-
-
-
-
-
-      <form *ngIf="this.selectedCuantia">
+      <div class="form-group" *ngIf="this.selectedCuantia || this.selectedValue == '1'">
         <mat-form-field appearance="fill">
           <mat-select [(ngModel)]="selectedSocio" name="socio">
             <mat-option *ngFor="let socio of socio" [value]="socio.value">
@@ -439,11 +437,11 @@
           </mat-select>
         </mat-form-field>
         <p> Servicio Seleccionado: {{selectedSocio}} </p>
-      </form>
+      </div>
 
       <button *ngIf="this.selectedSocio" type="button" (click)="clickme()">Clickme</button>
 
-
+      <p>{{total |currency}}</p>
 
 
 
