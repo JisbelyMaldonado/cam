@@ -743,7 +743,7 @@
           </div>
           <div>
             <div class="text-left">
-              <h4 class="title">{{post.post_title}}</h4>
+              <h4 class="title">{{post.post_title |slice:0:80}} ...</h4>
             </div>
             <p class="text">{{post.post_description |slice:0:116}} ...</p>
           </div>
