@@ -1,4 +1,3 @@
-
 <app-navbar [isHome]="isHome"></app-navbar>
 
 
@@ -378,7 +377,7 @@
       <div class="col-12 col-sm-12 text-center">
         <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
           src="../../../assets/img/Separador1.svg">
-  
+
         <span class="title-services">Cotizador</span>
         <div class="col-12 col-sm-12">
           <div class="rectangle-quote"></div>
@@ -386,17 +385,17 @@
       </div>
     </div>
     <div class="row m-0">
-      <div class="col-11 col-sm-10 col-md-6 col-lg-6">
-        <div class="row display-row-center">
-          <div class="col-lg-8">
+      <div class="col-12 col-sm-10 col-md-6 col-lg-6 display-col-center">
+        <div class="row m-0 display-row-center">
+          <div class="col-11 col-sm-11 col-md-10 col-lg-10 ">
             <div class="row m-0">
               <img class="icon-quote" src="../../../assets/img/Cotizador.svg">
             </div>
-            <div class="row m-0 pt-2">
+            <div class="row m-0 pt-4">
               <h1 class="title-quote">Lorem ipsum dolor sit
                 amet, conse</h1>
             </div>
-            <div class="row m-0 pt-2">
+            <div class="row m-0 pt-4">
               <span class="text-quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                 sed diam nonummy nibh euismod tincidunt ut laoreet
                 dolore magna aliquam erat volutpat. Ut wisi enim ad minim
@@ -406,72 +405,79 @@
           </div>
         </div>
       </div>
-      <div class="col-11 col-sm-10 col-md-6 col-lg-6">
+      <div class="col-12 col-sm-10 col-md-6 col-lg-6">
         <div class="row m-0 display-row-center">
-          <div class="col-11 col-sm-11 col-md-10 col-lg-10">
+          <div class="col-12 col-sm-11 col-md-10 col-lg-10">
             <form class="shake" role="form" method="post" id="quoteForm" name="quote-form" data-toggle="validator">
               <!-- Servicio -->
               <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
                 <label class="control-label" for="service">Servicio</label>
-                <select class="form-control bg-white cursor-pointer" id="service">
-                  <option>Arbitraje</option>
-                  <option>Mediación</option>
+                <select (change)="selectService($event)" class="custom-select form-control bg-white cursor-pointer"
+                  id="service">
+                  <!-- <option selected>Seleccione...</option> -->
+                  <option *ngFor="let service of servicio" [value]="service.value">{{service.viewValue}}</option>
                 </select>
               </div>
               <!-- Cantidad -->
-              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
+              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating"
+                *ngIf="selectServiceValue === '0'">
                 <label class="control-label" for="exampleFormControlSelect1">Cantidad</label>
-                <select class="form-control bg-white cursor-pointer" id="exampleFormControlSelect1">
-                  <option>1 arbitro</option>
-                  <option>3 arbitros</option>
+                <select (change)="selectArbitration($event)" class="form-control bg-white cursor-pointer" id="exampleFormControlSelect1">
+                  <option *ngFor="let arbitration of  arbitraje" [value]="arbitration.value">{{arbitration.viewValue}}</option>
                 </select>
               </div>
               <!-- CUANTÍAAA SELECT-->
-             <div class="row m-0 pt-2">
-               <div class="col-12">
-                <input type="checkbox" class="form-check-input" id="quote1">
-                <label class="form-check-label control-label" for="quote1">Cuantía determinada</label>
-               </div>
-               <div class="col-12">
-                <input type="checkbox" class="form-check-input" id="quote2">
-                <label class="form-check-label control-label" for="quote2">Cuantía indeterminada</label>
-               </div>
+              <div class="row m-0 pt-2">
+                <div class="col-12">
+                  <input  type="radio" class="form-check-input" id="amount1" name="amount"
+                    (change)="selectedCuantia = '0'" checked>
+                  <label class="form-check-label control-label " for="amount1">Cuantía determinada</label>
+                </div>
+                <div class="col-12">
+                  <input  [disabled]="selectServiceValue === '1'" (change)="selectedCuantia = '1'" type="radio" class="form-check-input" id="amount2" name="amount">
+                  <label class="form-check-label control-label" for="amount2">Cuantía indeterminada</label>
+                </div>
+              </div>
 
-             </div>
-             <!-- Cantidad -->
-             <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
-              <label class="control-label" for="quote">Cuantía</label>
-              <input class="form-control bg-white" id="quote" type="quote" name="quote" required placeholder="Ingrese el valor de la cuantía">
-              <div class="help-block with-errors"></div>
+            
+              <!-- Cantidad -->
+              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating" *ngIf="selectedCuantia === '0'">
+                <label class="control-label" for="amount">Cuantía</label>
+                <input [(ngModel)]="cuantiaValue" class="form-control bg-white" id="amount" type="number" name="amount" required
+                  placeholder="Ingrese el valor de la cuantía">
+                <div class="help-block with-errors"></div>
               </div>
-                 <!-- SOCIO -->
-             <div class="row m-0 pt-2">
-              <div class="col-6 col-sm-6 col-md-5 col-lg-5">
-               <input type="checkbox" class="form-check-input" id="quote1">
-               <label class="form-check-label control-label" for="quote1">Soy socio</label>
-              </div>
-              <div class="col-6 col-sm-6 col-md-5 col-lg-5">
-               <input type="checkbox" class="form-check-input" id="quote2">
-               <label class="form-check-label control-label" for="quote2">No soy socio</label>
-              </div>
+              <!-- SOCIO -->
+              <div class="row m-0 pt-2">
+                <div class="col-6 col-sm-6 col-md-5 col-lg-5">
+                  <input (change)="selectedSocio = '0'" type="radio" class="form-check-input" id="partner1" name="partner" checked>
+                  <label class="form-check-label control-label" for="partner1">Soy socio</label>
+                </div>
+                <div class="col-6 col-sm-6 col-md-5 col-lg-5">
+                  <input (change)="selectedSocio = '1'" type="radio" class="form-check-input" id="partner2" name="partner">
+                  <label class="form-check-label control-label" for="partner2">No soy socio</label>
+                </div>
               </div>
               <!-- Form Submit -->
               <div class="form-submit mt-3">
                 <div class="col-11 col-sm-11 col-md-10 col-lg-9 text-left p-0">
-                  <button class="" type="submit" class="btn btn-light w-100 p-2 max-height-btn">Calcular</button>
+                  <button (click)="calculate()" class="" type="submit" class="btn btn-light w-100 p-2 max-height-btn">Calcular</button>
                 </div>
               </div>
             </form>
+            <div class="row m-0">
+              <div class="col-11 col-sm-11 col-md-10 col-lg-10  display-col-center">
+                <h1 class="text-value-total-calculator">{{total | currency}}</h1>
+              </div>
+            </div>
           </div>
+         
         </div>
-
-
-
       </div>
     </div>
   </div>
 
-  
+
 
 
   <!-- <div class="row w-100 display-row-center mx-auto">
@@ -801,28 +807,28 @@
 
     <div class="row p-0 m-0 row-content-blog">
       <!-- <ng-container > -->
-        <div class=" col-11 col-sm-6 col-md-4 col-lg-3 " *ngFor="let post of arrayPost">
-          <div class="mr-1 mt-2">
-            <div class=" card-post ">
-              <div class="img-card-border" style="background-image: url({{post.post_img}});">
-                <!-- <img class="img-card-img" src="{{post.post_img}}" alt="{{post.post_title}}"> -->
+      <div class=" col-11 col-sm-6 col-md-4 col-lg-3 " *ngFor="let post of arrayPost">
+        <div class="mr-1 mt-2">
+          <div class=" card-post ">
+            <div class="img-card-border" style="background-image: url({{post.post_img}});">
+              <!-- <img class="img-card-img" src="{{post.post_img}}" alt="{{post.post_title}}"> -->
+            </div>
+            <div>
+              <div class="text-left div-content-text-title">
+                <h4 class="title">{{post.post_title |slice:0:60}} </h4>
               </div>
-              <div>
-                <div class="text-left div-content-text-title">
-                  <h4 class="title">{{post.post_title |slice:0:60}} </h4>
-                </div>
-                <!-- <p class="text">{{post.post_description |slice:0:116}} ...</p> -->
-                <div class="row m-0 ">
-                  <div [innerHTML]="post.post_description | slice:0:100"></div>
-                </div>
-              
+              <!-- <p class="text">{{post.post_description |slice:0:116}} ...</p> -->
+              <div class="row m-0 ">
+                <div [innerHTML]="post.post_description | slice:0:100"></div>
               </div>
 
             </div>
-            <div class="row m-0 ">
-                <button (click)="viewPost(post)" class="btn btn-view-more-post">Ver más</button>
-            </div>
+
           </div>
+          <div class="row m-0 ">
+            <button (click)="viewPost(post)" class="btn btn-view-more-post">Ver más</button>
+          </div>
+        </div>
       </div>
       <!-- </ng-container>  -->
     </div>
@@ -844,7 +850,7 @@
       </div>
     </div> -->
     <div class="row m-0 display-row-center">
-            <button class="btn btn-ligth-blog mt-5" [routerLink]="'blog'">Ir al Blog</button>
+      <button class="btn btn-ligth-blog mt-5" [routerLink]="'blog'">Ir al Blog</button>
     </div>
   </div>
 

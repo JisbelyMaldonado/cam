@@ -252,8 +252,8 @@
   color: white;
   background-color: #c2c258;
   border-radius: 30px;
-  font-family: "HindMadurai-Bold";
-  font-size: calc(0.625em + 0.625vw);
+  font-family: "HindMadurai-Regular";
+  font-size: 18px;
   margin-top: 10px;
   text-transform: none;
 }
@@ -726,7 +726,7 @@
 }
 
 .text-quote {
-  font-size: 14px;
+  font-size: 16px;
   font-family: "HindMadurai-Regular";
   color: #00504c;
   text-align: justify;
@@ -737,6 +737,46 @@
 }
 .max-height-btn {
   max-height: 35px;
+}
+input[type=radio]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
+  padding: 10px;
+  border-radius: 50% !important;
+}
+input[type=radio]:not(:checked){
+	background: #289661;
+}
+input[type=radio]:before{
+	content: '';
+	display: block;
+	height: 18px;
+	width: 18px;
+	border-radius: 50% !important;
+	position: absolute;
+	z-index: 1;
+	top: 4px;
+	left: 4px;
+	background:#2AC176;
+	transition: all 0.25s ease; /* Todas las propiedades | tiempo | tipo movimiento */
+	transform: scale(0) /* Lo reducimos a 0*/ ;
+	opacity: 0; /* Lo ocultamos*/
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.text-value-total-calculator {
+  color: black;
+  font-family: 'Exo-Bold';
+  font-size: 32px;
 }
 @media (max-width: 576px) {
   .rectangle-quienes-somos {

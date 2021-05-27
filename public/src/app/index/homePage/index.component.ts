@@ -24,11 +24,11 @@ import { Mediacion } from "app/interfaces/mediacion";
 
 export class IndexComponent implements OnInit {
   public username: string;
-  public cuantiaValue: number = 0;
+  public cuantiaValue: number = null;
   public selectedValue: string = '';
-  public selectedValueArb: string  = '';
-  public selectedCuantia: string  = '';
-  public selectedSocio: string  = '';
+  public selectedValueArb: string  = 'unico';
+  public selectedCuantia: string  = '0';
+  public selectedSocio: string  = '0';
   public total: number = 0;
   public user: Users;
   public arbitro: arbitro;
@@ -64,6 +64,8 @@ export class IndexComponent implements OnInit {
       "Authorization": "Bearer d&q5PKGl8qlX4Z#@",
     }),
   };
+
+  public selectServiceValue : string  = '0';
   constructor( private BlogService: BlogService, private db: AngularFirestore,
     private calcularService: CalculatorService,
     private route: Router,
@@ -75,134 +77,175 @@ export class IndexComponent implements OnInit {
     this.getPosts();
   }
 
-  // async clickme() {
-  //   if (this.selectedValue == "0") {
-  //     console.log("entra a arbitraje");
-  //     this.calcularService
-  //       .calcularArbitraje(
-  //         this.cuantiaValue,
-  //         this.selectedValue,
-  //         this.selectedValueArb,
-  //         this.selectedCuantia,
-  //         this.selectedSocio
-  //       )
-  //       .subscribe((arbitro: arbitro) => {
-  //         var excedente: number;
-  //         var fbasica: number;
-  //         var rango_inicial: number;
-  //         var calculo1: number;
-  //         var calculo_valor_arb: number;
-  //         var iva: number;
-  //         var descuento: number;
-  //         var subtotal: number;
+   public async calculate() {
+     console.log( this.cuantiaValue,
+      this.selectServiceValue,
+      this.selectedValueArb,
+      this.selectedCuantia,
+      this.selectedSocio);
+      
+      if (this.selectServiceValue === '0' && this.selectedCuantia === '1') {
+        this.getResultIndeterminate()
+      } else {
+        if (this.selectServiceValue == "0") {
+          console.log("entra a arbitraje");
+          this.calcularService
+            .calcularArbitraje(
+              this.cuantiaValue,
+              this.selectServiceValue,
+              this.selectedValueArb,
+              this.selectedCuantia,
+              this.selectedSocio
+            ).pipe(take(1)).subscribe((arbitro: arbitro) => {
+              var excedente: number;
+              var fbasica: number;
+              var rango_inicial: number;
+              var calculo1: number;
+              var calculo_valor_arb: number;
+              var iva: number;
+              var descuento: number;
+              var subtotal: number;
+  
+              excedente = arbitro.arb_unico_exc;
+              fbasica = arbitro.arb_unico_fbasica;
+              rango_inicial = arbitro.arb_unico_rango;
+  
+              if (this.selectedValueArb == "unico") {
+                if (this.selectedSocio == "1") {
+                  calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+                  calculo_valor_arb = calculo1 + fbasica;
+                  iva = calculo_valor_arb * 0.12;
+                  this.total = iva + calculo_valor_arb;
+                } else {
+                  calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+                  calculo_valor_arb = calculo1 + fbasica;
+                  descuento = calculo_valor_arb * 0.1;
+                  subtotal = calculo_valor_arb - descuento;
+                  iva = subtotal * 0.12;
+                  this.total = iva + subtotal;
+                }
+              } else {
+                if (this.selectedSocio == "1") {
+                  calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+                  calculo_valor_arb = (calculo1 + fbasica) * 1.05;
+                  iva = calculo_valor_arb * 0.12;
+                  this.total = iva + calculo_valor_arb;
+                } else {
+                  calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
+                  calculo_valor_arb = (calculo1 + fbasica) * 1.05;
+                  descuento = calculo_valor_arb * 0.1;
+                  subtotal = calculo_valor_arb - descuento;
+                  iva = subtotal * 0.12;
+                  this.total = iva + subtotal;
+                }
+              }
+              console.log(this.total);
+            });
+        } else {
+          console.log("Entra a mediacion");
+  
+          this.calcularService
+            .calcularMediacion(
+              this.cuantiaValue,
+              this.selectServiceValue,
+              this.selectedValueArb,
+              this.selectedCuantia,
+              this.selectedSocio
+            ).pipe(take(1)).subscribe((mediacion: Mediacion) => {
+              console.log(mediacion);
+              
+              if (this.selectedSocio == "1") {
+  
+                console.log("NO SOY SOCIO");
+                var excedente: number;
+                var fbasica: number;
+                var rango_inicial: number;
+                var calculo1: number;
+                var calculo_valor_med: number;
+  
+                var iva: number;
+                var descuento: number;
+                var subtotal: number;
+                var valor_hora: number = 50;
+  
+                excedente = mediacion.med_exc;
+                fbasica = mediacion.med_fbasica;
+                rango_inicial = mediacion.med_rango;
+  
+                calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
+                console.log(calculo1);
+                
+                calculo_valor_med = (calculo1 + fbasica) * valor_hora;
+                iva = calculo_valor_med * 0.12;
+                this.total = calculo_valor_med + iva;
+              } else if(this.selectedSocio == "0"){
+  
+                console.log("NO SOY SOCIO");
+                var excedente: number;
+                var fbasica: number;
+                var rango_inicial: number;
+                var calculo1: number;
+                var calculo_valor_med: number;
+  
+                var iva: number;
+                var descuento: number;
+                var subtotal: number;
+                var valor_hora: number = 50;
+  
+                excedente = mediacion.med_exc;
+                fbasica = mediacion.med_fbasica;
+                rango_inicial = mediacion.med_rango;
+                console.log("SOY SOCIO");
+              
+                calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
+                calculo_valor_med = (calculo1 + fbasica) * valor_hora;
+                descuento = calculo_valor_med*0.1
+                subtotal = calculo_valor_med - descuento;
+                iva = subtotal * 0.12;
+                this.total = iva + subtotal;
+                console.log(this.total);
+              
+              }
+            });
+        }
+      }     
+   }
 
-  //         excedente = arbitro.arb_unico_exc;
-  //         fbasica = arbitro.arb_unico_fbasica;
-  //         rango_inicial = arbitro.arb_unico_rango;
+   public getResultIndeterminate() {
+    console.log(this.cuantiaValue,
+      this.selectServiceValue,
+      this.selectedValueArb,
+      this.selectedCuantia,
+      this.selectedSocio);
+      if (this.selectedValueArb === 'unico') {
+        if (this.selectedSocio === '0') {
+          this.total = 1120
+        } else {
+          this.total = 1008
+        }
+      } else {
+        if (this.selectedSocio === '0') {
+          this.total = 1176
+        } else {
+          this.total = 1058.40
+        }
+      }
 
-  //         if (this.selectedValueArb == "unico") {
-  //           if (this.selectedSocio == "1") {
-  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
-  //             calculo_valor_arb = calculo1 + fbasica;
-  //             iva = calculo_valor_arb * 0.12;
-  //             this.total = iva + calculo_valor_arb;
-  //           } else {
-  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
-  //             calculo_valor_arb = calculo1 + fbasica;
-  //             descuento = calculo_valor_arb * 0.1;
-  //             subtotal = calculo_valor_arb - descuento;
-  //             iva = subtotal * 0.12;
-  //             this.total = iva + subtotal;
-  //           }
-  //         } else {
-  //           if (this.selectedSocio == "1") {
-  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
-  //             calculo_valor_arb = (calculo1 + fbasica) * 1.05;
-  //             iva = calculo_valor_arb * 0.12;
-  //             this.total = iva + calculo_valor_arb;
-  //           } else {
-  //             calculo1 = (this.cuantiaValue - rango_inicial) * excedente;
-  //             calculo_valor_arb = (calculo1 + fbasica) * 1.05;
-  //             descuento = calculo_valor_arb * 0.1;
-  //             subtotal = calculo_valor_arb - descuento;
-  //             iva = subtotal * 0.12;
-  //             this.total = iva + subtotal;
-  //           }
-  //         }
-  //         console.log(this.total);
-  //       });
-  //   } else {
-  //     console.log("Entra a mediacion");
+    
+   }
 
-  //     this.calcularService
-  //       .calcularMediacion(
-  //         this.cuantiaValue,
-  //         this.selectedValue,
-  //         this.selectedValueArb,
-  //         this.selectedCuantia,
-  //         this.selectedSocio
-  //       )
-  //       .subscribe((mediacion: Mediacion) => {
-  //         if (this.selectedSocio == "1") {
+   public selectService(e) {
+    console.log(e.target.value);
+    this.selectServiceValue = e.target.value;
+    if (e.target.value == '1') {
+       this.selectedCuantia = '0';
+    }
+    
+   }
 
-  //           console.log("NO SOY SOCIO");
-  //           var excedente: number;
-  //           var fbasica: number;
-  //           var rango_inicial: number;
-  //           var calculo1: number;
-  //           var calculo_valor_med: number;
-
-  //           var iva: number;
-  //           var descuento: number;
-  //           var subtotal: number;
-  //           var valor_hora: number = 50;
-
-  //           excedente = mediacion.med_exc;
-  //           fbasica = mediacion.med_fbasica;
-  //           rango_inicial = mediacion.med_rango;
-
-  //           calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
-  //           calculo_valor_med = (calculo1 + fbasica) * valor_hora;
-  //           iva = calculo_valor_med * 0.12;
-  //           this.total = calculo_valor_med + iva;
-  //         } else if(this.selectedSocio == "0"){
-
-  //           console.log("NO SOY SOCIO");
-  //           var excedente: number;
-  //           var fbasica: number;
-  //           var rango_inicial: number;
-  //           var calculo1: number;
-  //           var calculo_valor_med: number;
-
-  //           var iva: number;
-  //           var descuento: number;
-  //           var subtotal: number;
-  //           var valor_hora: number = 50;
-
-  //           excedente = mediacion.med_exc;
-  //           fbasica = mediacion.med_fbasica;
-  //           rango_inicial = mediacion.med_rango;
-
-
-
-
-
-
-  //           console.log("SOY SOCIO");
-            
-  //           calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
-  //           calculo_valor_med = (calculo1 + fbasica) * valor_hora;
-  //           descuento = calculo_valor_med*0.1
-  //           subtotal = calculo_valor_med - descuento;
-  //           iva = subtotal * 0.12;
-  //           this.total = iva + subtotal;
-  //           console.log(this.total);
-            
-  //         }
-  //       });
-  //   }
-  // }
-
+   public selectArbitration(e) {
+    this.selectedValueArb = e.target.value;
+   }
   /**
    * *** Funcion para validar e iniciar sesion ***
    * @param user
