@@ -32,12 +32,12 @@ export class AuthenticationService {
         if (await user_info) {
           var infoUser = {
             email: (await user_info)["user_email"],
-            type_user: (await user_info)["user_type"],
+            type_user: (await user_info)["user_type_account_int"],
           };
         }
         localStorage.setItem("infoUser", JSON.stringify(infoUser));
         this.infoUser = JSON.parse(localStorage.getItem("infoUser"));
-        if (this.infoUser.type_user == 'admin') {
+        if (this.infoUser.type_user == 1) {
           $('#myLargeModalLabel').modal('hide')
   
           this.router.navigate(['/adminBlog'])

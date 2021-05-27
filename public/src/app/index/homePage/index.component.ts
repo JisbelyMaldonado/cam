@@ -14,7 +14,11 @@ import { CalculatorService } from 'app/services/calculator.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Mediacion } from "app/interfaces/mediacion";
-
+import { Message } from 'app/interfaces/message';
+import { NgForm } from '@angular/forms';
+import { DateService } from 'app/services/date/date.service';
+import { MessageService } from 'app/services/message/message.service';
+declare var $: any;
 
 @Component({
   selector: "app-index",
@@ -33,7 +37,7 @@ export class IndexComponent implements OnInit {
   public user: Users;
   public arbitro: arbitro;
   public array: arbitro[];
-
+  public message : Message;
   public show = false;
   public arrayPost: Array<Post>
   public servicio: Servicio[] = [
@@ -69,21 +73,18 @@ export class IndexComponent implements OnInit {
   constructor( private BlogService: BlogService, private db: AngularFirestore,
     private calcularService: CalculatorService,
     private route: Router,
-    private http : HttpClient)
+    private http : HttpClient,
+    private dateService: DateService,
+    private messageService: MessageService)
   {}
 
   ngOnInit(): void {
     this.user = {};
+    this.message = {}
     this.getPosts();
   }
 
    public async calculate() {
-     console.log( this.cuantiaValue,
-      this.selectServiceValue,
-      this.selectedValueArb,
-      this.selectedCuantia,
-      this.selectedSocio);
-      
       if (this.selectServiceValue === '0' && this.selectedCuantia === '1') {
         this.getResultIndeterminate()
       } else {
@@ -148,9 +149,7 @@ export class IndexComponent implements OnInit {
             .calcularMediacion(
               this.cuantiaValue,
               this.selectServiceValue,
-              this.selectedValueArb,
-              this.selectedCuantia,
-              this.selectedSocio
+
             ).pipe(take(1)).subscribe((mediacion: Mediacion) => {
               console.log(mediacion);
               
@@ -171,9 +170,9 @@ export class IndexComponent implements OnInit {
                 excedente = mediacion.med_exc;
                 fbasica = mediacion.med_fbasica;
                 rango_inicial = mediacion.med_rango;
-  
+                console.log('excedente',excedente , 'fbasica', fbasica , 'rango_inicial', rango_inicial);
+
                 calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
-                console.log(calculo1);
                 
                 calculo_valor_med = (calculo1 + fbasica) * valor_hora;
                 iva = calculo_valor_med * 0.12;
@@ -299,15 +298,30 @@ export class IndexComponent implements OnInit {
      });
   }
 
-  // public get1() {
-    
-  // }
+  public sendMessage(message: Message, validate: boolean, form: NgForm) {
+    if (validate) {
+      message.message_date = this.dateService.getDateCurrent();
+      message.message_id = new Date().getTime().toString();
+      message.message_time = this.dateService.getTimeCurrent();
+      this.messageService.saveMessage(message).then(() => {
+        this.showNotification('bottom', 'center', 'Su mensaje ha sido enviado correctamente!', 'primary');
+        form.resetForm()
 
-  // public get2() {
-    
-  // }
+      })
+    }
+  }
 
-  // public put() {
-    
-  // }
+  public showNotification(from, align, msg, type) {
+    $.notify({
+      message: "<b>" + msg + "</b> "
+    }, {
+      type: type,
+      class: 'notify',
+      timer: 1000,
+      placement: {
+        from: from,
+        align: align
+      }
+    });
+  }
 }

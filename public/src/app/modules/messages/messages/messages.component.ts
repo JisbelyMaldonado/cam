@@ -37,9 +37,9 @@ export class MessagesComponent implements OnInit {
   public getMessages() {
     this.messageService.getMessages().pipe(take(1)).subscribe((messages) => {
       this.array_message = messages;
-      this.dataSource = new MatTableDataSource<Message>(messages);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+       this.dataSource = new MatTableDataSource<Message>(messages);
+       this.dataSource.paginator = this.paginator;
+       this.dataSource.sort = this.sort;
     })
   }
 

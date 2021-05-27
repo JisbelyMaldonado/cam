@@ -1,0 +1,96 @@
+.img-input {
+    width: 1rem;
+}
+
+.no-margin-row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.display-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.img-input {
+    width: 1rem;
+}
+
+.no-margin-row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.display-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.btn-login {
+    background-color: #00504c;
+}
+
+.form-control:invalid {
+    background-image: linear-gradient(to top, #00504c 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+
+
+.col-color {
+    background-color: gray;
+}
+
+.row-content-login {
+    background-color: white;
+}
+
+.display-row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.display-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.form-login {
+    width: 90%;
+}
+.img-cma {
+    width: 200px;
+}
+
+.form-control {
+    color: rgb(94, 94, 94);
+}
+
+.modal-content {
+    min-height: 50vh;
+}

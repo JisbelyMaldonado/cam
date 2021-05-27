@@ -20,22 +20,20 @@
   background-color:  white !important; 
   color:  #026568f5!important ;
 }
-/* .bg-color-solid a{
-  color: white !important;
-} */
+
 .bg-transparent {
   background-color: transparent ;
   min-height: 60px;
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
-  color: white !important ;
+  color: white  ;
 }
 
 .bg-transparent a {
 
-  color: white !important ;
-}
+  color: white  ;
+} 
 
 .bg-nav-two {
   background-color: transparent !important;
@@ -45,6 +43,8 @@
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
+  font-family: "HindMadurai-Regular";
+  font-weight: bold;
 }
 
 .bg-color-two {
@@ -55,6 +55,9 @@
   -moz-transition: all 0.5s 0s ease;
   -o-transition: all 0.5s 0s ease;
   transition: all 0.5s 0s ease;
+  font-family: "HindMadurai-Regular";
+  font-weight: bold;
+
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
@@ -87,12 +90,14 @@
   font-weight: none !important;
   border-bottom: solid 4px transparent !important;
   font-size: 15px;
+ 
+
+}
+.navbar .collapse .navbar-nav .nav-item .nav-link {
+  text-transform: none;
   font-family: "HindMadurai-Regular";
   text-transform: none;
-}
-
-.nav-item {
-  /* min-width: 100px; */
+  font-size: 14px;
 }
 
 .display-row-center {
@@ -149,12 +154,16 @@
   border-radius: 0px;
   padding: 0.625rem 0;
   margin-bottom: 20px;
-  padding-top: 0px;
+  padding-top: 10px;
   background-color: none;
 }
 
 .navbar {
   background-color: none;
+}
+
+.btn-primary {
+  text-transform: none !important;
 }
 @media (max-width: 576px) {
   .logo-navbar {

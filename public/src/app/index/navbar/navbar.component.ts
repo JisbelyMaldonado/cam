@@ -14,12 +14,13 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.isViewMobile()
-    this.validateStyle()
+    this.validateStyle();
+    this.scroll()
+    console.log(this.isHome);
+    
   }
 
   public scroll() {
-    // $(window).on('scroll', function () {
-    // });
     $(window).scroll(function (event) {
       var element = document.getElementById("navbarIndex");
       var sections = ['#home', '#products', '#about', '#quote', '#directory', '#blog', '#contact'];
@@ -27,9 +28,13 @@ export class NavbarComponent implements OnInit {
       var scrollTop = $(window).scrollTop();
       if (scrollTop > 220) {
         element.classList.add("bg-color-solid");
+        element.classList.remove("bg-nav-two");
+        element.classList.remove("bg-color-two");
       } else {
-        element.classList.remove("bg-color-solid");
         element.classList.add("bg-transparent");
+        element.classList.remove("bg-color-solid");
+        element.classList.remove("bg-nav-two");
+        element.classList.remove("bg-color-two");
       }
       /// *** Se recorren las secciones para determinar cual esta visible ***
       sections.forEach(function (section) {
@@ -122,8 +127,15 @@ export class NavbarComponent implements OnInit {
         if (element) {
           if ($(window).scrollTop() > 220) {
             element.classList.add("bg-color-solid");
+            element.classList.remove("bg-transparent");
+            element.classList.remove("bg-nav-two");
+            element.classList.remove("bg-color-two");
+
           } else {
             element.classList.add("bg-transparent");
+            element.classList.remove("bg-color-solid");
+            element.classList.remove("bg-nav-two");
+            element.classList.remove("bg-color-two");
           }
           this.scroll();
         } 
@@ -137,9 +149,12 @@ export class NavbarComponent implements OnInit {
           
           if ($(window).scrollTop() > 220) {
             element.classList.add("bg-nav-two");
+            element.classList.remove("bg-transparent");
+
             
           } else {
             element.classList.add("bg-color-two");
+            element.classList.remove("bg-transparent");
           }
           this.scrollTwo();
         } 
@@ -154,8 +169,10 @@ export class NavbarComponent implements OnInit {
 
     } else {
       this.isMobile = true;
-
     }
+
+    console.log(this.isMobile);
+    
   }
 
 
@@ -170,5 +187,9 @@ export class NavbarComponent implements OnInit {
         function () { }
       );
     }, 1000);
+  }
+
+  public openModalLogin() {
+    $("#modal-login").modal("show");
   }
 }

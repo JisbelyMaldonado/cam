@@ -172,15 +172,7 @@ export class CalculatorService {
   public calcularMediacion(
     cuantiaValue: number,
     selectedValue: string,
-    selectedValueArb: string,
-    selectedCuantia: string,
-    selectedSocio: string
   ) {
-    console.log('service',cuantiaValue,
-      selectedValue,
-      selectedValueArb,
-      selectedCuantia,
-      selectedSocio);
     
     if (selectedValue == "1") {
           if (cuantiaValue < 2000) {

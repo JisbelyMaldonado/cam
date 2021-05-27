@@ -104,15 +104,16 @@
 .option-menu:hover {
   color: #c5c258;
 }
+.text-content-footer {
+  text-align: justify !important;
+}
 @media (max-width: 576px) {
   
 .contacts-subtitle{
   font-size: 20px;
 
 }
-.text-content-footer {
-  text-align: justify !important;
-}
+
 .menu{
   font-size: 15px;
 }

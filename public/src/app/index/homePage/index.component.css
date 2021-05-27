@@ -114,7 +114,12 @@
   color: #006b66;
   font-weight: bold;
 }
-
+.custom-control-label {
+  font-size: 16px;
+  font-family: "HindMadurai-Light";
+  color: #006b66;
+  font-weight: bold;
+}
 .contacts-subtitle {
   font-size: calc(0.85em + 0.85vw);
   font-family: "Exo-Bold";
@@ -256,6 +261,8 @@
   font-size: 18px;
   margin-top: 10px;
   text-transform: none;
+  height: 40px;
+  width: 120px;
 }
 
 .box-shadow {
@@ -741,32 +748,28 @@
 input[type=radio]
 {
   /* Double-sized Checkboxes */
-  -ms-transform: scale(1.5); /* IE */
-  -moz-transform: scale(1.5); /* FF */
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
-  -o-transform: scale(1.5); /* Opera */
-  transform: scale(1.5);
+  -ms-transform: scale(1.1); /* IE */
+  -moz-transform: scale(1.1); /* FF */
+  -webkit-transform: scale(1.1); /* Safari and Chrome */
+  -o-transform: scale(1.1); /* Opera */
+  transform: scale(1.1);
   padding: 10px;
   border-radius: 50% !important;
 }
-input[type=radio]:not(:checked){
-	background: #289661;
+
+.custom-checkbox:checked~.control-label::before {
+  color: #fff;
+  border-color: #7B1FA2;
 }
-input[type=radio]:before{
-	content: '';
-	display: block;
-	height: 18px;
-	width: 18px;
-	border-radius: 50% !important;
-	position: absolute;
-	z-index: 1;
-	top: 4px;
-	left: 4px;
-	background:#2AC176;
-	transition: all 0.25s ease; /* Todas las propiedades | tiempo | tipo movimiento */
-	transform: scale(0) /* Lo reducimos a 0*/ ;
-	opacity: 0; /* Lo ocultamos*/
+
+.custom-checkbox:checked~.control-label.red::before {
+  background-color: red;
 }
+
+.custom-checkbox:checked~.control-label.green::before {
+  background-color: green;
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -778,6 +781,118 @@ input[type=number]::-webkit-outer-spin-button {
   font-family: 'Exo-Bold';
   font-size: 32px;
 }
+
+.custom-control-label::after {
+  position: absolute;
+  top: 0.25rem;
+  left: -1.6rem;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  content: "";
+  background: no-repeat 50%/50% 50%;
+  cursor: pointer;
+  border-radius: 30%;
+}
+
+/* .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: #00504c ;
+  border-radius: 30%;
+  width: 1.1rem;
+  height: 1.1rem;
+} */
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #ffffff;
+  border-color: #00504c;
+  background-color: #00504c;
+  -ms-transform: scale(1.2); /* IE */
+  -moz-transform: scale(1.2); /* FF */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
+  -o-transform: scale(1.2); /* Opera */
+  transform: scale(1.2);
+}
+.twitter {
+  background-image: url('../../../assets/img/Twitter.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 55px; 
+  height: 48px;
+  cursor: pointer;
+
+}
+.twitter:hover {
+  background-image: url('../../../assets/img/TwitterHover.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 55px;
+  height: 48px;
+  cursor: pointer;
+
+}
+
+.email {
+  background-image: url('../../../assets/img/Mail.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 55px;
+  height: 48px;
+  cursor: pointer;
+
+}
+.email:hover {
+  background-image: url('../../../assets/img/MailHover.svg');
+}
+
+.facebook {
+  background-image: url('../../../assets/img/Facebook.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 55px;
+  height: 48px;
+  cursor: pointer;
+
+}
+.facebook:hover {
+  background-image: url('../../../assets/img/FacebookHover.svg');
+}
+
+.instagram {
+  background-image: url('../../../assets/img/Instagram.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 55px;
+  height: 48px;
+  cursor: pointer;
+
+}
+.instagram:hover {
+  background-image: url('../../../assets/img/InstagramHover.svg');
+}
+
+.whatsapp {
+  background-image: url('../../../assets/img/Whatsapp.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 55px;
+  height: 48px;
+  cursor: pointer;
+
+}
+.whatsapp:hover {
+  background-image: url('../../../assets/img/WhatsappHover.svg');
+}
+
+.d-none {
+  display: none;
+}
+
 @media (max-width: 576px) {
   .rectangle-quienes-somos {
     position: relative;
