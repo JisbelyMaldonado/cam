@@ -290,7 +290,7 @@ export class IndexComponent implements OnInit {
     console.log('Llama a metodo');
     
     let data = {
-      "vin": 123456,
+      "vin": 'JHSFDGRTEBSJSKAL',
     }
      this.http.post<any>(this.url, data, this.httpOptions).subscribe(test => {
        console.log(test);

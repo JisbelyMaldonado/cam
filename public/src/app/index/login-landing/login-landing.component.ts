@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'app/services/authentication/authentication.service';
 import { Users } from '../../interfaces/user';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+declare var $: any;
 @Component({
   selector: 'app-login-landing',
   templateUrl: './login-landing.component.html',
