@@ -183,7 +183,7 @@ export class NavbarComponent implements OnInit {
         {
           scrollTop: $(opcActive).position().top,
         },
-        800,
+        500,
         function () { }
       );
     }, 1000);

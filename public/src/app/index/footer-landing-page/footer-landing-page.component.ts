@@ -19,17 +19,17 @@ export class FooterLandingPageComponent implements OnInit {
   }
 
 
-  public isItemActive( section?: string) {
-      this.router.navigate(["/"]);
-      setTimeout(() => {
-        $("html, body").animate(
-          {
-            scrollTop: $('#'+section).position().top,
-          },
-          2000,
-          function () { }
-        );
-      }, 500);
+  public viewSection(opcActive: string) {
+    this.router.navigate(["/"]);
+    setTimeout(function () {
+      $("html, body").animate(
+        {
+          scrollTop: $(opcActive).position().top,
+        },
+        800,
+        function () { }
+      );
+    }, 1000);
   }
 
   public viewLanding() {
