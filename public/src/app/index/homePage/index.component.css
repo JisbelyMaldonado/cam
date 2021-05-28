@@ -931,6 +931,14 @@ input[type=number]::-webkit-outer-spin-button {
 .img-about-us {
   width: 400px;
 }
+
+.bg-content-directory {
+  background-image: url('../../../assets/img/Directorioelemento1.svg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 20% 20%;
+  background-position-x: right;
+}
 @media (max-width: 576px) {
   .rectangle-quienes-somos {
     position: relative;
@@ -1117,6 +1125,10 @@ input[type=number]::-webkit-outer-spin-button {
   .logo-img-cma {
     display: none;
   }
+  .bg-content-directory {
+    background-image: none;
+  }
+ 
 }
 
 @media (max-width: 992px) {
