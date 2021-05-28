@@ -3,8 +3,8 @@
 <div class="row m-0 display-row-center">
     <div class="col-sm-12 p-0 ">
         <div class="row m-0 display-row-center row-content-body">
-            <div class="col-sm-5 col-md-5 col-lg-5 col-content-element-img ">
-                <div class="row img-content-logo display-row-center">
+            <div class="col-sm-5 col-md-5 col-lg-5 col-content-element-img " data-aos="zoom-in"> 
+                <div class="row img-content-logo display-row-center" >
                     <img class="img-logo" src="../../../assets/img/Logo Footer.svg">
                 </div>
 
@@ -63,7 +63,9 @@
                                 <div class="col-12 mt-2 p-0 text-justify"
                                     [innerHTML]="post.post_description | slice:0:300"></div>
                             </div>
-                            <div class="col-12 p-0">
+                            <div class="col-12 p-0" data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="600">
                                 <button class="btn btn-primary btn-contact text-center p-0" (click)="viewMorePost(post.post_id)"> Ver más</button>
                             </div>
                         </div>
@@ -80,7 +82,9 @@
                                 <div class="col-12 mt-2 p-0 text-justify"
                                     [innerHTML]="post.post_description | slice:0:300"></div>
                             </div>
-                            <div class="col-12 p-0">
+                            <div class="col-12 p-0" data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="600">
                                 <button class="btn btn-primary btn-contact text-center p-0" (click)="viewMorePost(post.post_id)"> Ver más</button>
                             </div>
                         </div>
@@ -93,7 +97,7 @@
 
         </div>
         <div class="row m-0">
-            <div class="col-12 p-0 display-col-center mt-4" *ngIf="!hiddenButton">
+            <div class="col-12 p-0 display-col-center mt-4" *ngIf="!hiddenButton" data-aos="zoom-in">
                 <button class="btn  btn-view-more text-center p-0" (click)="getTreeMore()"> Cargar más</button>
             </div>
         </div>
@@ -117,7 +121,9 @@
                                 <div class="col-12 mt-2 p-0 text-justify"
                                     [innerHTML]="post.post_description | slice:0:300"></div>
                             </div>
-                            <div class="col-12 p-0 pt-3 pb-3">
+                            <div class="col-12 p-0 pt-3 pb-3" data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="600">
                                 <button class="btn btn-primary btn-contact text-center p-0" (click)="viewMorePost(post.post_id)"> Ver más</button>
                             </div>
                         </div>
@@ -127,7 +133,7 @@
           
         </div>
         <div class="row m-0">
-            <div class="col-12 p-0 display-col-center mt-4" *ngIf="!hiddenButton">
+            <div class="col-12 p-0 display-col-center mt-4" *ngIf="!hiddenButton" data-aos="zoom-in">
                 <button class="btn  btn-view-more text-center p-0" (click)="getTreeMore()"> Cargar más</button>
             </div>
         </div>
@@ -136,3 +142,5 @@
 <!--FIN BODY-->
 <!-- FOOTER-->
 <app-footer-landing-page></app-footer-landing-page>
+<!-- FLOTANTE WHATSAPP-->
+<app-fixed-element-whatsapp></app-fixed-element-whatsapp>

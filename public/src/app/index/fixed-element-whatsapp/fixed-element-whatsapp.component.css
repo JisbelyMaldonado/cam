@@ -1,0 +1,38 @@
+.fixed-plugin {
+    width: 60px;
+    top: 84vh;
+    background-color: transparent;
+
+}
+
+.show-dropdown {
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background-color: #00504c;
+    width: 50px;
+    padding: auto;
+}
+
+
+
+.logo-whatsapp {
+    margin: auto;
+    width: 30px;
+}
+
+.display-row-center {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+@media (max-width: 576px) {
+    .fixed-plugin {
+        top: 79vh;
+    
+    }
+}

@@ -8,7 +8,9 @@
     <!-- <div class="col-sm-1"></div> -->
 
     <div class="col-10 col-sm-6 col-md-6 col-lg-6  mt-5 col-content-element-text-home">
-      <div class="text-left ">
+      <div class="text-left " data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="600">
         <h1 class="principal-title">
           <span style="color: #c2c258;">Promoviendo</span><br>
           <span style="color: white;">la Cultura de </span><br>
@@ -20,12 +22,14 @@
           Procuramos ser una organización líder en el <br>
           Ecuador con proyección hacia América Latina, en <br>
           la creación de la cultura del diálogo y la paz.</h5>
-        <div class="col-sm-12 text-left p-0">
+        <div class="col-sm-12 text-left p-0" data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="600">
           <button (click)="navigateSectionBlog('#contact')" type="button" class="btn btn-light p-0">Contactar</button>
         </div>
       </div>
     </div>
-    <div class="col-10 col-sm-6 col-md-6 col-lg-6 pl-0 pr-0 col-content-element-img-home">
+    <div class="col-10 col-sm-6 col-md-6 col-lg-6 pl-0 pr-0 col-content-element-img-home" data-aos="zoom-in-down">
       <img class="logo-img-cma text-center" alt="logo" src="../../../assets/img/Logo Home.svg">
     </div>
     <!-- <div class="col-sm-1"></div> -->
@@ -51,18 +55,18 @@
     </div>
   </div>
   <div class="row w-100 display-row-center m-3 mx-auto display-col-center">
-    <div class="col-sm-12 text-center " >
+    <div class="col-sm-12 text-center ">
       <img class=" text-center m-2" width="225px" alt="logo" src="../../../assets/img/asset 1.jpeg">
       <img class=" text-center m-2" width="225px" alt="logo" src="../../../assets/img/asset 2.png">
       <img class=" text-center m-2" width="225px" alt="logo" src="../../../assets/img/asset 3.png">
-      <img   class=" text-center m-2" width="225px" alt="logo" src="../../../assets/img/asset 4.jpeg">
+      <img class=" text-center m-2" width="225px" alt="logo" src="../../../assets/img/asset 4.jpeg">
     </div>
   </div>
   <div id="products"></div>
 </section>
 
 <!--PRODUCTS AND SERVICES-->
-<section >
+<section>
   <div class="row w-100 mx-auto display-row-center">
 
     <div class="col-12 col-sm-12 text-center">
@@ -92,7 +96,7 @@
                   src="../../../assets/img/Arbitraje.svg">
               </div>
               <div class="col-12 p-0">
-                <div class="mt-3 ">
+                <div class="mt-3 text-justify ">
                   <span class="subtitle-services">Arbitraje</span><br><br>
                   <span class="principal-subtitle-serv text-justify" style="color: rgb(0, 0, 0);"> Es un medio
                     alternativo de solución de
@@ -101,8 +105,27 @@
                     de transacción, a la decisión de un árbitro o tribunal conformado
                     para el efecto.</span>
                 </div>
-                <div class=" p-0 col-sm-12 text-left">
-                  <button class="" type="button" class="btn btn-light box-shadow p-0">Ver más</button>
+                <div class="collapse multi-collapse text-justify" id="multiCollapseArbitration">
+                  <h3 class="title-text-more-arbitration">Cláusula de Arbitraje</h3>
+                  <span class="principal-subtitle-serv text-justify">
+                    Para someterse al procedimiento arbitral es indispensable incluir en los instrumentos o contratos que se celebren una Cláusula Arbitral que diga:
+                    “Para la resolución de toda controversia o diferencia derivada de este contrato y de las obligaciones aquí 
+                    contenidas, los otorgantes de forma expresa renuncian fuero y domicilio, sujetándose al juicio de árbitros ante 
+                    el Centro de Arbitraje y Mediación de las Cámaras de la Producción del Azuay, de conformidad con la ley en la 
+                    materia y el reglamento interno del mismo.”
+                  </span>
+                  <h3 class="title-text-more-arbitration">Ventajas</h3>
+                  <ul class="principal-subtitle-serv text-justify">
+                    <li>Los laudos tienen la misma fuerza vinculante de una sentencia judicial.</li>
+                    <li>Las partes, de común acuerdo, tienen la posibilidad de diseñar el tipo de procedimiento que más se adapte a sus necesidades.</li>
+                    <li>Agilidad, eficacia y efectividad en los procesos.</li>
+                    <li>Los procedimientos arbitrales pueden ser confidenciales, si así convienen las partes.</li>
+                    <li>Economía de recursos.</li>
+                  </ul>
+                </div>
+                <div class=" p-0 col-sm-12 text-left" data-aos="zoom-in">
+                  <button class="" type="button" class="btn btn-light box-shadow p-0" (click)="viewMore()">Ver
+                    {{isViewMoreArbitration ? 'menos' : 'más'}}</button>
                 </div>
               </div>
             </div>
@@ -118,16 +141,35 @@
     <div class="col-10 col-sm-10 col-md-8 col-lg-8 text-center col-content-right-products">
       <div class="row  w-100 display-row-center mx-auto row-content-mediation">
         <div class="col-10 col-sm-10 col-md-8 col-lg-9 text-right p-0 ">
-          <img class="text-center img-mediation mb-3" alt="Medicación" src="../../../assets/img/Mediacion.svg"><br>
-          <span class="subtitle-services">Mediación</span><br><br>
-          <span class="principal-subtitle-serv">
-            Es un procedimiento de solución de conflictos, mediante el cual las partes asistidas por un tercero
-            neutral, llamado Mediador, procuran un acuerdo voluntario sobre materia transigible, es decir, sobre
-            asuntos negociables. Dicho acuerdo construido entre las partes pone fin al conflicto. Es de carácter
-            extra-judicial, pero plenamente legal.
-          </span>
-          <div class=" col-sm-12 text-right p-0">
-            <button class="" type="button" class="btn btn-light box-shadow p-0">Ver más</button>
+          <img class="img-mediation mb-3" alt="Medicación" src="../../../assets/img/Mediacion.svg"><br>
+          <div class="col-12 p-0 mt-3">
+            <span class="subtitle-services">Mediación</span>
+
+            <div class=" text-justify">
+              <span class="principal-subtitle-serv">
+                Es un procedimiento de solución de conflictos, mediante el cual las partes asistidas por un tercero
+                neutral, llamado Mediador, procuran un acuerdo voluntario sobre materia transigible, es decir, sobre
+                asuntos negociables. Dicho acuerdo construido entre las partes pone fin al conflicto. Es de carácter
+                extra-judicial, pero plenamente legal.
+              </span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse text-justify" id="multiCollapseMediation">
+            <span class="principal-subtitle-serv text-justify">
+              Un proceso de Mediación es voluntario. Sin embargo se sugiere que, para que la mediación sea obligatoria, en todos los contratos se incluya una Cláusula de Mediación.
+              <br>
+              <h3 class="title-text-more-arbitration">Ejemplo de Cláusula de Mediación</h3>
+              “Para la resolución de toda controversia o diferencia derivada de este contrato, las partes resuelven someterlas a un proceso de mediación en el Centro de Arbitraje y Mediación de las Cámaras de la Producción del Azuay”.
+            </span>
+            <br>
+            <div class="col-12 p-0 display-col-center pt-2">
+              <span class="text-center principal-subtitle-serv font-small text-justify">Agilidad y efectividad.  |  Confidencialidad  |  Economía de tiempo y recursos</span>
+            </div>
+
+          </div>
+
+          <div class=" col-sm-12 text-right p-0" data-aos="zoom-in">
+            <button class="" type="button" class="btn btn-light box-shadow p-0" (click)="viewMoreMediation()">Ver {{isViewMoreMediation ? 'menos' : 'más'}}</button>
           </div>
         </div>
         <div class="col-sm-0 col-md-4 col-lg-3">
@@ -136,14 +178,14 @@
       </div>
     </div>
     <div class="col-10 col-sm-10 col-md-4 col-lg-4 p-0 m-0 background-services-2 display-col-start p-0">
-      <img class="img-right" alt="Mediación" src="../../../assets/img/Mediacion.png">
+      <img class="img-right" alt="Mediación" src="../../../assets/img/mediacion.jpg">
     </div>
   </div>
 
   <!--Unidad de Capacitacion-->
   <div class="row w-100 display-row-center w-100 mx-auto mt-5">
     <div class="col-10 col-sm-10 col-md-4  col-lg-4 p-0 m-0 background-services-1 ">
-      <img class="text-center img-left" alt="Capacitación" src="../../../assets/img/Capacitacion.png">
+      <img class="text-center img-left" alt="Capacitación" src="../../../assets/img/capacitacion.jpg">
     </div>
     <div class="col-10 col-sm-10 col-md-8 col-lg-8 text-center col-content-arbitration">
       <div class="row w-100 mx-auto display-row-start row-content-arbitration pt-3 pb-3">
@@ -203,7 +245,7 @@
 </section>
 
 <!--SECTION WE ARE AND GOALS-->
-<section  class="mt-5" style=" background-color: #f5f5f5">
+<section class="mt-5" style=" background-color: #f5f5f5">
   <div class="container">
 
     <div class="row w-100 display-row-center mx-auto pt-5">
@@ -249,8 +291,8 @@
   <!--EL CENTRO DE MEDIACION Y ARBITRAJE-->
   <div class="row w-100 display-row-center mx-auto m-0">
     <div class="col-sm-6 text-center display-col-center">
-      <img class="text-center img-fluid mx-auto d-block" alt="Quienes somos"
-        src="../../../assets/img/Quienes Somos.png"><br>
+      <img class="text-center img-fluid mx-auto d-block img-about-us" alt="Quienes somos"
+        src="../../../assets/img/quienesSomos.png"><br>
     </div>
     <div class="col-sm-6 pl-5 pt-5 m-0 ">
       <div class="row w-100 display-row-center mx-auto ">
@@ -301,12 +343,13 @@
       <div class="row m-0 row-justify-content-around">
         <div class="col-10 col-sm-10 col-md-3 col-lg-3  p-0 ">
           <div class="card card p-0 content-mision-vision-val text-center ">
-            <div class="card-body display-col-start">
-              <img class="text-center img-fluid mx-auto d-block img-logo-about-vision" alt="Quienes somos"
+            <div class="card-body display-col-start text-justify text-center">
+              <img class="text-center img-fluid mx-auto d-block img-logo-about-vision" data-aos="fade-down"
+              data-aos-easing="linear" data-aos-duration="400" alt="Quienes somos"
                 src="../../../assets/img/Mision.svg"><br>
 
               <h5 class="card-title title-services" style="color: black !important;">Misión</h5>
-              <p class="card-text text-content-cards">Emplear eficiente y efectivamente los medios alternativos para
+              <p class="card-text text-content-cards text-justify text-center">Emplear eficiente y efectivamente los medios alternativos para
                 lograr la prevención,
                 administración y transformación de los conflictos, en aras de garantizar la paz y un acceso democrático
                 a
@@ -319,7 +362,8 @@
         <div class="col-10 col-sm-10 col-md-3 col-lg-3  p-0">
           <div class="card card content-mision-vision-val text-center ">
             <div class="card-body display-col-start">
-              <img class="text-center img-fluid mx-auto d-block img-logo-about-vision" alt="Quienes somos"
+              <img class="text-center img-fluid mx-auto d-block img-logo-about-vision" data-aos="fade-down"
+              data-aos-easing="linear" data-aos-duration="400" alt="Quienes somos"
                 src="../../../assets/img/Vision.svg"><br>
 
               <h5 class="card-title title-services" style="color: black !important;">Visión</h5>
@@ -333,8 +377,8 @@
         <div class="col-10 col-sm-10 col-md-3 col-lg-3  p-0">
           <div class="card card content-mision-vision-val text-center ">
             <div class="card-body display-col-start">
-              <img class="text-center img-fluid mx-auto d-block img-logo-about-vision" alt="Quienes somos"
-                src="../../../assets/img/Valores.svg"><br>
+              <img class="text-center img-fluid mx-auto d-block img-logo-about-vision" alt="Quienes somos"data-aos="fade-down"
+              data-aos-easing="linear" data-aos-duration="400" src="../../../assets/img/Valores.svg"><br>
 
               <h5 class="card-title title-services" style="color: black !important;">Valores</h5>
               <p class="card-text text-content-cards">Confianza, responsabilidad y respeto, para la creación de una
@@ -357,27 +401,28 @@
           <div class="text-center">
             <div class="rectangle"></div>
 
-            <h5 class="principal-subtitle" style="color: rgb(0, 0, 0);">
-              Autorizado por el Consejo de la Judicatura, como centro de mediación bajo el registro No. 009 y como
-              centro de arbitraje
-              bajo el registro No. 005 , en fecha 10 de octubre de 2018.
+            <h5 class="text-center-about" >
+              Centro de Mediación - <span class="letter-bold">Registro No. 009</span> - Consejo de la Judicatura
+            </h5>
+            <h5 class="text-center-about" >
+              Centro de Arbitraje -<span class="letter-bold">Registro No. 005</span>- Consejo de la Judicatura
             </h5>
           </div>
         </div>
       </div>
       <div id="quote"></div>
       <div class="col-sm-1">
-      
+
       </div>
     </div>
-  
+
   </div>
- 
+
 </section>
 
 
 <!--COTIZADOR-->
-<section class="" >
+<section class="">
   <div class="row pt-5 pb-5 m-0 row-content-bg-quote">
     <div class="row  w-100 mx-auto display-row-center">
       <div class="col-12 col-sm-12 text-center">
@@ -428,46 +473,53 @@
               <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating"
                 *ngIf="selectServiceValue === '0'">
                 <label class="control-label" for="exampleFormControlSelect1">Cantidad</label>
-                <select (change)="selectArbitration($event)" class="form-control bg-white cursor-pointer" id="exampleFormControlSelect1">
-                  <option *ngFor="let arbitration of  arbitraje" [value]="arbitration.value">{{arbitration.viewValue}}</option>
+                <select (change)="selectArbitration($event)" class="form-control bg-white cursor-pointer"
+                  id="exampleFormControlSelect1">
+                  <option *ngFor="let arbitration of  arbitraje" [value]="arbitration.value">{{arbitration.viewValue}}
+                  </option>
                 </select>
               </div>
               <!-- CUANTÍAAA SELECT-->
               <div class="row m-0 pt-2">
                 <div class="col-12 custom-control custom-checkbox">
-                  <input  type="radio" class="custom-control-input" id="amount1" name="amount"
+                  <input type="radio" class="custom-control-input" id="amount1" name="amount"
                     (change)="selectedCuantia = '0'" checked>
                   <label class="form-check-label custom-control-label " for="amount1">Cuantía determinada</label>
                 </div>
                 <div class="col-12 custom-control custom-checkbox">
-                  <input  [disabled]="selectServiceValue === '1'" (change)="selectedCuantia = '1'" type="radio" class="custom-control-input" id="amount2" name="amount">
+                  <input [disabled]="selectServiceValue === '1'" (change)="selectedCuantia = '1'" type="radio"
+                    class="custom-control-input" id="amount2" name="amount">
                   <label class="form-check-label custom-control-label " for="amount2">Cuantía indeterminada</label>
                 </div>
               </div>
 
-            
+
               <!-- Cantidad -->
-              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating" *ngIf="selectedCuantia === '0'">
+              <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating"
+                *ngIf="selectedCuantia === '0'">
                 <label class="control-label" for="amount">Cuantía</label>
-                <input [(ngModel)]="cuantiaValue" class="form-control bg-white" id="amount" type="number" name="amount" required
-                  placeholder="Ingrese el valor de la cuantía">
+                <input [(ngModel)]="cuantiaValue" class="form-control bg-white" id="amount" type="number" name="amount"
+                  required placeholder="Ingrese el valor de la cuantía">
                 <div class="help-block with-errors"></div>
               </div>
               <!-- SOCIO -->
               <div class="row m-0 pt-2">
                 <div class="col-6 col-sm-6 col-md-5 col-lg-5 custom-control custom-checkbox">
-                  <input (change)="selectedSocio = '0'" type="radio" class="form-check-input custom-control-input" id="partner1" name="partner" checked>
+                  <input (change)="selectedSocio = '0'" type="radio" class="form-check-input custom-control-input"
+                    id="partner1" name="partner" checked>
                   <label class="form-check-label custom-control-label" for="partner1">Soy socio</label>
                 </div>
                 <div class="col-6 col-sm-6 col-md-5 col-lg-5 custom-control custom-checkbox">
-                  <input (change)="selectedSocio = '1'" type="radio" class="form-check-input custom-control-input" id="partner2" name="partner">
+                  <input (change)="selectedSocio = '1'" type="radio" class="form-check-input custom-control-input"
+                    id="partner2" name="partner">
                   <label class="form-check-label custom-control-label" for="partner2">No soy socio</label>
                 </div>
               </div>
               <!-- Form Submit -->
               <div class="form-submit mt-3">
-                <div class="col-11 col-sm-11 col-md-10 col-lg-9 text-left p-0">
-                  <button (click)="calculate()" class="" type="submit" class="btn btn-light w-100 p-2 max-height-btn">Calcular</button>
+                <div class="col-11 col-sm-11 col-md-10 col-lg-9 text-left p-0" data-aos="zoom-in-down">
+                  <button (click)="calculate()" class="" type="submit"
+                    class="btn btn-light w-100 p-2 max-height-btn">Calcular</button>
                 </div>
               </div>
             </form>
@@ -477,7 +529,7 @@
               </div>
             </div>
           </div>
-         
+
         </div>
       </div>
     </div>
@@ -554,7 +606,7 @@
 </section>
 
 <!--DIRECTORIO-->
-<section class="" style="background-color: white; " >
+<section class="" style="background-color: white; ">
   <div class="row mb-3 w-100 display-row-center p-0 m-0">
     <div class="col-12 col-sm-12 text-center pt-5">
       <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
@@ -590,7 +642,8 @@
   <div class="row w-100 m-0 mx-auto mb-5 display-row-center">
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-1">
           </div>
         </div>
@@ -602,7 +655,8 @@
     </div>
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-2">
           </div>
         </div>
@@ -614,7 +668,8 @@
     </div>
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-3">
           </div>
         </div>
@@ -630,7 +685,8 @@
   <div class="row w-100 m-0 mx-auto mb-5 display-row-center">
     <div class="col-sm-4 m-0  justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-4">
           </div>
         </div>
@@ -642,7 +698,8 @@
     </div>
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-5">
           </div>
         </div>
@@ -654,7 +711,8 @@
     </div>
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-6">
           </div>
         </div>
@@ -670,7 +728,8 @@
   <div class="row w-100 m-0 mx-auto mb-5 display-row-center">
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-7">
           </div>
         </div>
@@ -684,7 +743,8 @@
     </div>
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-8">
           </div>
         </div>
@@ -697,7 +757,8 @@
     </div>
     <div class="col-sm-4 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-9">
           </div>
         </div>
@@ -745,7 +806,8 @@
   <div class="row w-100 m-0 mx-auto mb-5 display-row-center">
     <div class="col-sm-5 m-0 m-0 justify-content-center">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-5 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-5 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-11">
           </div>
         </div>
@@ -758,24 +820,10 @@
       </div>
     </div>
 
-    <!-- <div class="col-sm-2 m-0 m-0 justify-content-center p-0">
-      <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-5 col-xl-5 text-center m-0 p-0 justify-content-center">
-          <div class="text-center div-circle-0">
-          </div>
-        </div>
-        <div class="col-sm-10 col-md-12 col-lg-7 col-xl-7 mt-3 col-content-directory">
-          <p class="title-directory"> <br>
-          </p>
-          <p class="subtitle-directory">
-          </p>
-        </div>
-      </div>
-    </div> -->
-
     <div class="col-sm-5 m-0 m-0 justify-content-center p-0">
       <div class="row w-100 mx-auto m-0 p-0 display-row-center">
-        <div class="col-sm-10 col-md-12 col-lg-5 col-xl-5 text-center m-0 p-0 justify-content-center">
+        <div class="col-sm-10 col-md-12 col-lg-5 col-xl-5 text-center m-0 p-0 justify-content-center" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="600">
           <div class="text-center div-circle-12">
           </div>
         </div>
@@ -785,26 +833,20 @@
           </p>
           <p class="subtitle-directory">Secretaria Administrativa
           </p>
-        
+
         </div>
-        
+
       </div>
     </div>
     <div id="blog"></div>
   </div>
- 
+
 </section>
 
 <!--BLOG SECTION-->
-<section >
+<section>
   <div class="row-content-bg-color pt-5 pb-5 m-0">
     <div class="row display-row-center p-0 m-0">
-      <!-- <div class="col-sm-12 p-0 m-0 text-center">
-        <img class=" text-center img-fluid img-location-title" width="65" height="65" alt="BLOG INFOMATIVO"
-          src="../../../assets/img/Separador1.svg">
-        <span class="title-services">Blog informativo </span>
-        <div class="rectangle-directory"></div>
-      </div> -->
       <div class="col-12 col-sm-12 text-center">
         <img class=" text-center img-fluid img-location-title" width="100%" alt="PRODUCTOS Y SERVICIOS"
           src="../../../assets/img/Separador1.svg">
@@ -836,7 +878,9 @@
             </div>
 
           </div>
-          <div class="row m-0 ">
+          <div class="row m-0 " data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="600">
             <button (click)="viewPost(post)" class="btn btn-view-more-post">Ver más</button>
           </div>
         </div>
@@ -860,12 +904,12 @@
   
       </div>
     </div> -->
-    <div class="row m-0 display-row-center">
+    <div class="row m-0 display-row-center" data-aos="zoom-in">
       <button class="btn btn-ligth-blog mt-5" [routerLink]="'blog'">Ir al Blog</button>
     </div>
     <div id="contact"></div>
   </div>
-  
+
 
 </section>
 
@@ -876,7 +920,7 @@
 
 <!--CONTACTS-->
 
-<section class="background-contacts" >
+<section class="background-contacts">
   <div class="row w-100 display-row-center p-0 m-0 pt-5">
     <div class="col-sm-12 p-0 m-0 text-center ">
       <img class=" text-center img-fluid img-location-title" width="65" alt="PRODUCTOS Y SERVICIOS"
@@ -889,51 +933,51 @@
     <!-- Section Titile -->
     <!-- contact form -->
     <div class="col-sm-10 col-md-6 col-lg-6 wow animated fadeInRight ">
-      <form  #messajeForm="ngForm" novalidate
-      (ngSubmit)="sendMessage(messajeForm.value, messajeForm.valid, messajeForm)"class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+      <form #messajeForm="ngForm" novalidate (ngSubmit)="sendMessage(messajeForm.value, messajeForm.valid, messajeForm)"
+        class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
         <!-- Name -->
         <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
           <label class="control-label" for="name">*Nombre Completo</label>
-          <input [(ngModel)]="message.message_name" class="form-control" id="message_name" type="text" name="message_name" 
-          required data-error="Please enter your name" #message_name="ngModel">
+          <input [(ngModel)]="message.message_name" class="form-control" id="message_name" type="text"
+            name="message_name" required data-error="Please enter your name" #message_name="ngModel">
           <small [hidden]="message_name.valid || (message_name.pristine && !messajeForm.submitted)"
-                                class="form-text text-muted">El nombre es
-                                requerido.</small>
+            class="form-text text-muted">El nombre es
+            requerido.</small>
         </div>
         <!-- email -->
         <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
           <label class="control-label" for="email">*Correo Electrónico</label>
-          <input [(ngModel)]="message.message_email" class="form-control" id="message_email" type="email" name="message_email" required
-          #message_email="ngModel" aria-describedby="message_email">
-          <small
-          [hidden]="message_email.valid || (message_email.pristine && !messajeForm.submitted)"
-          class="form-text text-muted">El apellido es
-          requerido.</small>        </div>
+          <input [(ngModel)]="message.message_email" class="form-control" id="message_email" type="email"
+            name="message_email" required #message_email="ngModel" aria-describedby="message_email">
+          <small [hidden]="message_email.valid || (message_email.pristine && !messajeForm.submitted)"
+            class="form-text text-muted">El apellido es
+            requerido.</small>
+        </div>
         <!-- Teléfono -->
         <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
           <label class="control-label">*Teléfono</label>
-          <input [(ngModel)]="message.message_phone" class="form-control" id="message_phone" type="number" name="message_phone" required
-            data-error="Please enter your message subject"required #message_phone="ngModel"
-            pattern=.{9,{{10}}} maxlength="10">
-            <small [hidden]="message_phone.valid || (message_phone.pristine && !messajeForm.submitted)"
+          <input [(ngModel)]="message.message_phone" class="form-control" id="message_phone" type="number"
+            name="message_phone" required data-error="Please enter your message subject" required
+            #message_phone="ngModel" pattern=.{9,{{10}}} maxlength="10">
+          <small [hidden]="message_phone.valid || (message_phone.pristine && !messajeForm.submitted)"
             class="form-text text-muted">El teléfono es requerido y no debe exceder lo 10
             digitos.</small>
         </div>
         <!-- Message -->
         <div class=" col-11 col-sm-11 col-md-10 col-lg-9 p-0 form-group label-floating">
           <label for="message" class="control-label">*Mensaje</label>
-          <textarea  [(ngModel)]="message.message_description" class="form-control" rows="3" id="message_description" name="message_description" required
-          #message_description="ngModel"></textarea>
-            <small
-            [hidden]="message_description.valid || (message_description.pristine && !messajeForm.submitted)"
+          <textarea [(ngModel)]="message.message_description" class="form-control" rows="3" id="message_description"
+            name="message_description" required #message_description="ngModel"></textarea>
+          <small [hidden]="message_description.valid || (message_description.pristine && !messajeForm.submitted)"
             class="form-text text-muted">La descripción es
             requerido.</small>
         </div>
         <!-- Form Submit -->
         <div class="form-submit mt-3">
-          <div class=" col-sm-12 text-left p-0">
+          <div class=" col-sm-12 text-left p-0" data-aos="fade-down"
+          data-aos-easing="linear" data-aos-duration="600">
             <br>
-            <button class="" type="submit" class="btn btn-light p-0" >Enviar</button>
+            <button class="" type="submit" class="btn btn-light p-0">Enviar</button>
             <br>
           </div>
           <div id="msgSubmit" class="h3 text-center hidden"></div>
@@ -945,35 +989,42 @@
     <div class="col-sm-11 col-md-4 col-lg-4 mt-3 contact-widget-section2 " data-wow-delay=".2s">
       <h1 class="contacts-subtitle">Dirección</h1>
       <p class="text-contact">Federico Malo, 1-90<br>
-        Edificio de la Cámara de Comercio de Cuenca. <br>
-        Primer piso alto.</p>
+        Edificio Cámara de Comercio de Cuenca<br>
+        Cuenca - Ecuador.</p>
 
       <h1 class="contacts-subtitle">Teléfono</h1>
-      <p class="text-contact">(07) 282-7023
+      <p class="text-contact">+593 (7) 282 7023 <br>
+        +593 (0) 987 593 372
       </p>
 
       <h1 class="contacts-subtitle">Horarios</h1>
       <p class="text-contact">Lunes a Viernes <br> 08:00 - 13h00 / 15:00 - 18:00 </p>
 
-      <div class="row display-row-center  pt-5 p-0 m-0">
+      <div class="row display-row-center  pt-3 p-0 m-0">
         <!-- <div class="text-center img-fluid pr-2 img-redes-contact twitter"></div> -->
-          <a target="_blank" href="mailto:secretaria@centrodearbitrajeymediacion.com"><div class="text-center img-fluid pr-2 img-redes-contact email"></div></a>
-          <a target="_blank" href="https://www.facebook.com/CAMdeCuenca"><div class="text-center img-fluid pr-2 img-redes-contact facebook"></div></a>
-          <a target="_blank" href="https://instagram.com/arbitrajeymediacion?utm_medium=copy_link"><div  class="text-center img-fluid pr-2 img-redes-contact instagram"></div></a>
-          <a  href="https://api.whatsapp.com/send?phone=593 987593372&text=Saludos,%desearía%20obtener%20más%20información%20acerca%20de%20los%20servicios%20que%20brindan."
-          target="_blank"><div class="text-center img-fluid pr-2 img-redes-contact whatsapp"></div></a>
+        <div data-aos="zoom-in" class="text-center img-fluid pr-2 img-redes-contact email" (click)="viewModalEmail()"></div>
+        <a target="_blank" href="https://www.facebook.com/CAMdeCuenca">
+          <div data-aos="zoom-in" class="text-center img-fluid pr-2 img-redes-contact facebook"></div>
+        </a>
+        <a target="_blank" href="https://instagram.com/arbitrajeymediacion?utm_medium=copy_link">
+          <div data-aos="zoom-in" class="text-center img-fluid pr-2 img-redes-contact instagram"></div>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=593 987593372&text=Saludos,%20desearía%20obtener%20más%20información%20acerca%20de%20los%20servicios%20que%20brindan."
+          target="_blank">
+          <div data-aos="zoom-in" class="text-center img-fluid pr-2 img-redes-contact whatsapp"></div>
+        </a>
 
 
         <!-- <img class=" text-center img-fluid pr-2 img-redes-contact twitter d-none" alt="PRODUCTOS Y SERVICIOS"
           src="../../../assets/img/TwitterHover.svg">  -->
         <img class=" text-center img-fluid pr-2 img-redes-contact d-none" alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/MailHover.svg"> 
+          src="../../../assets/img/MailHover.svg">
         <img class=" text-center img-fluid pr-2 img-redes-contact d-none" alt="PRODUCTOS Y SERVICIOS"
           src="../../../assets/img/FacebookHover.svg">
         <img class=" text-center img-fluid pr-2 img-redes-contact d-none" alt="PRODUCTOS Y SERVICIOS"
           src="../../../assets/img/InstagramHover.svg">
         <img class=" text-center img-fluid pr-2 img-redes-contact d-none" alt="PRODUCTOS Y SERVICIOS"
-          src="../../../assets/img/WhatsappHover.svg"> 
+          src="../../../assets/img/WhatsappHover.svg">
       </div>
     </div>
   </div>
@@ -982,10 +1033,12 @@
 <!---------------  FOOTER   --------------------------->
 <app-footer-landing-page></app-footer-landing-page>
 <!--------------- FIN FOOTER   --------------------------->
+<!--MODAL CONTACT EMAIL-->
+<app-modal-contact-mail></app-modal-contact-mail>
 
+<!-- FLOTANTE WHATSAPP-->
+<app-fixed-element-whatsapp></app-fixed-element-whatsapp>
 
-
-
-<div class="row m-0">
+<!-- <div class="row m-0">
   <button (click)="post()">1</button>
-</div> 
+</div> -->

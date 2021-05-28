@@ -91,6 +91,8 @@ export class BlogConfigComponent implements OnInit {
 
   public newPost() {
     $('#multiCollapsePost').collapse('show');
+    this.previewUrl = null;
+    this.post = {}
     this.post.post_id = new Date().getTime().toString();
     this.post.post_state = true;
   }
@@ -180,10 +182,6 @@ export class BlogConfigComponent implements OnInit {
     $('#multiCollapsePost').collapse('show');
     this.post = post;
     this.isEdit = true;
-    console.log(
-      this.post
-    );
-    
   }
 
   public deletePost(post: Post) {

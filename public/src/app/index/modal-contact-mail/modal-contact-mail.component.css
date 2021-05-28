@@ -50,13 +50,32 @@
   font-display: swap;
 }
 
+.modal-title {
+  font-family: "HindMadurai-Light";
+  color: black;
+  font-size: 16px;
+}
 
+.close-modal {
+  font-family: "HindMadurai-Light";
+  color: black;
+  font-size: 36px;
+}
 
-
-.contacts-subtitle{
-  font-size: 24px;
-  font-family: "Exo-Bold";
-  color: #c2c258;
+.div-content-icon-mail {
+  width: 100px;
+  height: 100px;
+  /* background-color: rgb(219, 218, 218);
+  border-radius: 50%;
+  border: 6px solid white; */
+  background-image: url('../../../assets/img/Correo-37.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+.div-content-icon-mail:hover {
+  background-image: url('../../../assets/img/Correo-37-hover.svg');
 }
 
 .display-row-center {
@@ -68,7 +87,7 @@
   justify-items: center;
 }
 
-.justify-content-center {
+.display-col-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,70 +96,35 @@
   justify-items: center;
 }
 
-.menu{
+.modal-content {
+  background-color: rgba(230, 230, 230, 0.973);
+  min-width: 500px;
+  height: 250px;
+  border-radius: 15px;
+}
+.modal-header {
+  border-bottom: 1.5px solid #cfd3d6;
+}
+.img-mail {
+  width: 140px;
+}
+
+.title-type-mail {
   font-size: 16px;
-  font-family: "HindMadurai-Regular";
-  color: #00504c;
+  font-family: "Exo-Bold";
+  color: #006b66;
 }
 
-.img-location-title {
-  position: relative;
-  top: -30px;
-  left: 12px;
-  width: 50px;
+.text-contact-mail {
+  font-size: 11px;
+  font-family: "HindMadurai-Light";
+  color: #006b66;
 }
 
-.row-content-footer {
-  background-color: rgb(240, 240, 240);
-}
-
-.logo {
-  width: 150px;
-}
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.option-menu:hover {
-  color: #c5c258;
-}
-.text-content-footer {
-  text-align: justify !important;
-}
-@media (max-width: 576px) {
-  
-.contacts-subtitle{
-  font-size: 20px;
-
-}
-
-.menu{
-  font-size: 12px;
-}
-.row-content-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.col-content-object {
-  display: none;
-}
-}
-
-@media (max-width: 769px) {
-  .col-content-menu {
-    display: none;
+@media (max-width: 768px) {
+  .modal-content {
+    min-width: auto !important;
+    height: auto !important;
   }
-  .img-location-title {
-    left: 0px;
-    width: 30px;
 }
-}
-
-@media (max-width: 992px) {}
-
-@media (max-width: 1280px) {}
+ 

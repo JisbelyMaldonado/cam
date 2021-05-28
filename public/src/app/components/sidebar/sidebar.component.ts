@@ -36,7 +36,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.infoUser = JSON.parse(localStorage.getItem("infoUser"));
-    console.log(this.infoUser);
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
   }
   isMobileMenu() {

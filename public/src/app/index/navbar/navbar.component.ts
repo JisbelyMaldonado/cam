@@ -16,8 +16,6 @@ export class NavbarComponent implements OnInit {
     this.isViewMobile()
     this.validateStyle();
     this.scroll()
-    console.log(this.isHome);
-    
   }
 
   public scroll() {
@@ -55,8 +53,6 @@ export class NavbarComponent implements OnInit {
 
     // manejador de click sobre todos los elementos
     menues.click(function () {
-      console.log('*** se hace clic ***');
-
       // eliminamos active de todos los elementos
       menues.removeClass("active");
       // activamos el elemento clicado.
@@ -98,8 +94,6 @@ export class NavbarComponent implements OnInit {
 
     // manejador de click sobre todos los elementos
     menues.click(function () {
-      console.log('*** se hace clic ***');
-
       // eliminamos active de todos los elementos
       menues.removeClass("active");
       // activamos el elemento clicado.
@@ -143,8 +137,6 @@ export class NavbarComponent implements OnInit {
     } else {
       setTimeout(() => {
         var element = document.getElementById("navbarIndex");
-        console.log(element);
-
         if (element) {
           
           if ($(window).scrollTop() > 220) {
@@ -166,13 +158,9 @@ export class NavbarComponent implements OnInit {
   isViewMobile() {
     if ($(window).width() > 992) {
       this.isMobile = false;
-
     } else {
       this.isMobile = true;
     }
-
-    console.log(this.isMobile);
-    
   }
 
 

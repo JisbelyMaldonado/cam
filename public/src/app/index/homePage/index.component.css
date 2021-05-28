@@ -50,6 +50,8 @@
   font-display: swap;
 }
 
+
+
 .display-row-start {
   display: flex;
   flex-direction: row;
@@ -70,22 +72,23 @@
 }
 
 .background-services-2 {
-  /* background-image: url("/../../assets/img/Servicios-elemento1.svg");
+  background-image: url("../../../assets/img/services-elementos-2.svg");
   background-repeat: no-repeat;
-  background-position: right; */
+  background-position: right; 
+  background-size: 40% 100%;
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
-  left: -130px;
+  /* left: -130px; */
 }
 .background-services-1 {
-  background-image: url("/../../assets/img/Servicios elemento2.svg");
+  background-image: url("../../../assets/img/servicios-elemtno.svg");
   background-repeat: no-repeat;
   background-position: left;
+  background-size: 40% 100%;
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
-  left: 120px;
 }
 
 .background-contacts {
@@ -162,6 +165,14 @@
   color: white;
 }
 
+.text-center-about {
+  font-size: 14px;
+  font-family: "HindMadurai-Light";
+  font-weight:600;
+  color: black;
+  letter-spacing: 0.2px;
+
+}
 .text-center-arbitration {
   font-size: 18px;
   font-family: "HindMadurai-Regular";
@@ -183,6 +194,14 @@
   font-size: 18px;
   font-family: "HindMadurai-Regular";
   color: black;
+  text-align: justify;
+}
+
+.title-text-more-arbitration{
+  font-size: 18px;
+  font-family: "HindMadurai-Regular";
+  color: black;
+  font-weight: bold;
 }
 
 .principal-subtitle-serv1 {
@@ -192,8 +211,9 @@
 }
 
 .text-contact {
-  font-size: 22px;
+  font-size: 14px;
   font-family: "HindMadurai-Regular";
+  font-weight:800;
   color: #00504c;
 }
 
@@ -383,13 +403,21 @@
   top: 65px; */
   z-index: 1000;
   width: 420px;
+  left: 120px;
 }
 
 .img-right {
+  position: relative;
+  z-index: 1000;
   width: 400px;
+  left: -130px;
 }
+
 .img-right-projects {
   width: 380px;
+  position: relative;
+  z-index: 1000;
+  left: -130px;
 }
 
 .cma-img-right {
@@ -893,6 +921,16 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
+.letter-bold {
+  font-family: "Exo-Bold";
+
+}
+.font-small {
+  font-size: 14px;
+}
+.img-about-us {
+  width: 400px;
+}
 @media (max-width: 576px) {
   .rectangle-quienes-somos {
     position: relative;
@@ -1084,9 +1122,13 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width: 992px) {
   .img-left {
     width: 390px;
-  }
-  .background-services-1 {
     left: 60px;
+  }
+  .img-right {
+    left: -90px;
+  }
+  .img-right-projects {
+    left: -90px;
   }
   .rectangle-products {
     width: 140px;

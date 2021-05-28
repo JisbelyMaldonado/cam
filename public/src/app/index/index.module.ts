@@ -13,10 +13,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BlogComponent } from './blog/blog.component';
 import { DetailBlogComponent } from './detail-blog/detail-blog.component';
 import { LoginLandingComponent } from './login-landing/login-landing.component';
+import { ModalContactMailComponent } from './modal-contact-mail/modal-contact-mail.component';
+import { FixedElementWhatsappComponent } from './fixed-element-whatsapp/fixed-element-whatsapp.component';
 
 
 @NgModule({
-  declarations: [IndexComponent, FooterLandingPageComponent, NavbarComponent, BlogComponent, DetailBlogComponent, LoginLandingComponent],
+  declarations: [IndexComponent, FooterLandingPageComponent, NavbarComponent, BlogComponent, DetailBlogComponent, LoginLandingComponent, ModalContactMailComponent, FixedElementWhatsappComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexRoutingModule),

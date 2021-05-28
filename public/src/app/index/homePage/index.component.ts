@@ -68,8 +68,10 @@ export class IndexComponent implements OnInit {
       "Authorization": "Bearer d&q5PKGl8qlX4Z#@",
     }),
   };
-
   public selectServiceValue : string  = '0';
+  public isViewMoreArbitration = false;
+  public isViewMoreMediation = false;
+
   constructor( private BlogService: BlogService, private db: AngularFirestore,
     private calcularService: CalculatorService,
     private route: Router,
@@ -89,7 +91,6 @@ export class IndexComponent implements OnInit {
         this.getResultIndeterminate()
       } else {
         if (this.selectServiceValue == "0") {
-          console.log("entra a arbitraje");
           this.calcularService
             .calcularArbitraje(
               this.cuantiaValue,
@@ -140,22 +141,15 @@ export class IndexComponent implements OnInit {
                   this.total = iva + subtotal;
                 }
               }
-              console.log(this.total);
             });
         } else {
-          console.log("Entra a mediacion");
-  
           this.calcularService
             .calcularMediacion(
               this.cuantiaValue,
               this.selectServiceValue,
 
             ).pipe(take(1)).subscribe((mediacion: Mediacion) => {
-              console.log(mediacion);
-              
               if (this.selectedSocio == "1") {
-  
-                console.log("NO SOY SOCIO");
                 var excedente: number;
                 var fbasica: number;
                 var rango_inicial: number;
@@ -170,8 +164,6 @@ export class IndexComponent implements OnInit {
                 excedente = mediacion.med_exc;
                 fbasica = mediacion.med_fbasica;
                 rango_inicial = mediacion.med_rango;
-                console.log('excedente',excedente , 'fbasica', fbasica , 'rango_inicial', rango_inicial);
-
                 calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
                 
                 calculo_valor_med = (calculo1 + fbasica) * valor_hora;
@@ -179,7 +171,6 @@ export class IndexComponent implements OnInit {
                 this.total = calculo_valor_med + iva;
               } else if(this.selectedSocio == "0"){
   
-                console.log("NO SOY SOCIO");
                 var excedente: number;
                 var fbasica: number;
                 var rango_inicial: number;
@@ -194,7 +185,6 @@ export class IndexComponent implements OnInit {
                 excedente = mediacion.med_exc;
                 fbasica = mediacion.med_fbasica;
                 rango_inicial = mediacion.med_rango;
-                console.log("SOY SOCIO");
               
                 calculo1 = ((this.cuantiaValue - rango_inicial) / valor_hora) * excedente;
                 calculo_valor_med = (calculo1 + fbasica) * valor_hora;
@@ -202,7 +192,6 @@ export class IndexComponent implements OnInit {
                 subtotal = calculo_valor_med - descuento;
                 iva = subtotal * 0.12;
                 this.total = iva + subtotal;
-                console.log(this.total);
               
               }
             });
@@ -211,11 +200,6 @@ export class IndexComponent implements OnInit {
    }
 
    public getResultIndeterminate() {
-    console.log(this.cuantiaValue,
-      this.selectServiceValue,
-      this.selectedValueArb,
-      this.selectedCuantia,
-      this.selectedSocio);
       if (this.selectedValueArb === 'unico') {
         if (this.selectedSocio === '0') {
           this.total = 1120
@@ -229,45 +213,22 @@ export class IndexComponent implements OnInit {
           this.total = 1058.40
         }
       }
-
-    
    }
 
    public selectService(e) {
-    console.log(e.target.value);
     this.selectServiceValue = e.target.value;
     if (e.target.value == '1') {
        this.selectedCuantia = '0';
     }
-    
    }
 
    public selectArbitration(e) {
     this.selectedValueArb = e.target.value;
    }
-  /**
-   * *** Funcion para validar e iniciar sesion ***
-   * @param user
-   * @param valid
-   */
-  public onLogin(user: Users, valid: boolean) {
-    if (valid) {
-      // this.authService.login(this.user.user_email, this.user.user_password);
-      // var soap = require('soap');
-      // var url = 'http://apl.vazseguros.com:8080/ServicioWeb/wsmovil?wsdl';
-      // var args = {name: 'value'};
-      // soap.createClientAsync(url).then((client) => {
-      //   return client.MyFunctionAsync(args);
-      // }).then((result) => {
-      //   console.log(result);
-      // });
-    }
-  }
 
   public getPosts() {
-    this.BlogService.getPostByCategory().subscribe(posts => {
+    this.BlogService.getPostTree().subscribe(posts => {
       this.arrayPost= posts;
-      console.log(posts);
     })
   }
  
@@ -287,13 +248,10 @@ export class IndexComponent implements OnInit {
     }, 1000);
   }
   public post() {
-    console.log('Llama a metodo');
-    
     let data = {
       "vin": 'JHSFDGRTEBSJSKAL',
     }
      this.http.post<any>(this.url, data, this.httpOptions).subscribe(test => {
-       console.log(test);
        
      });
   }
@@ -323,5 +281,29 @@ export class IndexComponent implements OnInit {
         align: align
       }
     });
+  }
+
+  public viewModalEmail() {
+    $("#modal-contact-email").modal("show");
+  }
+
+  public viewMore() {
+    if (this.isViewMoreArbitration) {
+      this.isViewMoreArbitration = false;
+      $('#multiCollapseArbitration').collapse('hide');
+    } else {
+      this.isViewMoreArbitration = true;
+      $('#multiCollapseArbitration').collapse('show');
+    }      
+  }
+
+  public viewMoreMediation() {
+    if (this.isViewMoreMediation) {
+      this.isViewMoreMediation = false;
+      $('#multiCollapseMediation').collapse('hide');
+    } else {
+      this.isViewMoreMediation = true;
+      $('#multiCollapseMediation').collapse('show');
+    }   
   }
 }

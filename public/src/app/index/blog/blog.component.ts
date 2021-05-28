@@ -21,14 +21,13 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.getPosts();
     this.isViewMobile()
-    
+    window.scrollTo(0, 0); 
+
   }
 
   public getPosts() {
     this.blogService.getBlogPosts().pipe(take(1)).subscribe((posts) =>{
       this.array_blog = posts;
-      console.log(posts);
-      
       if (posts.length < 3) {
         this.hiddenButton = true;
       }

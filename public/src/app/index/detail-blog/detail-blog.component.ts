@@ -18,14 +18,12 @@ export class DetailBlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPostId();
-    console.log(this.post_id);
-    
+    window.scrollTo(0, 0); 
+
   }
 
   public getPostId() {
     this.blogService.getPostId(this.post_id).pipe(take(1)).subscribe(post => {
-      console.log(post);
-      
       this.post = post
     })
   }

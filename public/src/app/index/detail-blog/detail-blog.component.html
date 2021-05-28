@@ -3,7 +3,7 @@
 <div class="row m-0 display-row-center">
     <div class="col-sm-12 p-0 ">
         <div class="row m-0 display-row-center row-content-body">
-            <div class="col-sm-5 col-md-5 col-lg-5 col-content-element-img ">
+            <div class="col-sm-5 col-md-5 col-lg-5 col-content-element-img " data-aos="zoom-in">
                 <div class="row img-content-logo display-row-center">
                     <img class="img-logo" src="../../../assets/img/Logo Footer.svg">
                 </div>
@@ -61,19 +61,11 @@
             vspace="5"></div>
 
         <div class="text-justify mt-2 container-text-post" [innerHTML]="post.post_description"></div>
-        <!-- <div class="display-flex-end  pb-2">
-            <span class="text-date">Publicado : {{post.post_date}} / {{ post.post_time}}</span>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <div class="div-container-share cursor-pointer " (click)="sharePost1()">
-                    <a href="https://inspirapmc.com/sharepost/{{post.post_id}}"></a>
-            </div>
-           
-        </div> -->
     </div>
   
 </div>
 
 <!--FIN BODY-->
 <app-footer-landing-page></app-footer-landing-page>
+<!-- FLOTANTE WHATSAPP-->
+<app-fixed-element-whatsapp></app-fixed-element-whatsapp>

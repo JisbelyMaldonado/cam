@@ -25,9 +25,12 @@ export class BlogService {
   }
 
   public getPosts() {
-    return this.db.collection('blog').valueChanges();
+    return this.db.collection('blog', ref => ref.orderBy("post_id", "desc")).valueChanges();
   }
 
+  public getPostTree() {
+    return this.db.collection<Post>('blog', (ref) => ref.orderBy("post_id", "desc").limit(3)).valueChanges();
+  }
   public getBlogPosts() {
     let first = this.db.collection<Post>('blog', (ref) => ref.orderBy("post_id", "desc").limit(3));
     first.get().subscribe(documentSnapshots => {
@@ -48,29 +51,6 @@ export class BlogService {
     });
     return first.valueChanges()
 
-  }
-
-  public getPostByCategory() {
-    let first = this.db.collection('blog', (ref) => ref.orderBy("post_id", "desc").limit(3))
-    console.log(first);
-
-    first.get().subscribe(documentSnapshots => {
-      // Get the last visible document
-      if (documentSnapshots.docs.length > 0) {
-        var lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1];
-        // Construct a new query starting at this document,
-        // get the next 25 cities.
-        this.next = this.db.collection("blog", ref => ref.orderBy("post_id", "desc")
-          .startAfter(lastVisible)
-          .limit(3));
-        this.next = this.db.collection("blog", (ref) => ref
-          .orderBy("post_id", "desc")
-          .startAfter(lastVisible)
-          .limit(3))
-      }
-
-    });
-    return first.valueChanges()
   }
 
   public getMoreTree() {

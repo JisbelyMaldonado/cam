@@ -20,9 +20,7 @@ export class CalculatorService {
     if (selectedValue == "0") {
       if (selectedValueArb == "tres") {
         if (selectedCuantia == "0") {
-          console.log("Entra a valor determinado");
           if (cuantiaValue > 1 && cuantiaValue < 5000) {
-            console.log("1");
             return this.db
               .collection<arbitro>("Arbitro")
               .doc(`${selectedValueArb}`)
@@ -30,7 +28,6 @@ export class CalculatorService {
               .doc("rJ9DtqgqDPHLiVo1wxDy")
               .valueChanges();
           } else if (cuantiaValue > 5001 && cuantiaValue < 10000) {
-            console.log("5001");
             return this.db
               .collection<arbitro>("Arbitro")
               .doc(`${selectedValueArb}`)
@@ -81,7 +78,6 @@ export class CalculatorService {
               .valueChanges();
           }
         } else if (selectedCuantia == "1") {
-          console.log("Entra a indeterminado");
           return this.db
             .collection<arbitro>("Arbitro")
             .doc(`${selectedValueArb}`)
@@ -90,11 +86,8 @@ export class CalculatorService {
             .valueChanges();
         }
       } else if (selectedValueArb == "unico") {
-        console.log("arbitro unico");
         if (selectedCuantia == "0") {
-          console.log("Entra a valor determinado");
           if (cuantiaValue > 1 && cuantiaValue < 5000) {
-            console.log("1");
             return this.db
               .collection<arbitro>("Arbitro")
               .doc(`${selectedValueArb}`)
@@ -102,7 +95,6 @@ export class CalculatorService {
               .doc("ShDz1TyfdJy570zEt97q")
               .valueChanges();
           } else if (cuantiaValue > 5001 && cuantiaValue < 10000) {
-            console.log("5001");
             return this.db
               .collection<arbitro>("Arbitro")
               .doc(`${selectedValueArb}`)
@@ -153,7 +145,6 @@ export class CalculatorService {
               .valueChanges();
           }
         } else if (selectedCuantia == "1") {
-          console.log("Entra a indeterminado");
           return this.db
             .collection<arbitro>("Arbitro")
             .doc(`${selectedValueArb}`)
@@ -162,10 +153,8 @@ export class CalculatorService {
             .valueChanges();
         }
       } else {
-        console.log("no entra a unico");
       }
     } else {
-      console.log("no entra a arbitraje");
     }
   }
 
@@ -176,7 +165,6 @@ export class CalculatorService {
     
     if (selectedValue == "1") {
           if (cuantiaValue < 2000) {
-            console.log("1");
             return this.db
               .collection<Mediacion>("Mediacion")
               .doc("mediacion")
@@ -185,9 +173,6 @@ export class CalculatorService {
               .valueChanges();
           }
           else if (cuantiaValue > 2001 && cuantiaValue < 5000) {
-            console.log("2001");
-            console.log(cuantiaValue);
-            
             return this.db
             .collection<Mediacion>("Mediacion")
             .doc("mediacion")
@@ -195,7 +180,6 @@ export class CalculatorService {
             .doc("serQiv762tVUZQ07Aukb")
             .valueChanges();
           } else if (cuantiaValue > 5001 && cuantiaValue < 10000) {
-            console.log("hasta aqui en 6000");
             return this.db
               .collection<Mediacion>("Mediacion")
               .doc("mediacion")

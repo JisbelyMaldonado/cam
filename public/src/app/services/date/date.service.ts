@@ -46,7 +46,6 @@ export class DateService {
         this.addZero(date.getMonth()),
         this.addZero(1)
       );
-      console.log(firstDay);
       return (
         firstDay.getFullYear() +
         "-" +
