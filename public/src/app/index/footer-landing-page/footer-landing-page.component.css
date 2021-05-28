@@ -107,11 +107,18 @@
 .text-content-footer {
   text-align: justify !important;
 }
+.logo-nikola {
+  width: 120px;
+}
+
 @media (max-width: 576px) {
   
 .contacts-subtitle{
   font-size: 20px;
 
+}
+.logo-nikola {
+  width: 80px;
 }
 
 .menu{
