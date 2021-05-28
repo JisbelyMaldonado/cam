@@ -106,7 +106,7 @@
 
 <div class="row m-0" *ngIf="isMobile">
     <div class="col-12 p-0 ">
-        <div class="row m-0 display-row-center" *ngFor="let post of array_blog , let i = index">
+        <div class="row m-0 " *ngFor="let post of array_blog , let i = index">
             <!-- IMAGEN DERECHO -->
             <div class="col-12 p-0" >
                 <div class="row m-0 row-content-post display-row-center pt-3 {{i%2==1 ? 'bg-gray' : ''}}">
@@ -114,9 +114,8 @@
                         <div class="col-content-img-post" style="background-image: url({{post.post_img}});"></div>
                     </div>
                     <div class="col-sm-10">
-
                         <div class="row m-0 display-row-center pt-3">
-                            <div class="col-12 pr-4 p-0 display-col-start col-content-body-text">
+                            <div class="col-12 pr-4 p-0  col-content-body-text">
                                 <h1 class="title-post">{{post.post_title}} </h1>
                                 <div class="col-12 mt-2 p-0 text-justify"
                                     [innerHTML]="post.post_description | slice:0:300"></div>
